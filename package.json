@@ -30,6 +30,11 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.20.0",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-webpack-plugin": "^2.5.1",
+    "gatsby-plugin-eslint": "^3.0.0",
     "postcss": "^8.2.4",
     "postcss-preset-env": "^6.7.0",
     "tailwindcss": "^2.0.2"
