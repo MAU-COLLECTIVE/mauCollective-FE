@@ -2,11 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 // Components
+import SEO from 'components/SEO'
 import { NavbarHome } from 'components/Navbar'
 
 const HomeLayout = ({ children }) => {
   return (
     <React.Fragment>
+      <SEO />
       <NavbarHome />
       <main>
         {children}
