@@ -1,5 +1,5 @@
-import Section2 from './Section2'
+import RecentNews from './RecentNews'
 
 export {
-  Section2
+  RecentNews
 }

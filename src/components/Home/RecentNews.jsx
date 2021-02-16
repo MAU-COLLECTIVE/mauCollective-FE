@@ -1,7 +1,7 @@
 import React from 'react'
 import BadgeNumber from 'components/BadgeNumber'
 
-const Section2 = () => {
+const RecentNews = () => {
   return (
     <div className="px-6 py-8 flex flex-col">
       <a href="#view-all-news" className="font-light uppercase w-full text-right px-6 mb-4">View all news</a>
@@ -37,4 +37,4 @@ const Section2 = () => {
   )
 };
 
-export default Section2
+export default RecentNews
