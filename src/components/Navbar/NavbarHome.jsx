@@ -32,6 +32,13 @@ const NavbarHome = () => {
         <BadgeNumber number="07" />
         <a href="#" className="block font-medium uppercase">Shop</a>
       </div>
+      <div className="px-6 py-4 flex flex-1 justify-end space-x-2">
+        <p className="font-medium uppercase">EN</p>
+        <span>/</span>
+        <p className="font-medium uppercase">VI</p>
+        <span>/</span>
+        <p className="font-medium uppercase">JP</p>
+      </div>
     </nav>
   )
 }
