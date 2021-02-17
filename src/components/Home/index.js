@@ -1,5 +1,7 @@
-import RecentNews from './RecentNews'
+import Recent from './Recent'
+import About from './About'
 
 export {
-  RecentNews
+  Recent,
+  About
 }
