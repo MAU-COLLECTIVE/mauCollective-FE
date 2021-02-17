@@ -1,6 +1,7 @@
 import React from 'react'
 import {
-  RecentNews
+  Recent,
+  About
 } from 'components/Home'
 
 import HomeLayout from 'layouts/HomeLayout'
@@ -8,7 +9,9 @@ import HomeLayout from 'layouts/HomeLayout'
 const HomePage = () => {
   return (
     <HomeLayout>
-      <RecentNews />
+      <Recent />
+      <About />
+      <Recent />
     </HomeLayout>
   )
 }
