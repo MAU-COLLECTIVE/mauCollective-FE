@@ -24,11 +24,11 @@ const About = () => {
       </div>
       <div className="relative px-2 lg:px-6 py-4">
         <h1 className="font-semibold text-3xl mb-8 text-white uppercase">CONTACT US</h1>
-        <div className="flex sm:space-x-16 space-y-8 sm:space-y-0 flex-col sm:flex-row">
+        <div className="flex sm:space-x-28 space-y-8 sm:space-y-0 flex-col sm:flex-row">
           <div>
             <p className="font-mono sm:text-lg xl:text-xl text-gray-200">M.A.U Collective</p>
           </div>
-          <div className="flex space-x-8 sm:space-x-16">
+          <div className="flex space-x-14 sm:space-x-28">
             <div>
               <p className="font-mono sm:text-lg xl:text-xl text-gray-200">371/4 Hai Ba Trung</p>
               <p className="font-mono sm:text-lg xl:text-xl text-gray-200 mb-6">District 3</p>
