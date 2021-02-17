@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 // Components
 import SEO from 'components/SEO'
 import { NavbarHome } from 'components/Navbar'
+import Footer from 'components/Footer'
 
 const HomeLayout = ({ children }) => {
   return (
@@ -13,6 +14,7 @@ const HomeLayout = ({ children }) => {
       <main>
         {children}
       </main>
+      <Footer />
     </React.Fragment>
   )
 }
