@@ -15,7 +15,11 @@ module.exports = {
       serif: ['Source Serif Pro', 'serif'],
       mono: ['Source Sans Pro', 'monospace'],
     },
-    extend: {},
+    extend: {
+      colors: {
+        black: '#000000'
+      },
+    },
   },
   variants: {
     extend: {},
