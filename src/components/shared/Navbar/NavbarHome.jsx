@@ -1,5 +1,5 @@
 import React from 'react'
-import BadgeNumber from 'components/BadgeNumber'
+import BadgeNumber from 'components/shared/BadgeNumber'
 
 const NavbarHome = () => {
   return (

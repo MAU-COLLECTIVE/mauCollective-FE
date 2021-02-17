@@ -1,6 +1,6 @@
 import React from 'react'
-import BadgeNumber from 'components/BadgeNumber'
-import CardPost from 'components/CardPost'
+import BadgeNumber from 'components/shared/BadgeNumber'
+import CardPost from 'components/shared/CardPost'
 
 const RecentNews = () => {
   return (
