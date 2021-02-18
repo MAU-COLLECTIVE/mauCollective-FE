@@ -1,7 +1,8 @@
 import React from 'react'
 import {
   Recent,
-  About
+  About,
+  RecentCollaboration
 } from 'components/Home'
 
 import HomeLayout from 'layouts/HomeLayout'
@@ -9,6 +10,7 @@ import HomeLayout from 'layouts/HomeLayout'
 const HomePage = () => {
   return (
     <HomeLayout>
+      <RecentCollaboration />
       <Recent />
       <About />
       <Recent />
