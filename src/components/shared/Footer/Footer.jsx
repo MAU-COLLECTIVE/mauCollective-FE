@@ -11,7 +11,7 @@ const Footer = () => (
         <a href="#fb"><img src="/icons/spotify-dark.svg"/></a>
       </div>
     </div>
-    <div className="relative flex-1 flex flex-wrap sm:space-x-8 2xl:space-x-16 space-y-4 sm:space-y-0 justify-between xl:justify-start">
+    <div className="relative flex-1 flex flex-wrap sm:space-x-8 2xl:space-x-16 justify-between xl:justify-start">
       <div className="w-1/2 sm:w-auto">
         <p className="font-light text-sm">Ho Chi Minh City</p>
         <p className="font-light text-sm">Vietnam</p>
@@ -20,7 +20,7 @@ const Footer = () => (
         <p className="font-light text-sm">371/4 Hai Ba Trung</p>
         <p className="font-light text-sm">District 3</p>
       </div>
-      <div className="w-full sm:w-auto flex sm:flex-col mt-6 sm:mt-0">
+      <div className="w-full sm:w-auto flex sm:flex-col mt-4 sm:mt-0">
         <p className="font-light text-sm w-1/2 sm:w-auto">
           <span className="font-medium md:hidden mr-2 text-gray-400">T</span>
           +84 93 785 10 36
