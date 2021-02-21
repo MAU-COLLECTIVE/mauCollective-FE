@@ -2,7 +2,7 @@ import React from 'react'
 
 const Artists = () => {
   return (
-    <div className="bg-black text-white px-4 lg:px-14 py-28 flex flex-col space-y-20">
+    <div className="min-h-screen bg-black text-white px-4 lg:px-14 py-28 flex flex-col justify-center space-y-20">
       <h1 className="font-semibold text-3xl text-white uppercase">ARTISTS</h1>
       <div className="grid gap-10 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
         <div className="w-max flex flex-col 2xl:flex-row items-center justify-center 2xl:space-x-6 space-y-6 2xl:space-y-0">

@@ -4,7 +4,7 @@ import CardPost from 'components/shared/CardPost'
 
 const RecentNews = () => {
   return (
-    <div className="px-2 lg:px-6 py-28 flex flex-col">
+    <div className="min-h-screen px-2 lg:px-6 py-28 flex flex-col justify-center">
       <div className="text-right px-2 lg:px-6 mb-4">
         <a href="#view-all-news" className="font-light text-sm md:text-base uppercase">View all news</a>
       </div>

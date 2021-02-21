@@ -3,7 +3,7 @@ import BadgeNumber from 'components/shared/BadgeNumber'
 
 const About = () => {
   return (
-    <div className="bg-black text-white px-2 lg:px-6 py-28 flex flex-col space-y-20">
+    <div className="min-h-screen bg-black text-white px-2 lg:px-6 py-28 flex flex-col justify-center space-y-20">
       <div className="flex flex-col lg:flex-row space-y-20 lg:space-y-0">
         <div className="relative lg:w-1/2 px-2 lg:px-6 py-4">
           <BadgeNumber number="03" />
