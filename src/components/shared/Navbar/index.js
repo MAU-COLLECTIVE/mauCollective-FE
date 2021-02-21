@@ -1,3 +1,4 @@
 import NavbarHome from './NavbarHome'
+import NavbarBlog from './NavbarBlog'
 
-export { NavbarHome }
+export { NavbarHome, NavbarBlog }
