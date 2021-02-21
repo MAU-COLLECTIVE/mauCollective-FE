@@ -2,6 +2,10 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}'],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    minWidth: {
+      '0': '0',
+      '3/4': '75%'
+     },
     screens: {
       'xs': '414px',
       'sm': '600px',
