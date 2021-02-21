@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "mau-collective",
+    siteUrl: "localhost:8000"
   },
   plugins: [
     {
