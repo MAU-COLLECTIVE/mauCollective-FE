@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import BadgeNumber from 'components/shared/BadgeNumber'
 
 const NavComponent = ({ className }) => (
-  <div className={`${className}`}>
+  <div className={`lg:space-x-4 ${className}`}>
     <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="01" className="hidden lg:block" />
         <a href="#" className="break-words block font-normal text-2xl lg:text-base lg:font-medium uppercase">Home</a>
