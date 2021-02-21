@@ -11,10 +11,10 @@ import HomeLayout from 'layouts/HomeLayout'
 const HomePage = () => {
   return (
     <HomeLayout>
-      <Artists />
-      <RecentCollaboration />
       <Recent />
       <About />
+      <Artists />
+      <RecentCollaboration />
       <Recent />
     </HomeLayout>
   )
