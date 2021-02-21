@@ -87,7 +87,7 @@ const NavbarHome = () => {
             <img src="/icons/close.svg" alt="close" />
         </button>
         <NavComponent />
-        <div className="lg:px-6 py-2 lg:py-4 flex lg:flex-1 justify-end space-x-2 mt-auto">
+        <div className="lg:px-6 py-2 lg:py-4 flex lg:flex-1 justify-end space-x-2 mt-auto mb-8">
           <p className="font-medium uppercase">EN</p>
           <span>/</span>
           <p className="font-medium uppercase">VI</p>
