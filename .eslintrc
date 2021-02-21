@@ -1,15 +1,21 @@
 {
-  "parser": "babel-eslint", // uses babel-eslint transforms
-  "settings": {
-    "react": {
-      "version": "detect" // detect react version
-    }
-  },
-  "env": {
-    "node": true // defines things like process.env when generating through node
+  "parser": "babel-eslint",
+  "rules": {
+    "strict": 0
   },
   "extends": [
-    "eslint:recommended", // use recommended configs
+    "eslint:recommended",
     "plugin:react/recommended"
-  ]
+  ],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "worker": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }
