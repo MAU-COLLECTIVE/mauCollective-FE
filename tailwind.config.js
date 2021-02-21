@@ -12,7 +12,8 @@ module.exports = {
       'md': '900px',
       'lg': '1124px',
       'xl': '1265px',
-      '2xl': '1530px'
+      '2xl': '1530px',
+      '3xl': '1920px'
     },
     fontFamily: {
       sans: ['Source Code Pro', 'sans-serif'],
