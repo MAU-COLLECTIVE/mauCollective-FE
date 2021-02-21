@@ -8,7 +8,7 @@ import Footer from 'components/shared/Footer'
 
 const HomeLayout = ({ children }) => {
   return (
-    <div className="max-w-screen flex flex-col">
+    <div className="max-w-screen relative flex flex-col">
       <SEO />
       <NavbarHome />
       <main>

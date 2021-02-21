@@ -6,27 +6,27 @@ const NavComponent = ({ className }) => (
   <div className={`lg:space-x-4 ${className}`}>
     <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="01" className="hidden lg:block" />
-        <a href="#" className="break-words block font-normal text-2xl lg:text-base lg:font-medium uppercase">Home</a>
+        <a href="#" onClick={(e) => { e.preventDefault(); scrollTo(0, 0); }} className="break-words block font-normal text-2xl lg:text-base lg:font-medium uppercase">Home</a>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="02" className="hidden lg:block" />
-        <a href="#" className="break-words block font-normal text-2xl lg:text-base lg:font-medium uppercase">News</a>
+        <a href="#news" className="break-words block font-normal text-2xl lg:text-base lg:font-medium uppercase">News</a>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="03" className="hidden lg:block" />
-        <a href="#" className="break-words block font-normal text-2xl lg:text-base lg:font-medium uppercase">About M.A.U</a>
+        <a href="#about" className="break-words block font-normal text-2xl lg:text-base lg:font-medium uppercase">About M.A.U</a>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="04" className="hidden lg:block" />
-        <a href="#" className="break-words block font-normal text-2xl lg:text-base lg:font-medium uppercase">Artists</a>
+        <a href="#artists" className="break-words block font-normal text-2xl lg:text-base lg:font-medium uppercase">Artists</a>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="05" className="hidden lg:block" />
-        <a href="#" className="break-words block font-normal text-2xl lg:text-base lg:font-medium uppercase">Collaborations</a>
+        <a href="#collaborations" className="break-words block font-normal text-2xl lg:text-base lg:font-medium uppercase">Collaborations</a>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="06" className="hidden lg:block" />
-        <a href="#" className="break-words block font-normal text-2xl lg:text-base lg:font-medium uppercase">Events</a>
+        <a href="#events" className="break-words block font-normal text-2xl lg:text-base lg:font-medium uppercase">Events</a>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="07" className="hidden lg:block" />
@@ -64,9 +64,45 @@ const NavbarHome = () => {
     return () => window.removeEventListener('resize', resize);
   }, [])
 
+  useEffect(() => {
+    // intersection observer setup
+    const sections = [
+      document.getElementById('news'),
+      document.getElementById('about'),
+      document.getElementById('artists'),
+      document.getElementById('collaborations'),
+      document.getElementById('events'),
+    ]
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5,
+    };
+
+    function observerCallback(entries) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const name = entry.target.id;
+          if(name === 'news' || name === 'events') {
+            document.getElementById('navbar').style.color = 'black'
+          }
+          else {
+            document.getElementById('navbar').style.color = 'white'
+          }
+        }
+      });
+    }
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    sections.forEach((sec) => observer.observe(sec));
+    return () => sections.forEach((sec) => observer.unobserve(sec));
+  }, [])
+
   return (
     <React.Fragment>
-      <nav className="px-4 lg:px-6 py-2 flex lg:space-x-4 bg-black text-white items-center justify-between lg:justify-start">
+      <nav id="navbar" className="z-40 px-4 lg:px-6 py-2 fixed w-full flex lg:space-x-4 items-center justify-between lg:justify-start">
         <NavComponent className="hidden lg:flex flex-wrap flex-col justify-start items-start lg:flex-row" />
         <button
           className="block lg:hidden font-medium uppercase py-4"
@@ -96,7 +132,7 @@ const NavbarHome = () => {
         </div>
       </div>
       {/* Sidebar Overlay */}
-      <div className={`z-40 ${isToggled ? 'block' : 'hidden'} absolute w-screen h-screen bg-black opacity-80`} />
+      <div className={`z-40 ${isToggled ? 'block' : 'hidden'} absolute w-screen min-h-screen h-full bg-black opacity-80`} />
     </React.Fragment>
   )
 }

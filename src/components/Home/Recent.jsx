@@ -1,10 +1,11 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import BadgeNumber from 'components/shared/BadgeNumber'
 import CardPost from 'components/shared/CardPost'
 
-const RecentNews = () => {
+const Recent = ({ id }) => {
   return (
-    <div className="min-h-screen px-2 lg:px-6 py-28 flex flex-col justify-center">
+    <div id={id} className="min-h-screen px-2 lg:px-6 py-28 flex flex-col justify-center">
       <div className="text-right px-2 lg:px-6 mb-4">
         <a href="#view-all-news" className="font-light text-sm md:text-base uppercase">View all news</a>
       </div>
@@ -37,4 +38,8 @@ const RecentNews = () => {
   )
 };
 
-export default RecentNews
+Recent.propTypes = {
+  id: PropTypes.string
+}
+
+export default Recent

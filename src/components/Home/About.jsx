@@ -1,9 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import BadgeNumber from 'components/shared/BadgeNumber'
 
-const About = () => {
+const About = ({ id }) => {
   return (
-    <div className="min-h-screen bg-black text-white px-2 lg:px-6 py-28 flex flex-col justify-center space-y-20">
+    <div id={id} className="min-h-screen bg-black text-white px-2 lg:px-6 py-28 flex flex-col justify-center space-y-20">
       <div className="flex flex-col lg:flex-row space-y-20 lg:space-y-0">
         <div className="relative lg:w-1/2 px-2 lg:px-6 py-4">
           <BadgeNumber number="03" />
@@ -50,6 +51,10 @@ const About = () => {
       </div>
     </div>
   )
+}
+
+About.propTypes = {
+  id: PropTypes.string
 }
 
 export default About

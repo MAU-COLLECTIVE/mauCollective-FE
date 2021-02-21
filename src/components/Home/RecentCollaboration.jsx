@@ -1,9 +1,5 @@
 import React, { useState } from 'react'
-
-const images = [
-  '/img/avril.jpg',
-  '/img/collab.png'
-];
+import PropTypes from 'prop-types'
 
 const data = [
   {
@@ -18,12 +14,12 @@ const data = [
   }
 ]
 
-const RecentCollaboration = () => {
+const RecentCollaboration = ({ id }) => {
   
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
-    <div className="min-h-screen relative px-2 lg:px-6 py-28 flex flex-col justify-center text-gray-200">
+    <div id={id} className="min-h-screen relative px-2 lg:px-6 py-28 flex flex-col justify-center text-gray-200">
       <img className="absolute w-full h-full object-cover -mx-2 lg:-mx-6 -my-28 z-0 transition-all" style={{ filter: 'brightness(75%)' }} src={data?.[currentIndex]?.img} />
       <div className="text-right px-2 lg:px-6 mb-4 z-10">
         <a href="#view-all-news" className="font-light text-sm md:text-base uppercase">View all <br/>collaborations</a>
@@ -41,6 +37,10 @@ const RecentCollaboration = () => {
       </div>
     </div>
   )
+}
+
+RecentCollaboration.propTypes = {
+  id: PropTypes.string
 }
 
 export default RecentCollaboration
