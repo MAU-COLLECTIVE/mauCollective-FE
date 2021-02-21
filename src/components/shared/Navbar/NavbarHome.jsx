@@ -66,7 +66,7 @@ const NavbarHome = () => {
 
   return (
     <React.Fragment>
-      <nav className="px-6 py-2 flex space-x-4 bg-black text-white items-center justify-between lg:justify-start">
+      <nav className="px-4 lg:px-6 py-2 flex lg:space-x-4 bg-black text-white items-center justify-between lg:justify-start">
         <NavComponent className="hidden lg:flex flex-wrap flex-col justify-start items-start lg:flex-row" />
         <button
           className="block lg:hidden font-medium uppercase py-4"
@@ -82,8 +82,10 @@ const NavbarHome = () => {
       {/* Sidebar */}
       <div className={`pl-6 pr-20 py-2 fixed z-50 ${isToggled ? 'flex' : 'hidden'} flex-wrap flex-col justify-start items-start lg:flex-row h-screen lg:min-h-0 w-max max-w-full lg:hidden bg-black text-white`}>
         <button
-          className="block lg:hidden my-6 self-end text-3xl -mr-14"
-          onClick={handleToggle}>CLOSE</button>
+          className="block lg:hidden my-6 self-end -mr-14"
+          onClick={handleToggle}>
+            <img src="/icons/close.svg" alt="close" />
+        </button>
         <NavComponent />
         <div className="lg:px-6 py-2 lg:py-4 flex lg:flex-1 justify-end space-x-2 mt-auto">
           <p className="font-medium uppercase">EN</p>
@@ -93,6 +95,8 @@ const NavbarHome = () => {
           <p className="font-medium uppercase">JP</p>
         </div>
       </div>
+      {/* Sidebar Overlay */}
+      <div className={`z-40 ${isToggled ? 'block' : 'hidden'} absolute w-screen h-screen bg-black opacity-80`} />
     </React.Fragment>
   )
 }
