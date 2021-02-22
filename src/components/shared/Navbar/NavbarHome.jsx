@@ -64,45 +64,10 @@ const NavbarHome = () => {
     return () => window.removeEventListener('resize', resize);
   }, [])
 
-  useEffect(() => {
-    // intersection observer setup
-    const sections = [
-      document.getElementById('news'),
-      document.getElementById('about'),
-      document.getElementById('artists'),
-      document.getElementById('collaborations'),
-      document.getElementById('events'),
-    ]
-
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.5,
-    };
-
-    function observerCallback(entries) {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const name = entry.target.id;
-          if(name === 'news' || name === 'events') {
-            document.getElementById('navbar').style.color = 'black'
-          }
-          else {
-            document.getElementById('navbar').style.color = 'white'
-          }
-        }
-      });
-    }
-
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    sections.forEach((sec) => observer.observe(sec));
-    return () => sections.forEach((sec) => observer.unobserve(sec));
-  }, [])
-
   return (
     <React.Fragment>
-      <nav id="navbar" className="z-40 px-4 lg:px-6 py-2 fixed w-full flex lg:space-x-4 items-center justify-between lg:justify-start">
+      <nav id="navbar" className="bg-white text-black z-40 px-4 lg:px-6 py-2 fixed w-full flex lg:space-x-4 items-center justify-between lg:justify-start"
+        style={{ mixBlendMode: 'exclusion', filter: 'invert(1)' }}>
         <NavComponent className="hidden lg:flex flex-wrap flex-col justify-start items-start lg:flex-row" />
         <button
           className="block lg:hidden font-medium uppercase py-4"

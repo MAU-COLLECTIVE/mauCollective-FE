@@ -19,7 +19,7 @@ const RecentCollaboration = ({ id }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
-    <div id={id} className="min-h-screen relative px-2 lg:px-6 py-28 flex flex-col justify-center text-gray-200">
+    <div id={id} className="min-h-screen relative px-2 lg:px-6 py-28 flex flex-col justify-between text-gray-200">
       <img className="absolute w-full h-full object-cover -mx-2 lg:-mx-6 -my-28 z-0 transition-all" style={{ filter: 'brightness(75%)' }} src={data?.[currentIndex]?.img} />
       <div className="text-right px-2 lg:px-6 mb-4 z-10">
         <a href="#view-all-news" className="font-light text-sm md:text-base uppercase">View all <br/>collaborations</a>
