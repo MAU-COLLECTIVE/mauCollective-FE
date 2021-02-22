@@ -11,7 +11,7 @@ const Footer = () => (
         <a href="#fb"><img src="/icons/spotify-dark.svg"/></a>
       </div>
     </div>
-    <div className="relative flex-1 flex flex-wrap sm:space-x-8 2xl:space-x-16 justify-between xl:justify-start">
+    <div className="relative flex-1 flex flex-wrap sm:space-x-8 2xl:space-x-16 justify-between xl:justify-start xl:px-4">
       <div className="w-1/2 sm:w-auto">
         <p className="font-light text-sm">Ho Chi Minh City</p>
         <p className="font-light text-sm">Vietnam</p>
