@@ -12,7 +12,7 @@ const Artist = () => {
         <div className="xl:w-2/3">
           <div className="relative px-6 py-4 mb-6">
             <BadgeNumber number="02" />
-            <a href="#" className="block font-semibold text-3xl uppercase">Joe Karnavian</a>
+            <h1 className="block font-semibold text-3xl uppercase">Joe Karnavian</h1>
           </div>
           <p className="px-6 font-mono sm:text-lg xl:text-xl text-gray-200 mb-32">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi, assumenda nisi, quisquam molestias iste quod ratione officia aut dignissimos, adipisci hic. Ratione, distinctio? Magni optio exercitationem vel molestias suscipit.</p>
           <div className="lg:hidden flex flex-1 flex-col items-center space-y-8 mb-32">
@@ -39,9 +39,9 @@ const Artist = () => {
                   </div>
                   <div className="flex flex-col flex-1 items-end">
                     <p className="text-right">Stream on:</p>
-                    <div className="flex space-x-1">
-                      <img src="/icons/fb.svg" />
-                      <img src="/icons/ig.svg" />
+                    <div className="flex space-x-1 mt-auto">
+                      <img src="/icons/fb.svg" className="w-4 opacity-75" />
+                      <img src="/icons/ig.svg" className="w-4 opacity-75" />
                     </div>
                   </div>
                 </li>
@@ -53,9 +53,9 @@ const Artist = () => {
                   </div>
                   <div className="flex flex-col flex-1 items-end">
                     <p className="text-right">Stream on:</p>
-                    <div className="flex space-x-1">
-                      <img src="/icons/fb.svg" />
-                      <img src="/icons/ig.svg" />
+                    <div className="flex space-x-1 mt-auto">
+                      <img src="/icons/fb.svg" className="w-4 opacity-75" />
+                      <img src="/icons/ig.svg" className="w-4 opacity-75" />
                     </div>
                   </div>
                 </li>
@@ -67,9 +67,9 @@ const Artist = () => {
                   </div>
                   <div className="flex flex-col flex-1 items-end">
                     <p className="text-right">Stream on:</p>
-                    <div className="flex space-x-1">
-                      <img src="/icons/fb.svg" />
-                      <img src="/icons/ig.svg" />
+                    <div className="flex space-x-1 mt-auto">
+                      <img src="/icons/fb.svg" className="w-4 opacity-75" />
+                      <img src="/icons/ig.svg" className="w-4 opacity-75" />
                     </div>
                   </div>
                 </li>
@@ -92,9 +92,9 @@ const Artist = () => {
                   </div>
                   <div className="flex flex-col flex-1 items-end">
                     <p className="text-right">Stream on:</p>
-                    <div className="flex space-x-1">
-                      <img src="/icons/fb.svg" />
-                      <img src="/icons/ig.svg" />
+                    <div className="flex space-x-1 mt-auto">
+                      <img src="/icons/fb.svg" className="w-4 opacity-75" />
+                      <img src="/icons/ig.svg" className="w-4 opacity-75" />
                     </div>
                   </div>
                 </li>
@@ -106,9 +106,9 @@ const Artist = () => {
                   </div>
                   <div className="flex flex-col flex-1 items-end">
                     <p className="text-right">Stream on:</p>
-                    <div className="flex space-x-1">
-                      <img src="/icons/fb.svg" />
-                      <img src="/icons/ig.svg" />
+                    <div className="flex space-x-1 mt-auto">
+                      <img src="/icons/fb.svg" className="w-4 opacity-75" />
+                      <img src="/icons/ig.svg" className="w-4 opacity-75" />
                     </div>
                   </div>
                 </li>
@@ -120,9 +120,9 @@ const Artist = () => {
                   </div>
                   <div className="flex flex-col flex-1 items-end">
                     <p className="text-right">Stream on:</p>
-                    <div className="flex space-x-1">
-                      <img src="/icons/fb.svg" />
-                      <img src="/icons/ig.svg" />
+                    <div className="flex space-x-1 mt-auto">
+                      <img src="/icons/fb.svg" className="w-4 opacity-75" />
+                      <img src="/icons/ig.svg" className="w-4 opacity-75" />
                     </div>
                   </div>
                 </li>
