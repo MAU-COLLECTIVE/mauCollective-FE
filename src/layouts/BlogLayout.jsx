@@ -4,14 +4,13 @@ import PropTypes from 'prop-types'
 // Components
 import SEO from 'components/shared/SEO'
 import { NavbarBlog } from 'components/shared/Navbar'
-import Footer from 'components/shared/Footer'
 
-const BlogLayout = ({ children }) => {
+const BlogLayout = ({ children, title }) => {
   return (
-    <div className="max-w-screen max-h-screen flex overflow-y-hidden">
+    <div className="max-w-screen lg:max-h-screen flex flex-col lg:flex-row lg:overflow-y-hidden">
       <SEO />
-      <NavbarBlog />
-      <main className="flex-1 overflow-y-auto px-16 py-12">
+      <NavbarBlog title={title} />
+      <main className="flex-1 lg:overflow-y-auto px-4 lg:px-16 py-12">
         {children}
       </main>
     </div>
@@ -19,7 +18,8 @@ const BlogLayout = ({ children }) => {
 }
 
 BlogLayout.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
+  title: PropTypes.string
 }
 
 export default BlogLayout
