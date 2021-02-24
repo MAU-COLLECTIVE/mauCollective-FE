@@ -5,3 +5,13 @@
 html, body {
   scroll-behavior: smooth;
 }
+
+.tl-wrapper {
+  overflow-y: hidden !important;
+}
+
+.tl-wrapper-status--entered {
+  overflow-y: auto !important;
+  transform: none !important;
+  /* z-index: unset !important; */
+}

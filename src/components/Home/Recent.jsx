@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import BadgeNumber from 'components/shared/BadgeNumber'
 import CardPost from 'components/shared/CardPost'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 const Recent = ({ id }) => {
   return (
@@ -16,7 +17,11 @@ const Recent = ({ id }) => {
           <div className="xl:hidden md:block w-full h-96 mb-8 xl:mb-0 bg-gray-300">Image</div>
           <div className="flex flex-col md:flex-row xl:flex-col md:space-x-8 items-start justify-start xl:space-x-0 space-y-8 md:space-y-0 xl:space-y-8">
             <p className="font-mono sm:text-lg xl:text-xl text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum adipisci, voluptates excepturi molestias dolorum ducimus soluta cupiditate possimus nobis quam dicta sint illo doloremque pariatur quae, quia aut, officiis animi.</p>
-            <a href="#continue-read" className="font-light text-sm md:text-base uppercase border-b-2 border-black border-solid whitespace-nowrap">Continue reading</a>
+            <AniLink
+              swipe direction="left"
+              top="entry" to="/single-post"
+              className="font-light text-sm md:text-base uppercase border-b-2 border-black border-solid whitespace-nowrap">
+                Continue reading</AniLink>
           </div>
         </div>
         <div className="px-2 lg:px-6 flex-1 space-y-6">
