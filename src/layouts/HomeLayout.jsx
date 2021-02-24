@@ -8,14 +8,16 @@ import Footer from 'components/shared/Footer'
 
 const HomeLayout = ({ children }) => {
   return (
-    <div className="max-w-screen relative flex flex-col">
-      <SEO />
-      <NavbarHome />
+    <React.Fragment>
+      <header>
+        <SEO />
+        <NavbarHome />
+      </header>
       <main>
         {children}
       </main>
       <Footer />
-    </div>
+    </React.Fragment>
   )
 }
 

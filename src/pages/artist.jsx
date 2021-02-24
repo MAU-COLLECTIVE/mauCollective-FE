@@ -1,13 +1,17 @@
 import React from 'react'
 import BadgeNumber from 'components/shared/BadgeNumber'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 const Artist = () => {
   return (
     <div className="min-h-screen max-w-screen p-10 flex flex-col items-start bg-black text-white">
-      <div className="relative px-6 py-4 mb-12">
-        <BadgeNumber number="01" />
-        <a href="#" className="block font-medium uppercase">Close</a>
-      </div>
+      <AniLink
+        swipe direction="right"
+        top="exit" to="/"
+        className="relative px-6 py-4 mb-12">
+          <BadgeNumber number="01" />
+          <span className="block font-medium uppercase">Close</span>
+      </AniLink>
       <div className="flex">
         <div className="xl:w-2/3">
           <div className="relative px-6 py-4 mb-6">

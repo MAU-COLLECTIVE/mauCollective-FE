@@ -16,6 +16,7 @@ module.exports = {
         }
       }
     },
+    "gatsby-plugin-transition-link",
     "gatsby-plugin-postcss",
     "gatsby-plugin-sharp",
     "gatsby-plugin-react-helmet",

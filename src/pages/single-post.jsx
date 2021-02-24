@@ -1,14 +1,18 @@
 import React from 'react'
 import BadgeNumber from 'components/shared/BadgeNumber'
 import CardPost from 'components/shared/CardPost'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 const SinglePost = () => {
 	return (
-    <div className="min-h-screen max-w-screen py-6 2xl:py-10 flex flex-col items-start">
-      <div className="relative mx-4 2xl:mx-10 px-6 py-4">
-        <BadgeNumber number="01" />
-        <a href="#" className="block font-medium uppercase">Close</a>
-      </div>
+    <div className="min-h-screen max-w-screen bg-white py-6 2xl:py-10 flex flex-col items-start">
+      <AniLink
+        swipe direction="right"
+        top="entry" to="/"
+        className="relative mx-4 2xl:mx-10 px-6 py-4">
+          <BadgeNumber number="01" />
+          <span className="block font-medium uppercase">Close</span>
+      </AniLink>
       <div className="flex flex-col items-center w-full space-y-12">
         <h1 className="font-black text-3xl sm:text-4xl md:text-5xl xl:text-6xl uppercase px-6 2xl:px-0 w-full 2xl:w-2/3 text-center">MOST RECENT NEWS HEADLINE</h1>
         <ul className="text-sm font-light font-mono flex flex-col items-center">
