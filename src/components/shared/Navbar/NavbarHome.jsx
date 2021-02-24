@@ -66,7 +66,7 @@ const NavbarHome = () => {
 
   return (
     <React.Fragment>
-      <nav id="navbar" className="bg-white text-black z-40 px-4 lg:px-6 py-2 fixed w-full flex lg:space-x-4 items-center justify-between lg:justify-start"
+      <nav id="navbar" className="bg-transparen z-40 px-4 lg:px-6 py-2 fixed w-full flex lg:space-x-4 items-center justify-between lg:justify-start"
         style={{ mixBlendMode: 'exclusion', filter: 'invert(1)' }}>
         <NavComponent className="hidden lg:flex flex-wrap flex-col justify-start items-start lg:flex-row" />
         <button
