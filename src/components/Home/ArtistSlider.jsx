@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import gsap from 'gsap'
 import { Draggable } from 'gsap/Draggable'
 
@@ -53,13 +54,6 @@ const ArtistSlider = () => {
       onThrowUpdate: updateProgress,
       snap: {
         x: snapX
-      },
-      onThrowComplete: function () {
-        console.log("onThrowComplete");
-        //TODO: animation that inject selected card title
-      },
-      onClick: function() {
-        console.log(this)
       }
     });
 
@@ -94,10 +88,13 @@ const ArtistSlider = () => {
     <div className="bg-black text-white h-screen relative flex flex-col w-full items-center justify-center overflow-hidden">
       <div id="picker" className="picker">
         <div className="cell">
-          <div className="cell-content">
-            <img src="/img/artist.png" className="rounded-full w-full h-full" />
-            <h1 className="text-center font-medium text-lg uppercase mt-8">Dycal</h1>
-          </div>
+          <AniLink
+            swipe direction="left"
+            top="entry" to="/artist"
+            className="cell-content">
+              <img src="/img/artist.png" className="rounded-full w-full h-full" />
+              <h1 className="text-center font-medium text-lg uppercase mt-8">Dycal</h1>
+          </AniLink>
         </div>     
         <div className="cell">
           <div className="cell-content">
