@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {
   Recent,
   About,
@@ -8,16 +8,25 @@ import {
 } from 'components/Home'
 
 import HomeLayout from 'layouts/HomeLayout'
+import HomeContext from 'contexts/HomeContext'
 
 const HomePage = () => {
+
+  const ctx = useContext(HomeContext);
+
   return (
     <HomeLayout>
-      <ArtistSlider />
-      {/* <Recent id="news" />
+      <Recent id="news" />
       <About id="about" />
-      <Artists id="artists" />
+      <div id="artists">
+        {ctx.artistType === 'slider' ? (
+          <ArtistSlider />
+        ) : (
+          <Artists />
+        )}
+      </div>
       <RecentCollaboration id="collaborations" />
-      <Recent id="events" /> */}
+      <Recent id="events" />
     </HomeLayout>
   )
 }
