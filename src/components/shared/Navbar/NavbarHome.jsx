@@ -126,7 +126,7 @@ const NavbarHome = () => {
         </div>
       </nav>
       {/* Sidebar */}
-      <div className={`pl-6 pr-20 py-2 fixed z-50 ${isToggled ? 'flex' : 'hidden'} flex-wrap flex-col justify-start items-start lg:flex-row h-screen lg:min-h-0 w-max max-w-full lg:hidden bg-black text-white`}>
+      <div className={`pl-6 pr-20 py-2 fixed z-50 ${isToggled ? 'flex' : 'hidden'} flex-1 flex-wrap flex-col justify-start items-start lg:flex-row h-screen lg:min-h-0 w-max max-w-full lg:hidden bg-black text-white`}>
         <button
           className="block lg:hidden my-6 self-end -mr-14"
           onClick={handleToggle}>
