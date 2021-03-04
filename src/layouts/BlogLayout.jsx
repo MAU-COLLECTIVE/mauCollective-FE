@@ -7,7 +7,7 @@ import { NavbarBlog } from 'components/shared/Navbar'
 
 const BlogLayout = ({ children, title }) => {
   return (
-    <div className="max-w-screen lg:max-h-screen flex flex-col lg:flex-row lg:overflow-y-hidden">
+    <div className="max-w-screen lg:max-h-screen flex flex-col lg:flex-row lg:overflow-y-hidden bg-white">
       <SEO />
       <NavbarBlog title={title} />
       <main className="flex-1 lg:overflow-y-auto px-4 lg:px-16 py-12">
