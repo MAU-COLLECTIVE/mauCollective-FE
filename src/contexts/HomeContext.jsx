@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState, useEffect } from 'react'
 import PropTypes from 'prop-types';
 
 const initState = {
@@ -9,8 +9,20 @@ const initState = {
 const HomeContext = createContext(initState);
 
 const HomeProvider = ({ children }) => {
-  const [artistType, setArtistType] = useState('slider');
+  const [artistType, setArtistType] = useState('slider'); // slider or shuffle
   const changeArtistType = () => setArtistType(prev => prev === 'slider' ? 'shuffle' : 'slider');
+
+  useEffect(() => {
+    const resize = () => {
+      const width = window.innerWidth;
+      if(width < 600) setArtistType('shuffle')
+      else setArtistType('slider')
+    }
+
+    resize();
+    window.addEventListener('resize', resize);
+    return () => window.removeEventListener('resize', resize);
+  }, [])
 
   return (
     <HomeContext.Provider value={{ artistType, changeArtistType }}>
