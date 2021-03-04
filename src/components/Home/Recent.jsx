@@ -8,7 +8,12 @@ const Recent = ({ id }) => {
   return (
     <div id={id} className="min-h-screen bg-white px-2 lg:px-6 py-28 flex flex-col justify-center">
       <div className="text-right px-2 lg:px-6 mb-4">
-        <a href="#view-all-news" className="font-light text-sm md:text-base uppercase">View all news</a>
+        <AniLink
+          swipe direction="left"
+          top="entry" to="/blog"
+          className="font-light text-sm md:text-base uppercase">
+            View all news
+        </AniLink>
       </div>
       <div className="flex flex-col xl:flex-row">
         <div className="relative px-2 lg:px-6 py-4 w-full xl:w-1/3">

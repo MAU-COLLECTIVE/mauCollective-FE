@@ -1,14 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import BadgeNumber from 'components/shared/BadgeNumber'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 const NavbarBlog = ({ title }) => {
   return (
     <nav className="lg:h-screen p-4 lg:p-10 text-black flex flex-col items-start">
-      <div className="relative px-6 py-4 mb-4 lg:mb-16">
-        <BadgeNumber number="01" />
-        <a href="#" className="block font-medium uppercase">Close</a>
-      </div>
+      <AniLink
+        swipe direction="right"
+        top="entry" to="/"
+        className="relative px-6 py-4 mb-4 lg:mb-16">
+          <BadgeNumber number="01" />
+          <span className="block font-medium uppercase">Close</span>
+      </AniLink>
       <div className="lg:px-6 block w-full">
         <h1 className="lg:hidden font-black text-3xl sm:text-4xl md:text-5xl xl:text-6xl mb-4 uppercase">{title}</h1>
         <div className="flex lg:flex-col">
