@@ -4,15 +4,15 @@ import AniLink from 'gatsby-plugin-transition-link/AniLink'
 
 const Artist = () => {
   return (
-    <div className="min-h-screen max-w-screen p-10 flex flex-col items-start bg-black text-white">
+    <div className="min-h-screen max-w-screen py-6 2xl:py-10 flex flex-col items-start bg-black text-white">
       <AniLink
         swipe direction="right"
         top="exit" to="/"
-        className="relative px-6 py-4 mb-12">
+        className="relative mx-4 2xl:mx-10 px-6 py-4 mb-8">
           <BadgeNumber number="01" />
           <span className="block font-medium uppercase">Close</span>
       </AniLink>
-      <div className="flex">
+      <div className="flex mx-4 2xl:mx-10">
         <div className="xl:w-2/3">
           <div className="relative px-6 py-4 mb-6">
             <BadgeNumber number="02" />
