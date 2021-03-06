@@ -13,14 +13,14 @@ const Artist = () => {
           <span className="block font-medium uppercase">Close</span>
       </AniLink>
       <div className="flex mx-4 2xl:mx-10">
-        <div className="xl:w-2/3">
+        <div className="lg:w-2/3">
           <div className="relative px-6 py-4 mb-6">
             <BadgeNumber number="02" />
             <h1 className="block font-semibold text-3xl uppercase">Joe Karnavian</h1>
           </div>
           <p className="px-6 font-mono sm:text-lg xl:text-xl text-gray-200 mb-32">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi, assumenda nisi, quisquam molestias iste quod ratione officia aut dignissimos, adipisci hic. Ratione, distinctio? Magni optio exercitationem vel molestias suscipit.</p>
           <div className="lg:hidden flex flex-1 flex-col items-center space-y-8 mb-32">
-            <img src="/img/logo.svg" alt="logo" />
+            <img src="/img/artist.png" alt="artist" className="w-full" style={{  maxWidth: '600px' }} />
             <div className="flex space-x-2">
               <a href="#fb"><img src="/icons/fb.svg"/></a>
               <a href="#fb"><img src="/icons/ig.svg"/></a>
@@ -138,7 +138,7 @@ const Artist = () => {
           </div>
         </div>
         <div className="hidden lg:flex flex-1 flex-col items-center space-y-8">
-          <img src="/img/logo.svg" alt="logo" />
+          <img src="/img/artist.png" alt="artist" className="w-full" style={{  maxWidth: '600px' }} />
           <div className="flex space-x-2">
             <a href="#fb"><img src="/icons/fb.svg"/></a>
             <a href="#fb"><img src="/icons/ig.svg"/></a>
