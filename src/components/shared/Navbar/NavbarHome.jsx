@@ -120,13 +120,13 @@ const NavbarHome = () => {
         <div className="lg:px-6 py-4 flex lg:flex-1 justify-end space-x-2">
           <p className="font-medium uppercase">EN</p>
           <span>/</span>
-          <p className="font-medium uppercase">VI</p>
+          <p className="font-medium uppercase">VN</p>
           <span>/</span>
           <p className="font-medium uppercase">JP</p>
         </div>
       </nav>
       {/* Sidebar */}
-      <div className={`pl-6 pr-20 py-2 fixed z-50 ${isToggled ? 'flex' : 'hidden'} flex-1 flex-wrap flex-col justify-start items-start lg:flex-row h-screen lg:min-h-0 w-max max-w-full lg:hidden bg-black text-white`}>
+      <div className={`transform transition-transform ease-in-out duration-500 pl-6 pr-20 py-2 fixed z-50 ${isToggled ? 'translate-x-0' : '-translate-x-full'} flex flex-1 flex-wrap flex-col justify-start items-start lg:flex-row h-screen lg:min-h-0 w-max max-w-full lg:hidden bg-black text-white`}>
         <button
           className="block lg:hidden my-6 self-end -mr-14"
           onClick={handleToggle}>
@@ -136,13 +136,13 @@ const NavbarHome = () => {
         <div className="lg:px-6 py-2 lg:py-4 flex lg:flex-1 justify-end space-x-2 mt-auto mb-8">
           <p className="font-medium uppercase">EN</p>
           <span>/</span>
-          <p className="font-medium uppercase">VI</p>
+          <p className="font-medium uppercase">VN</p>
           <span>/</span>
           <p className="font-medium uppercase">JP</p>
         </div>
       </div>
       {/* Sidebar Overlay */}
-      <div className={`z-40 ${isToggled ? 'block' : 'hidden'} absolute w-screen min-h-screen h-full bg-black opacity-80`} />
+      <div className={`z-40 ${isToggled ? 'opacity-80' : 'opacity-0 invisible'} transition-opacity ease-in-out duration-300 absolute w-screen min-h-screen h-full bg-black`} />
     </React.Fragment>
   )
 }
