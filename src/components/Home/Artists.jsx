@@ -13,7 +13,7 @@ const Artists = ({ id }) => {
           className="w-full">
             <div className="max-w-max flex flex-col justify-center items-center 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0">
               <img src="/img/artist.png" alt="artist" className="w-full md:w-52 md:h-52" />
-              <h2 className="font-semibold text-lg uppercase">DYCAL</h2>
+              <h2 className="font-semibold text-lg uppercase text-center">DYCAL</h2>
             </div>
         </AniLink>
         <AniLink
@@ -22,7 +22,7 @@ const Artists = ({ id }) => {
           className="w-full">
             <div className="max-w-max flex flex-col justify-center items-center 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0">
               <img src="/img/artist.png" alt="artist" className="w-full md:w-52 md:h-52" />
-              <h2 className="font-semibold text-lg uppercase">DYCAL</h2>
+              <h2 className="font-semibold text-lg uppercase text-center">DYCAL</h2>
             </div>
         </AniLink>
         <AniLink
@@ -31,7 +31,7 @@ const Artists = ({ id }) => {
           className="w-full">
             <div className="max-w-max flex flex-col justify-center items-center 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0">
               <img src="/img/artist.png" alt="artist" className="w-full md:w-52 md:h-52" />
-              <h2 className="font-semibold text-lg uppercase">DYCAL</h2>
+              <h2 className="font-semibold text-lg uppercase text-center">DYCAL</h2>
             </div>
         </AniLink>
         <AniLink
@@ -40,7 +40,7 @@ const Artists = ({ id }) => {
           className="w-full">
             <div className="max-w-max flex flex-col justify-center items-center 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0">
               <img src="/img/artist.png" alt="artist" className="w-full md:w-52 md:h-52" />
-              <h2 className="font-semibold text-lg uppercase">DYCAL</h2>
+              <h2 className="font-semibold text-lg uppercase text-center">DYCAL</h2>
             </div>
         </AniLink>
         <AniLink
@@ -49,7 +49,7 @@ const Artists = ({ id }) => {
           className="w-full">
             <div className="max-w-max flex flex-col justify-center items-center 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0">
               <img src="/img/artist.png" alt="artist" className="w-full md:w-52 md:h-52" />
-              <h2 className="font-semibold text-lg uppercase">DYCAL</h2>
+              <h2 className="font-semibold text-lg uppercase text-center">DYCAL</h2>
             </div>
         </AniLink>
         <AniLink
@@ -58,7 +58,7 @@ const Artists = ({ id }) => {
           className="w-full">
             <div className="max-w-max flex flex-col justify-center items-center 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0">
               <img src="/img/artist.png" alt="artist" className="w-full md:w-52 md:h-52" />
-              <h2 className="font-semibold text-lg uppercase">DYCAL</h2>
+              <h2 className="font-semibold text-lg uppercase text-center">DYCAL</h2>
             </div>
         </AniLink>
         <AniLink
@@ -67,41 +67,9 @@ const Artists = ({ id }) => {
           className="w-full">
             <div className="max-w-max flex flex-col justify-center items-center 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0">
               <img src="/img/artist.png" alt="artist" className="w-full md:w-52 md:h-52" />
-              <h2 className="font-semibold text-lg uppercase">DYCAL</h2>
+              <h2 className="font-semibold text-lg uppercase text-center">DYCAL</h2>
             </div>
         </AniLink>
-        {/* <div className="w-full flex flex-col 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0">
-          <img src="/img/artist.png" alt="artist" className="w-full sm:w-32 sm:h-32 md:w-52 md:h-52" />
-          <h2 className="font-semibold text-lg uppercase">DYCAL</h2>
-        </div>
-        <div className="w-full flex flex-col 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0">
-          <img src="/img/artist.png" alt="artist" className="w-full sm:w-32 sm:h-32 md:w-52 md:h-52" />
-          <h2 className="font-semibold text-lg uppercase">DYCAL</h2>
-        </div>
-        <div className="w-full flex flex-col 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0">
-          <img src="/img/artist.png" alt="artist" className="w-full sm:w-32 sm:h-32 md:w-52 md:h-52" />
-          <h2 className="font-semibold text-lg uppercase">DYCAL</h2>
-        </div>
-        <div className="w-full flex flex-col 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0">
-          <img src="/img/artist.png" alt="artist" className="w-full sm:w-32 sm:h-32 md:w-52 md:h-52" />
-          <h2 className="font-semibold text-lg uppercase">DYCAL</h2>
-        </div>
-        <div className="w-full flex flex-col 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0">
-          <img src="/img/artist.png" alt="artist" className="w-full sm:w-32 sm:h-32 md:w-52 md:h-52" />
-          <h2 className="font-semibold text-lg uppercase">DYCAL</h2>
-        </div>
-        <div className="w-full flex flex-col 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0">
-          <img src="/img/artist.png" alt="artist" className="w-full sm:w-32 sm:h-32 md:w-52 md:h-52" />
-          <h2 className="font-semibold text-lg uppercase">DYCAL</h2>
-        </div>
-        <div className="w-full flex flex-col 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0">
-          <img src="/img/artist.png" alt="artist" className="w-full sm:w-32 sm:h-32 md:w-52 md:h-52" />
-          <h2 className="font-semibold text-lg uppercase">DYCAL</h2>
-        </div>
-        <div className="w-full flex flex-col 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0">
-          <img src="/img/artist.png" alt="artist" className="w-full sm:w-32 sm:h-32 md:w-52 md:h-52" />
-          <h2 className="font-semibold text-lg uppercase">DYCAL</h2>
-        </div> */}
       </div>
     </div>
   )
