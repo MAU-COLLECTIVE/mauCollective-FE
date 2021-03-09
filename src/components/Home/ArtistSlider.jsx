@@ -17,13 +17,14 @@ const ArtistSlider = () => {
     var proxy = document.createElement("div");
 
     var cellWidth = 600;
+    var rotation = -90;
+
     if(window.innerWidth > 740) {
       cellWidth = 600;
     }
     else {
       cellWidth = 400;
     }
-    var rotation = -90;
 
     var numCells = cells.length;
     var cellStep = 1 / numCells;
@@ -45,13 +46,16 @@ const ArtistSlider = () => {
       .add(baseTl.tweenFromTo(1, 2))
       .progress(1);
 
-    var draggable = new Draggable(proxy, {
+    animation.timeScale(0.05).reverse();
+
+    new Draggable(proxy, {
       allowContextMenu: true,
       type: "x",
       trigger: picker,
       inertia: true,
+      throwProps: true,
       onDrag: updateProgress,
-      onThrowUpdate: updateProgress,
+      onRelease: updateProgress2,
       snap: {
         x: snapX
       }
@@ -64,7 +68,14 @@ const ArtistSlider = () => {
     function updateProgress() {
       let newProg = this.x / wrapWidth;
       newProg = newProg - Math.floor(newProg);
+      animation.pause();
       animation.progress(newProg);
+    }
+
+    function updateProgress2() {
+      setTimeout(() => {
+        animation.timeScale(0.05).reverse();
+      }, 2000)
     }
 
     function initCell(element, index) {
