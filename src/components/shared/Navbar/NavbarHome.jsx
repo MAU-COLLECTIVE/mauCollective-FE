@@ -142,7 +142,7 @@ const NavbarHome = () => {
         </div>
       </div>
       {/* Sidebar Overlay */}
-      <div className={`z-40 ${isToggled ? 'opacity-80' : 'opacity-0 invisible'} transition-opacity ease-in-out duration-300 absolute w-screen min-h-screen h-full bg-black`} />
+      <div className={`z-40 ${isToggled ? 'opacity-80' : 'opacity-0 invisible'} transition-opacity ease-in-out duration-300 absolute w-full h-full bg-black`} />
     </React.Fragment>
   )
 }
