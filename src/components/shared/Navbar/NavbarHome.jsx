@@ -126,7 +126,7 @@ const NavbarHome = () => {
         </div>
       </nav>
       {/* Sidebar */}
-      <div className={`transform transition-transform ease-in-out duration-500 pl-6 pr-20 py-2 fixed z-50 ${isToggled ? 'translate-x-0' : '-translate-x-full'} flex flex-1 flex-wrap flex-col justify-start items-start lg:flex-row h-screen lg:min-h-0 w-max max-w-full lg:hidden bg-black text-white`}>
+      <div className={`transform transition-transform ease-in-out duration-500 pl-6 pr-20 py-2 fixed z-50 ${isToggled ? 'translate-x-0' : '-translate-x-full'} flex flex-1 flex-wrap flex-col justify-start items-start lg:flex-row h-screen lg:min-h-0 w-auto max-w-full lg:hidden bg-black text-white`}>
         <button
           className="block lg:hidden my-6 self-end -mr-14"
           onClick={handleToggle}>
@@ -141,8 +141,6 @@ const NavbarHome = () => {
           <p className="font-medium uppercase">JP</p>
         </div>
       </div>
-      {/* Sidebar Overlay */}
-      <div className={`z-40 ${isToggled ? 'opacity-80' : 'opacity-0 invisible'} transition-opacity ease-in-out duration-300 absolute w-full h-full bg-black`} />
     </React.Fragment>
   )
 }
