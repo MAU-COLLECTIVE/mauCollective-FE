@@ -31,8 +31,8 @@ const swipe = ({node, exit, type, triggerName}) => {
 }
 
 export default function SwipeOver({type, ...props}) {
-  const exitLength = 1
-  const entryLength = 1
+  const exitLength = 0.7
+  const entryLength = 0.7
   const entryZ = type === "main" ? 0 : 1
   const exitZ = type === "main" ? 1 : 0
 
