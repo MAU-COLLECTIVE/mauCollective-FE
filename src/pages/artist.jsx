@@ -1,17 +1,17 @@
 import React from 'react'
 import BadgeNumber from 'components/shared/BadgeNumber'
-import AniLink from 'gatsby-plugin-transition-link/AniLink'
+import OverlayLink from 'components/shared/OverlayLink'
 
 const Artist = () => {
   return (
     <div className="min-h-screen max-w-screen py-6 2xl:py-10 flex flex-col items-start bg-black text-white">
-      <AniLink
-        swipe direction="right"
-        top="exit" to="/"
+      <OverlayLink
+        type="main"
+        to="/"
         className="relative mx-4 2xl:mx-10 px-6 py-4 mb-8">
           <BadgeNumber number="01" />
           <span className="block font-medium uppercase">Close</span>
-      </AniLink>
+      </OverlayLink>
       <div className="flex mx-4 2xl:mx-10">
         <div className="lg:w-2/3">
           <div className="relative px-6 py-4 mb-6">
