@@ -117,7 +117,7 @@ const NavbarHome = () => {
         <button
           className="block lg:hidden font-medium uppercase py-4"
           onClick={handleToggle}>MENU</button>
-        <div className="lg:px-6 py-4 flex lg:flex-1 justify-end space-x-2">
+        <div className="lg:px-6 py-4 flex lg:flex-1 justify-end space-x-2 lg:mr-2">
           <p className="font-medium uppercase">EN</p>
           <span>/</span>
           <p className="font-medium uppercase">VN</p>
