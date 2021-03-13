@@ -15,7 +15,7 @@ const HomeProvider = ({ children }) => {
   useEffect(() => {
     const resize = () => {
       const width = window.innerWidth;
-      if(width < 600) setArtistType('shuffle')
+      if(width < 1124) setArtistType('shuffle')
       else setArtistType('slider')
     }
 
