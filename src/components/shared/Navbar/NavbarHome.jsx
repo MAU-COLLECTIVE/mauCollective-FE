@@ -17,37 +17,37 @@ const NavComponent = ({ className }) => {
     <div className={`lg:space-x-4 ${className}`}>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="01" className="hidden lg:block" />
-        <a href="#" onClick={(e) => { e.preventDefault(); scrollTo(0, 0); }} className="break-words block font-normal text-2xl lg:text-base lg:font-medium uppercase">Home</a>
+        <a href="#" onClick={(e) => { e.preventDefault(); scrollTo(0, 0); }} className="break-words block font-normal text-xs lg:font-medium uppercase">Home</a>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="02" className="hidden lg:block" />
-        <a href="#news" className="break-words block font-normal text-2xl lg:text-base lg:font-medium uppercase">News</a>
+        <a href="#news" className="break-words block font-normal text-xs lg:font-medium uppercase">News</a>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="03" className="hidden lg:block" />
-        <a href="#about" className="break-words block font-normal text-2xl lg:text-base lg:font-medium uppercase">About M.A.U</a>
+        <a href="#about" className="break-words block font-normal text-xs lg:font-medium uppercase">About M.A.U</a>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="04" className="hidden lg:block" />
-        <a href="#artists" className="break-words block font-normal text-2xl lg:text-base lg:font-medium uppercase">Artists</a>
+        <a href="#artists" className="break-words block font-normal text-xs lg:font-medium uppercase">Artists</a>
         <button
           id="btn-artist-type"
-          className="absolute w-max break-words hidden font-normal text-2xl lg:text-base lg:font-medium uppercase focus:outline-none"
+          className="absolute w-max break-words hidden font-normal text-xs lg:font-medium uppercase focus:outline-none"
           onClick={toggleArtistType}>
           {ctx.artistType === 'slider' ? 'View all artist' : 'Shuffle'}
         </button>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="05" className="hidden lg:block" />
-        <a href="#collaborations" className="break-words block font-normal text-2xl lg:text-base lg:font-medium uppercase">Collaborations</a>
+        <a href="#collaborations" className="break-words block font-normal text-xs lg:font-medium uppercase">Collaborations</a>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="06" className="hidden lg:block" />
-        <a href="#events" className="break-words block font-normal text-2xl lg:text-base lg:font-medium uppercase">Events</a>
+        <a href="#events" className="break-words block font-normal text-xs lg:font-medium uppercase">Events</a>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="07" className="hidden lg:block" />
-        <a href="#" className="break-words block font-normal text-2xl lg:text-base lg:font-medium uppercase">Shop</a>
+        <a href="#" className="break-words block font-normal text-xs lg:font-medium uppercase">Shop</a>
       </div>
     </div>
   )
