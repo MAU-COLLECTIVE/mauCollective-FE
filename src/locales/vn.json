@@ -1,4 +1,9 @@
 {
+  "shared": {
+    "close": "Close VN",
+    "loadMore": "Load more VN",
+    "categories": "Categories VN"
+  },
   "navbar": {
     "home": "Home VN",
     "news": "News VN",
@@ -9,5 +14,24 @@
     "collaborations": "Collaborations VN",
     "events": "Events VN",
     "shop": "Shop VN"
+  },
+  "home": {
+    "viewAll": "View all VN",
+    "continueRead": "Continue reading VN",
+    "about": "About MAU VN",
+    "contactUs": "Contact Us VN",
+    "watchVideo": "Watch  Video VN"
+  },
+  "post": {
+    "text": "Text VN",
+    "photography": "Photography VN",
+    "date": "Date VN",
+    "nextStory": "Next Story VN"
+  },
+  "artist": {
+    "music": "Music VN",
+    "video": "Video VN",
+    "livePerform": "Live Performance VN",
+    "streamOn": "Stream on VN"
   }
 }

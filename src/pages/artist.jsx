@@ -1,8 +1,11 @@
 import React from 'react'
 import BadgeNumber from 'components/shared/BadgeNumber'
 import OverlayLink from 'components/shared/OverlayLink'
+import { useTranslation } from 'react-i18next'
 
 const Artist = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen max-w-screen py-6 2xl:py-10 flex flex-col items-start bg-black text-white">
       <OverlayLink
@@ -10,7 +13,7 @@ const Artist = () => {
         to="/"
         className="relative mx-4 2xl:mx-10 px-6 py-4 mb-8">
           <BadgeNumber number="01" />
-          <span className="block font-medium uppercase text-xs">Close</span>
+          <span className="block font-medium uppercase text-xs">{t('shared.close')}</span>
       </OverlayLink>
       <div className="flex mx-4 2xl:mx-10">
         <div className="lg:w-2/3">
@@ -32,17 +35,17 @@ const Artist = () => {
             <div className="flex flex-col">
               <div className="relative px-6 py-4 mb-6">
                 <BadgeNumber number="03" />
-                <a href="#" className="block font-semibold text-3xl uppercase">Music</a>
+                <a href="#" className="block font-semibold text-3xl uppercase">{t('artist.music')}</a>
               </div>
               <ul className="px-6">
                 <li className="flex space-x-2 md:space-x-8 font-mono font-light text-lg text-gray-400 border-b border-gray-400 py-6 first:pt-0">
                   <p className="tracking-wide">2019</p>
                   <div className="flex flex-col">
                     <p className="tracking-wide">Wean</p>
-                    <p className="text-sm">Live Performance</p>
+                    <p className="text-sm">{t('artist.livePerform')}</p>
                   </div>
                   <div className="flex flex-col flex-1 items-end">
-                    <p className="text-right">Stream on:</p>
+                    <p className="text-right">{t('artist.streamOn')}:</p>
                     <div className="flex space-x-1 mt-auto">
                       <img src="/icons/fb.svg" className="w-4 opacity-75" />
                       <img src="/icons/ig.svg" className="w-4 opacity-75" />
@@ -53,10 +56,10 @@ const Artist = () => {
                   <p className="tracking-wide">2019</p>
                   <div className="flex flex-col">
                     <p className="tracking-wide">Wean</p>
-                    <p className="text-sm">Live Performance</p>
+                    <p className="text-sm">{t('artist.livePerform')}</p>
                   </div>
                   <div className="flex flex-col flex-1 items-end">
-                    <p className="text-right">Stream on:</p>
+                    <p className="text-right">{t('artist.streamOn')}:</p>
                     <div className="flex space-x-1 mt-auto">
                       <img src="/icons/fb.svg" className="w-4 opacity-75" />
                       <img src="/icons/ig.svg" className="w-4 opacity-75" />
@@ -67,10 +70,10 @@ const Artist = () => {
                   <p className="tracking-wide">2019</p>
                   <div className="flex flex-col">
                     <p className="tracking-wide">Wean</p>
-                    <p className="text-sm">Live Performance</p>
+                    <p className="text-sm">{t('artist.livePerform')}</p>
                   </div>
                   <div className="flex flex-col flex-1 items-end">
-                    <p className="text-right">Stream on:</p>
+                    <p className="text-right">{t('artist.streamOn')}:</p>
                     <div className="flex space-x-1 mt-auto">
                       <img src="/icons/fb.svg" className="w-4 opacity-75" />
                       <img src="/icons/ig.svg" className="w-4 opacity-75" />
@@ -85,17 +88,17 @@ const Artist = () => {
             <div className="flex flex-col">
               <div className="relative px-6 py-4 mb-6">
                 <BadgeNumber number="04" />
-                <a href="#" className="block font-semibold text-3xl uppercase">Video</a>
+                <a href="#" className="block font-semibold text-3xl uppercase">{t('artist.video')}</a>
               </div>
               <ul className="px-6">
                 <li className="flex space-x-2 md:space-x-8 font-mono font-light text-lg text-gray-400 border-b border-gray-400 py-6 first:pt-0">
                   <p className="tracking-wide">2019</p>
                   <div className="flex flex-col">
                     <p className="tracking-wide">Wean</p>
-                    <p className="text-sm">Live Performance</p>
+                    <p className="text-sm">{t('artist.livePerform')}</p>
                   </div>
                   <div className="flex flex-col flex-1 items-end">
-                    <p className="text-right">Stream on:</p>
+                    <p className="text-right">{t('artist.streamOn')}:</p>
                     <div className="flex space-x-1 mt-auto">
                       <img src="/icons/fb.svg" className="w-4 opacity-75" />
                       <img src="/icons/ig.svg" className="w-4 opacity-75" />
@@ -106,10 +109,10 @@ const Artist = () => {
                   <p className="tracking-wide">2019</p>
                   <div className="flex flex-col">
                     <p className="tracking-wide">Wean</p>
-                    <p className="text-sm">Live Performance</p>
+                    <p className="text-sm">{t('artist.livePerform')}</p>
                   </div>
                   <div className="flex flex-col flex-1 items-end">
-                    <p className="text-right">Stream on:</p>
+                    <p className="text-right">{t('artist.streamOn')}:</p>
                     <div className="flex space-x-1 mt-auto">
                       <img src="/icons/fb.svg" className="w-4 opacity-75" />
                       <img src="/icons/ig.svg" className="w-4 opacity-75" />
@@ -120,10 +123,10 @@ const Artist = () => {
                   <p className="tracking-wide">2019</p>
                   <div className="flex flex-col">
                     <p className="tracking-wide">Wean</p>
-                    <p className="text-sm">Live Performance</p>
+                    <p className="text-sm">{t('artist.livePerform')}</p>
                   </div>
                   <div className="flex flex-col flex-1 items-end">
-                    <p className="text-right">Stream on:</p>
+                    <p className="text-right">{t('artist.streamOn')}:</p>
                     <div className="flex space-x-1 mt-auto">
                       <img src="/icons/fb.svg" className="w-4 opacity-75" />
                       <img src="/icons/ig.svg" className="w-4 opacity-75" />

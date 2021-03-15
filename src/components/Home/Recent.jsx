@@ -3,8 +3,11 @@ import PropTypes from 'prop-types'
 import BadgeNumber from 'components/shared/BadgeNumber'
 import CardPost from 'components/shared/CardPost'
 import OverlayLink from 'components/shared/OverlayLink'
+import { useTranslation } from 'react-i18next'
 
 const Recent = ({ id }) => {
+  const { t } = useTranslation();
+
   return (
     <div id={id} className="min-h-screen bg-white px-2 lg:px-6 py-28 flex flex-col justify-center">
       <div className="text-right px-2 lg:px-6 mb-2">
@@ -12,7 +15,7 @@ const Recent = ({ id }) => {
           type="secondary"
           to="/blog"
           className="font-light text-sm uppercase">
-            View all news
+            {t('home.viewAll')+' '+t('navbar.news')}
         </OverlayLink>
       </div>
       <div className="flex flex-col xl:flex-row">
@@ -26,7 +29,7 @@ const Recent = ({ id }) => {
               type="secondary"
               to="/single-post"
               className="font-light text-sm leading-6 uppercase border-b-2 border-black border-solid whitespace-nowrap">
-                Continue reading</OverlayLink>
+                {t('home.continueRead')}</OverlayLink>
           </div>
         </div>
         <div className="px-2 lg:px-6 py-2 flex-1 space-y-6">
