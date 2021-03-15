@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react'
 import PropTypes from 'prop-types'
 import BadgeNumber from 'components/shared/BadgeNumber'
+import LanguageSwitcher from 'components/shared/LanguageSwitcher'
 import HomeContext from 'contexts/HomeContext'
+import { useTranslation } from 'react-i18next'
 
 const NavComponent = ({ className }) => {
-  
+  const { t } = useTranslation();
   const ctx = useContext(HomeContext);
 
   const toggleArtistType = () => {
@@ -17,37 +19,37 @@ const NavComponent = ({ className }) => {
     <div className={`lg:space-x-4 ${className}`}>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="01" className="hidden lg:block" />
-        <a href="#" onClick={(e) => { e.preventDefault(); scrollTo(0, 0); }} className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">Home</a>
+        <a href="#" onClick={(e ) => { e.preventDefault(); scrollTo(0, 0); }} className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">{t('navbar.home')}</a>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="02" className="hidden lg:block" />
-        <a href="#news" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">News</a>
+        <a href="#news" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">{t('navbar.news')}</a>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="03" className="hidden lg:block" />
-        <a href="#about" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">About M.A.U</a>
+        <a href="#about" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">{t('navbar.about')}</a>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="04" className="hidden lg:block" />
-        <a href="#artists" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">Artists</a>
+        <a href="#artists" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">{t('navbar.artists')}</a>
         <button
           id="btn-artist-type"
           className="absolute w-max break-words hidden font-normal text-xs tracking-widest lg:font-medium uppercase focus:outline-none"
           onClick={toggleArtistType}>
-          {ctx.artistType === 'slider' ? 'View all artist' : 'Shuffle'}
+          {ctx.artistType === 'slider' ? t('navbar.artistsType1') : t('navbar.artistsType2')}
         </button>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="05" className="hidden lg:block" />
-        <a href="#collaborations" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">Collaborations</a>
+        <a href="#collaborations" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">{t('navbar.collaborations')}</a>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="06" className="hidden lg:block" />
-        <a href="#events" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">Events</a>
+        <a href="#events" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">{t('navbar.events')}</a>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="07" className="hidden lg:block" />
-        <a href="#" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">Shop</a>
+        <a href="#" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">{t('navbar.shop')}</a>
       </div>
     </div>
   )
@@ -111,19 +113,13 @@ const NavbarHome = () => {
 
   return (
     <React.Fragment>
-      <nav id="navbar" className="bg-transparen z-40 px-4 lg:px-6 py-2 fixed w-full flex lg:space-x-4 items-center justify-between lg:justify-start"
+      <nav id="navbar" className="bg-transparent z-40 px-4 lg:px-6 py-2 fixed w-full flex lg:space-x-4 items-center justify-between lg:justify-start"
         style={{ mixBlendMode: 'exclusion', filter: 'invert(1)' }}>
         <NavComponent className="hidden lg:flex flex-wrap flex-col justify-start items-start lg:flex-row" />
         <button
           className="block lg:hidden font-medium uppercase text-xs tracking-widest py-4"
           onClick={handleToggle}>MENU</button>
-        <div className="lg:px-6 py-4 flex lg:flex-1 justify-end space-x-2 lg:mr-2">
-          <p className="font-medium uppercase text-xs tracking-widest">EN</p>
-          <span className="text-xs">/</span>
-          <p className="font-medium uppercase text-xs tracking-widest">VN</p>
-          <span className="text-xs">/</span>
-          <p className="font-medium uppercase text-xs tracking-widest">JP</p>
-        </div>
+        <LanguageSwitcher className="hidden lg:px-6 py-4 lg:flex lg:flex-1 justify-end space-x-2 lg:mr-2" />
       </nav>
       {/* Sidebar */}
       <div className={`transform transition-transform ease-in-out duration-500 pl-6 pr-20 py-2 fixed z-50 ${isToggled ? 'translate-x-0' : '-translate-x-full'} flex flex-1 flex-wrap flex-col justify-start items-start lg:flex-row h-screen lg:min-h-0 w-auto max-w-full lg:hidden bg-black text-white`}>
@@ -133,13 +129,7 @@ const NavbarHome = () => {
             <img src="/icons/close.svg" alt="close" />
         </button>
         <NavComponent />
-        <div className="lg:px-6 py-2 lg:py-4 flex lg:flex-1 justify-end space-x-2 mt-auto mb-8">
-          <p className="font-medium uppercase text-xs tracking-widest">EN</p>
-          <span className="text-xs">/</span>
-          <p className="font-medium uppercase text-xs tracking-widest">VN</p>
-          <span className="text-xs">/</span>
-          <p className="font-medium uppercase text-xs tracking-widest">JP</p>
-        </div>
+        <LanguageSwitcher className="lg:px-6 py-2 lg:py-4 flex lg:flex-1 justify-end space-x-2 mt-auto mb-8" />
       </div>
     </React.Fragment>
   )
