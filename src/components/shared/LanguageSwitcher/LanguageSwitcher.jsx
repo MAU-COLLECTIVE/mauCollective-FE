@@ -3,11 +3,13 @@ import PropTypes from 'prop-types'
 import { useTranslation } from 'react-i18next'
 
 const LanguageSwitcher = ({ className }) => {
-  const { i18n } = useTranslation()
-  const [language, setLanguage] = useState('en')
+  const { i18n } = useTranslation();
+  const currentLanguage = localStorage.getItem('language');
+  const [language, setLanguage] = useState(currentLanguage ?? 'en');
 
   useEffect(() => {
     i18n.changeLanguage(language)
+    localStorage.setItem('language', language);
   }, [language])
 
   return (
