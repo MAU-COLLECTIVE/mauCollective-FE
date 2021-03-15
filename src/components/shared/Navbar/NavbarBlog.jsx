@@ -11,7 +11,7 @@ const NavbarBlog = ({ title }) => {
         to="/"
         className="relative px-6 py-4 mb-4 lg:mb-16">
           <BadgeNumber number="01" />
-          <span className="block font-medium uppercase">Close</span>
+          <span className="block font-medium uppercase text-xs">Close</span>
       </OverlayLink>
       <div className="lg:px-6 block w-full">
         <h1 className="lg:hidden font-black text-2xl sm:text-3xl md:text-4xl xl:text-5xl mb-8 xl:mb-28 uppercase tracking-wide">{title}</h1>

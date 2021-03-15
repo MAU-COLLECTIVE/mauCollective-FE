@@ -10,7 +10,7 @@ const Artist = () => {
         to="/"
         className="relative mx-4 2xl:mx-10 px-6 py-4 mb-8">
           <BadgeNumber number="01" />
-          <span className="block font-medium uppercase">Close</span>
+          <span className="block font-medium uppercase text-xs">Close</span>
       </OverlayLink>
       <div className="flex mx-4 2xl:mx-10">
         <div className="lg:w-2/3">
