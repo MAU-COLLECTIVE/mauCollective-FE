@@ -18,7 +18,7 @@ const Artist = () => {
             <BadgeNumber number="02" />
             <h1 className="block font-semibold text-3xl uppercase">Joe Karnavian</h1>
           </div>
-          <p className="px-6 font-mono sm:text-lg xl:text-xl text-gray-300 mb-32">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi, assumenda nisi, quisquam molestias iste quod ratione officia aut dignissimos, adipisci hic. Ratione, distinctio? Magni optio exercitationem vel molestias suscipit.</p>
+          <p className="px-6 font-mono xl:text-lg text-gray-300 mb-32">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi, assumenda nisi, quisquam molestias iste quod ratione officia aut dignissimos, adipisci hic. Ratione, distinctio? Magni optio exercitationem vel molestias suscipit.</p>
           <div className="lg:hidden flex flex-1 flex-col items-center space-y-8 mb-32">
             <img src="/img/artist.png" alt="artist" className="w-full" style={{  maxWidth: '600px' }} />
             <div className="flex space-x-2">
@@ -36,9 +36,9 @@ const Artist = () => {
               </div>
               <ul className="px-6">
                 <li className="flex space-x-2 md:space-x-8 font-mono font-light text-lg text-gray-400 border-b border-gray-400 py-6 first:pt-0">
-                  <p>2019</p>
+                  <p className="tracking-wide">2019</p>
                   <div className="flex flex-col">
-                    <p>Wean</p>
+                    <p className="tracking-wide">Wean</p>
                     <p className="text-sm">Live Performance</p>
                   </div>
                   <div className="flex flex-col flex-1 items-end">
@@ -50,9 +50,9 @@ const Artist = () => {
                   </div>
                 </li>
                 <li className="flex space-x-2 md:space-x-8 font-mono font-light text-lg text-gray-400 border-b border-gray-400 py-6 first:pt-0">
-                  <p>2019</p>
+                  <p className="tracking-wide">2019</p>
                   <div className="flex flex-col">
-                    <p>Wean</p>
+                    <p className="tracking-wide">Wean</p>
                     <p className="text-sm">Live Performance</p>
                   </div>
                   <div className="flex flex-col flex-1 items-end">
@@ -64,9 +64,9 @@ const Artist = () => {
                   </div>
                 </li>
                 <li className="flex space-x-2 md:space-x-8 font-mono font-light text-lg text-gray-400 border-b border-gray-400 py-6 first:pt-0">
-                  <p>2019</p>
+                  <p className="tracking-wide">2019</p>
                   <div className="flex flex-col">
-                    <p>Wean</p>
+                    <p className="tracking-wide">Wean</p>
                     <p className="text-sm">Live Performance</p>
                   </div>
                   <div className="flex flex-col flex-1 items-end">
@@ -89,9 +89,9 @@ const Artist = () => {
               </div>
               <ul className="px-6">
                 <li className="flex space-x-2 md:space-x-8 font-mono font-light text-lg text-gray-400 border-b border-gray-400 py-6 first:pt-0">
-                  <p>2019</p>
+                  <p className="tracking-wide">2019</p>
                   <div className="flex flex-col">
-                    <p>Wean</p>
+                    <p className="tracking-wide">Wean</p>
                     <p className="text-sm">Live Performance</p>
                   </div>
                   <div className="flex flex-col flex-1 items-end">
@@ -103,9 +103,9 @@ const Artist = () => {
                   </div>
                 </li>
                 <li className="flex space-x-2 md:space-x-8 font-mono font-light text-lg text-gray-400 border-b border-gray-400 py-6 first:pt-0">
-                  <p>2019</p>
+                  <p className="tracking-wide">2019</p>
                   <div className="flex flex-col">
-                    <p>Wean</p>
+                    <p className="tracking-wide">Wean</p>
                     <p className="text-sm">Live Performance</p>
                   </div>
                   <div className="flex flex-col flex-1 items-end">
@@ -117,9 +117,9 @@ const Artist = () => {
                   </div>
                 </li>
                 <li className="flex space-x-2 md:space-x-8 font-mono font-light text-lg text-gray-400 border-b border-gray-400 py-6 first:pt-0">
-                  <p>2019</p>
+                  <p className="tracking-wide">2019</p>
                   <div className="flex flex-col">
-                    <p>Wean</p>
+                    <p className="tracking-wide">Wean</p>
                     <p className="text-sm">Live Performance</p>
                   </div>
                   <div className="flex flex-col flex-1 items-end">

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
-import { TweenMax } from 'gsap/all'
+import { TweenLite } from 'gsap/all'
 import OverlayLink from 'components/shared/OverlayLink'
 
 const data = [
@@ -33,8 +33,15 @@ const RecentCollaboration = ({ id }) => {
   const imgRef = useRef([]);
 
   useEffect(() => {
-    TweenMax.to(imgRef.current[prevCurrentIndex], 0.5, {css:{autoAlpha:0}}) 
-    TweenMax.to(imgRef.current[currentIndex], 0.5, {css:{autoAlpha:1}})
+    TweenLite.to(imgRef.current[0], 0.5, {css:{autoAlpha:1}})
+  },[])
+
+  useEffect(() => {
+    if(imgRef.current[prevCurrentIndex] !== undefined &&
+       imgRef.current[currentIndex] !== undefined) {
+         TweenLite.to(imgRef.current[prevCurrentIndex], 0.5, {css:{autoAlpha:0}}) 
+         TweenLite.to(imgRef.current[currentIndex], 0.5, {css:{autoAlpha:1}})
+       }
   }, [currentIndex])
 
   return (
@@ -51,18 +58,18 @@ const RecentCollaboration = ({ id }) => {
         <OverlayLink
           type="secondary"
           to="/blog"
-          className="font-light text-sm md:text-base uppercase">
+          className="font-light text-sm uppercase">
             View all <br/>collaborations
         </OverlayLink>
       </div>
-      <div className="flex flex-col lg:flex-row px-2 lg:px-6 z-10">
+      <div className="flex flex-col lg:flex-row px-2 lg:px-6 z-10 flex-1 items-center">
         <div className="relative w-full lg:w-1/2 xl:w-1/3">
-          <h1 className="font-black text-3xl sm:text-4xl md:text-5xl xl:text-6xl mb-8 xl:mb-28 uppercase">{data?.[currentIndex]?.title}</h1>
-          <p className="font-mono sm:text-lg xl:text-xl mb-8">{data?.[currentIndex]?.desc}</p>
+          <h1 className="font-black text-2xl sm:text-3xl md:text-4xl xl:text-5xl mb-8 xl:mb-28 uppercase tracking-wide">{data?.[currentIndex]?.title}</h1>
+          <p className="font-mono xl:text-lg mb-8">{data?.[currentIndex]?.desc}</p>
           <OverlayLink
             type="secondary"
             to="/single-post"
-            className="font-light text-sm md:text-base uppercase border-b-2 border-white border-solid whitespace-nowrap">
+            className="font-light text-sm uppercase border-b-2 border-white border-solid whitespace-nowrap">
               Watch video
           </OverlayLink>
         </div>

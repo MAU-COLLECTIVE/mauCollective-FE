@@ -14,10 +14,10 @@ const NavbarBlog = ({ title }) => {
           <span className="block font-medium uppercase">Close</span>
       </OverlayLink>
       <div className="lg:px-6 block w-full">
-        <h1 className="lg:hidden font-black text-3xl sm:text-4xl md:text-5xl xl:text-6xl mb-4 uppercase">{title}</h1>
+        <h1 className="lg:hidden font-black text-2xl sm:text-3xl md:text-4xl xl:text-5xl mb-8 xl:mb-28 uppercase tracking-wide">{title}</h1>
         <div className="flex lg:flex-col space-x-6">
-          <h2 className="uppercase w-1/2 lg:w-auto font-light mb-6">Categories</h2>
-          <ul className="lg:ml-5 w-1/2 lg:w-auto lg:space-y-1 flex flex-wrap lg:flex-col">
+          <h2 className="uppercase w-1/2 lg:w-auto font-light mb-6 text-xs">Categories</h2>
+          <ul className="lg:ml-5 w-1/2 lg:w-auto lg:space-y-1 flex flex-wrap lg:flex-col text-xs">
             <li className="uppercase font-light">News</li>
             <li className="mx-2 lg:mx-0 lg:hidden">/</li>
             <li className="uppercase font-light">About M.A.U</li>

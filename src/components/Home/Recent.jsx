@@ -11,21 +11,21 @@ const Recent = ({ id }) => {
         <OverlayLink
           type="secondary"
           to="/blog"
-          className="font-light text-sm md:text-base uppercase">
+          className="font-light text-sm uppercase">
             View all news
         </OverlayLink>
       </div>
       <div className="flex flex-col xl:flex-row">
         <div className="relative px-2 lg:px-6 py-4 w-full xl:w-1/3">
           <BadgeNumber number="02" />
-          <h1 className="font-black text-3xl sm:text-4xl md:text-5xl xl:text-6xl mb-8 xl:mb-28 uppercase tracking-wide">MOST RECENT NEWS HEADLINE</h1>
+          <h1 className="font-black text-2xl sm:text-3xl md:text-4xl xl:text-5xl mb-8 xl:mb-28 uppercase tracking-wide">MOST RECENT NEWS HEADLINE</h1>
           <div className="xl:hidden md:block w-full h-96 mb-8 xl:mb-0 bg-gray-300">Image</div>
           <div className="flex flex-col md:flex-row xl:flex-col md:space-x-8 items-start justify-start xl:space-x-0 space-y-8 md:space-y-0 xl:space-y-8">
-            <p className="font-mono sm:text-lg xl:text-xl font-light xl:font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum adipisci, voluptates excepturi molestias dolorum ducimus soluta cupiditate possimus nobis quam dicta sint illo doloremque pariatur quae, quia aut, officiis animi.</p>
+            <p className="font-mono xl:text-lg font-light xl:font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum adipisci, voluptates excepturi molestias dolorum ducimus soluta cupiditate possimus nobis quam dicta sint illo doloremque pariatur quae, quia aut, officiis animi.</p>
             <OverlayLink
               type="secondary"
               to="/single-post"
-              className="font-light text-sm md:text-base uppercase border-b-2 border-black border-solid whitespace-nowrap">
+              className="font-light text-sm leading-6 uppercase border-b-2 border-black border-solid whitespace-nowrap">
                 Continue reading</OverlayLink>
           </div>
         </div>
