@@ -1,0 +1,13 @@
+{
+  "navbar": {
+    "home": "Home",
+    "news": "News",
+    "about": "About M.A.U",
+    "artists": "Artists",
+    "artistsType1": "View all artists",
+    "artistsType2": "Shuffle",
+    "collaborations": "Collaborations",
+    "events": "Events",
+    "shop": "Shop"
+  }
+}
