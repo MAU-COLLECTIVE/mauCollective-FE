@@ -14,8 +14,8 @@ const SinglePost = () => {
           <span className="block font-medium uppercase">Close</span>
       </OverlayLink>
       <div className="flex flex-col items-center w-full space-y-12">
-        <h1 className="font-black text-3xl sm:text-4xl md:text-5xl xl:text-6xl uppercase px-6 2xl:px-0 w-full 2xl:w-2/3 text-center">MOST RECENT NEWS HEADLINE</h1>
-        <ul className="text-sm font-light font-mono flex flex-col items-center">
+        <h1 className="font-black text-2xl sm:text-3xl md:text-4xl xl:text-5xl uppercase tracking-wide px-6 2xl:px-0 w-full 2xl:w-2/3 text-center">MOST RECENT NEWS HEADLINE</h1>
+        <ul className="text-xs font-light font-mono flex flex-col items-center">
           <li className="tracking-wide">
             <span className="uppercase mr-2 tracking-wider">Text:</span>
             Jenna Wortham
@@ -31,7 +31,7 @@ const SinglePost = () => {
         </ul>
         <div className="flex flex-col">
           <img src="/img/avril.jpg" alt="img-banner" className="w-full mb-4" />
-          <span className="mx-6 2xl:mx-16 font-light self-start font-mono">This is the largest CMA Awards tally the label group has achieved since 2006. SMN scores seven out of the 11 possible categories. </span>
+          <span className="mx-6 2xl:mx-16 font-light self-start font-mono text-sm">This is the largest CMA Awards tally the label group has achieved since 2006. SMN scores seven out of the 11 possible categories. </span>
         </div>
         <div className="w-full px-6 2xl:w-1/2 font-mono space-y-12 text-xl sm:text-2xl md:text-3xl">
           <p className="font-mono text-gray-800 text-justify" style={{ textIndent: "3rem" }}>
@@ -59,9 +59,9 @@ const SinglePost = () => {
         </div>
         <div className="flex flex-col">
           <img src="/img/avril.jpg" alt="img-banner" className="w-full mb-4" />
-          <span className="mx-6 2xl:mx-16 font-light self-start font-mono">This is the largest CMA Awards tally the label group has achieved since 2006. SMN scores seven out of the 11 possible categories. </span>
+          <span className="mx-6 2xl:mx-16 font-light self-start font-mono text-sm">This is the largest CMA Awards tally the label group has achieved since 2006. SMN scores seven out of the 11 possible categories. </span>
         </div>
-        <ul className="text-sm font-light font-mono flex flex-col self-start mx-6 2xl:mx-16">
+        <ul className="text-xs font-light font-mono flex flex-col self-start mx-6 2xl:mx-16">
           <li className="tracking-wide">
             <span className="uppercase mr-2 tracking-wider">Text:</span>
             Jenna Wortham
@@ -77,13 +77,13 @@ const SinglePost = () => {
         </ul>
         <div className="flex flex-wrap px-6 2xl:px-16 w-full flex-col md:flex-row space-y-4 2xl:space-y-0">
           <div className="w-full text-right md:mb-4 hidden md:block">
-            <a href="#view-all-news" className="font-light text-sm md:text-base uppercase">View all news</a>
+            <a href="#view-all-news" className="font-light text-sm uppercase">View all news</a>
           </div>
           <div className="w-full md:w-1/3">
-            <h2 className="font-black text-3xl sm:text-4xl md:text-5xl xl:text-6xl uppercase">NEXT STORY</h2>
+            <h2 className="font-black text-2xl sm:text-3xl md:text-4xl xl:text-5xl mb-8 xl:mb-16 uppercase tracking-wide">NEXT STORY</h2>
           </div>
           <div className="w-full text-right md:mb-4 md:hidden">
-            <a href="#view-all-news" className="font-light text-sm md:text-base uppercase">View all news</a>
+            <a href="#view-all-news" className="font-light text-sm uppercase">View all news</a>
           </div>
           <div className="flex-1 flex space-x-6">
             <div className="w-1/2 2xl:w-1/3">
