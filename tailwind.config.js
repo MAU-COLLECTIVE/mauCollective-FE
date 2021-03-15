@@ -43,7 +43,9 @@ module.exports = {
   },
   variants: {
     extend: {
-      padding: ['first']
+      padding: ['first'],
+      visibility: ['group-hover'],
+      display: ['group-hover']
     },
   },
   plugins: [],
