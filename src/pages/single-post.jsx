@@ -11,7 +11,7 @@ const SinglePost = () => {
         to="/"
         className="relative mx-4 2xl:mx-10 px-6 py-4">
           <BadgeNumber number="01" />
-          <span className="block font-medium uppercase">Close</span>
+          <span className="block font-medium uppercase text-xs">Close</span>
       </OverlayLink>
       <div className="flex flex-col items-center w-full space-y-12">
         <h1 className="font-black text-2xl sm:text-3xl md:text-4xl xl:text-5xl uppercase tracking-wide px-6 2xl:px-0 w-full 2xl:w-2/3 text-center">MOST RECENT NEWS HEADLINE</h1>
