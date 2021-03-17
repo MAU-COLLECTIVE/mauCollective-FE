@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { TweenLite } from 'gsap/all'
 import OverlayLink from 'components/shared/OverlayLink'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 
 const data = [
   {

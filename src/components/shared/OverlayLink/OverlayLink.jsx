@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import TransitionLink from 'gatsby-plugin-transition-link'
 import gsap from 'gsap'
+import { useI18next } from "gatsby-plugin-react-i18next";
 
 const swipe = ({node, exit, type, triggerName}) => {
   const scrollTop =
@@ -30,7 +31,10 @@ const swipe = ({node, exit, type, triggerName}) => {
   }
 }
 
-export default function SwipeOver({type, ...props}) {
+export default function SwipeOver({to, type, ...props}) {
+  const {language} = useI18next();
+  const linkTo = `/${language}${to}`
+
   const exitLength = 0.7
   const entryLength = 0.7
   const entryZ = type === "main" ? 0 : 1
@@ -60,6 +64,7 @@ export default function SwipeOver({type, ...props}) {
           }),
         zIndex: entryZ,
       }}
+      to={linkTo}
       {...props}>
       {props.children}
     </TransitionLink>
@@ -67,6 +72,7 @@ export default function SwipeOver({type, ...props}) {
 }
 
 SwipeOver.propTypes = {
+  to: PropTypes.string.isRequired,
   type: PropTypes.oneOf(["main", "secondary"]).isRequired,
   children: PropTypes.node.isRequired
 }

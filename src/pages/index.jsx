@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { graphql } from 'gatsby'
 import {
   Recent,
   About,
@@ -30,5 +31,19 @@ const HomePage = () => {
     </HomeLayout>
   )
 }
+
+export const query = graphql`
+  query($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
 
 export default HomePage
