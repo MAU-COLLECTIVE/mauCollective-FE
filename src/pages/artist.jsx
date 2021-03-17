@@ -1,7 +1,8 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import BadgeNumber from 'components/shared/BadgeNumber'
 import OverlayLink from 'components/shared/OverlayLink'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 
 const Artist = () => {
   const { t } = useTranslation();
@@ -153,5 +154,19 @@ const Artist = () => {
     </div>
   )
 }
+
+export const query = graphql`
+  query($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
 
 export default Artist

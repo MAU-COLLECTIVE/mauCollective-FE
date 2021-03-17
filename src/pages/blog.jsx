@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 
 import BlogLayout from 'layouts/BlogLayout'
 import CardPost from 'components/shared/CardPost'
@@ -18,5 +19,19 @@ const BlogPage = () => {
     </BlogLayout>
   )
 }
+
+export const query = graphql`
+  query($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
 
 export default BlogPage

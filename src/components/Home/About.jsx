@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import BadgeNumber from 'components/shared/BadgeNumber'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 
 const About = ({ id }) => {
   const { t } = useTranslation();

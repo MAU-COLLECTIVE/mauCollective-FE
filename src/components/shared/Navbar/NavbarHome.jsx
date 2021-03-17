@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import BadgeNumber from 'components/shared/BadgeNumber'
 import LanguageSwitcher from 'components/shared/LanguageSwitcher'
 import HomeContext from 'contexts/HomeContext'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 
 const NavComponent = ({ className }) => {
   const { t } = useTranslation();
