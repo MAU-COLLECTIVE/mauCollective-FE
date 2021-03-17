@@ -2,33 +2,37 @@
   "shared": {
     "close": "Close JP",
     "loadMore": "Load more JP",
-    "categories": "Categories JP"
-  },
-  "navbar": {
-    "home": "Home JP",
-    "news": "News JP",
-    "about": "About M.A.U JP",
-    "artists": "Artists JP",
-    "artistsType1": "View all artists JP",
-    "artistsType2": "Shuffle JP",
-    "collaborations": "Collaborations JP",
-    "events": "Events JP",
-    "shop": "Shop JP"
-  },
-  "home": {
+    "categories": "Categories JP",
     "viewAll": "View all JP",
     "continueRead": "Continue reading JP",
-    "about": "About MAU JP",
-    "contactUs": "Contact Us JP",
-    "watchVideo": "Watch  Video JP"
-  },
-  "post": {
-    "text": "Text JP",
-    "photography": "Photography JP",
-    "date": "Date JP",
+    "watchVideo": "Watch Video JP",
     "nextStory": "Next Story JP"
   },
-  "artist": {
+  "homeSection": {
+    "homeCategory": "Home JP"
+  },
+  "newsSection": {
+    "newsCategory": "News JP"
+  },
+  "aboutSection": {
+    "aboutCategory": "About M.A.U JP",
+    "contactUsField": "Contact Us JP"
+  },
+  "artistSection": {
+    "artistCategory": "Artist JP",
+    "artistViewAllStyle": "View all artists JP",
+    "artistShuffleStyle": "Shuffle JP"
+  },
+  "collaborationSection": {
+    "collaborationCategory": "Collaborations JP"
+  },
+  "eventSection": {
+    "eventCategory": "Events JP"
+  },
+  "shopSection": {
+    "shopCategory": "Shop JP"
+  },
+  "artistPage": {
     "music": "Music JP",
     "video": "Video JP",
     "livePerform": "Live Performance JP",

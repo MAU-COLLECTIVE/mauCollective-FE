@@ -2,33 +2,37 @@
   "shared": {
     "close": "Close VN",
     "loadMore": "Load more VN",
-    "categories": "Categories VN"
-  },
-  "navbar": {
-    "home": "Home VN",
-    "news": "News VN",
-    "about": "About M.A.U VN",
-    "artists": "Artists VN",
-    "artistsType1": "View all artists VN",
-    "artistsType2": "Shuffle VN",
-    "collaborations": "Collaborations VN",
-    "events": "Events VN",
-    "shop": "Shop VN"
-  },
-  "home": {
+    "categories": "Categories VN",
     "viewAll": "View all VN",
     "continueRead": "Continue reading VN",
-    "about": "About MAU VN",
-    "contactUs": "Contact Us VN",
-    "watchVideo": "Watch  Video VN"
-  },
-  "post": {
-    "text": "Text VN",
-    "photography": "Photography VN",
-    "date": "Date VN",
+    "watchVideo": "Watch Video VN",
     "nextStory": "Next Story VN"
   },
-  "artist": {
+  "homeSection": {
+    "homeCategory": "Home VN"
+  },
+  "newsSection": {
+    "newsCategory": "News VN"
+  },
+  "aboutSection": {
+    "aboutCategory": "About M.A.U VN",
+    "contactUsField": "Contact Us VN"
+  },
+  "artistSection": {
+    "artistCategory": "Artist VN",
+    "artistViewAllStyle": "View all artists VN",
+    "artistShuffleStyle": "Shuffle VN"
+  },
+  "collaborationSection": {
+    "collaborationCategory": "Collaborations VN"
+  },
+  "eventSection": {
+    "eventCategory": "Events VN"
+  },
+  "shopSection": {
+    "shopCategory": "Shop VN"
+  },
+  "artistPage": {
     "music": "Music VN",
     "video": "Video VN",
     "livePerform": "Live Performance VN",
