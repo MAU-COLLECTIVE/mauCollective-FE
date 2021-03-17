@@ -60,8 +60,8 @@ const RecentCollaboration = ({ id }) => {
           type="secondary"
           to="/blog"
           className="font-light text-sm uppercase flex flex-col">
-            {t('home.viewAll')}
-            <span>{t('navbar.collaborations')}</span>
+            {t('shared.viewAll')}
+            <span>{t('collaborationSection.collaborationCategory')}</span>
         </OverlayLink>
       </div>
       <div className="flex flex-col lg:flex-row px-2 lg:px-6 z-10 flex-1 items-center">
@@ -72,7 +72,7 @@ const RecentCollaboration = ({ id }) => {
             type="secondary"
             to="/single-post"
             className="font-light text-sm uppercase border-b-2 border-white border-solid whitespace-nowrap">
-              {t('home.watchVideo')}
+              {t('shared.watchVideo')}
           </OverlayLink>
         </div>
         <ul className="flex flex-row mt-28 lg:mt-0 lg:flex-col lg:flex-1 lg:items-end justify-center space-x-4 lg:space-x-0 lg:space-y-4 text-sm md:text-base">

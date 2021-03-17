@@ -2,33 +2,37 @@
   "shared": {
     "close": "Close",
     "loadMore": "Load more",
-    "categories": "Categories"
-  },
-  "navbar": {
-    "home": "Home",
-    "news": "News",
-    "about": "About M.A.U",
-    "artists": "Artists",
-    "artistsType1": "View all artists",
-    "artistsType2": "Shuffle",
-    "collaborations": "Collaborations",
-    "events": "Events",
-    "shop": "Shop"
-  },
-  "home": {
+    "categories": "Categories",
     "viewAll": "View all",
     "continueRead": "Continue reading",
-    "about": "About MAU",
-    "contactUs": "Contact Us",
-    "watchVideo": "Watch  Video"
-  },
-  "post": {
-    "text": "Text",
-    "photography": "Photography",
-    "date": "Date",
+    "watchVideo": "Watch Video",
     "nextStory": "Next Story"
   },
-  "artist": {
+  "homeSection": {
+    "homeCategory": "Home"
+  },
+  "newsSection": {
+    "newsCategory": "News"
+  },
+  "aboutSection": {
+    "aboutCategory": "About M.A.U",
+    "contactUsField": "Contact Us"
+  },
+  "artistSection": {
+    "artistCategory": "Artist",
+    "artistViewAllStyle": "View all artists",
+    "artistShuffleStyle": "Shuffle"
+  },
+  "collaborationSection": {
+    "collaborationCategory": "Collaborations"
+  },
+  "eventSection": {
+    "eventCategory": "Events"
+  },
+  "shopSection": {
+    "shopCategory": "Shop"
+  },
+  "artistPage": {
     "music": "Music",
     "video": "Video",
     "livePerform": "Live Performance",

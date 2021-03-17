@@ -21,15 +21,15 @@ const NavbarBlog = ({ title }) => {
         <div className="flex lg:flex-col space-x-6">
           <h2 className="uppercase w-1/2 lg:w-auto font-light mb-6 text-xs">{t('shared.categories')}</h2>
           <ul className="lg:ml-5 w-1/2 lg:w-auto lg:space-y-1 flex flex-wrap lg:flex-col text-xs">
-            <li className="uppercase font-light">{t('navbar.news')}</li>
+            <li className="uppercase font-light">{t('newsSection.newsCategory')}</li>
             <li className="mx-2 lg:mx-0 lg:hidden">/</li>
-            <li className="uppercase font-light">{t('navbar.about')}</li>
+            <li className="uppercase font-light">{t('aboutSection.aboutCategory')}</li>
             <li className="mx-2 lg:mx-0 lg:hidden">/</li>
-            <li className="uppercase font-light">{t('navbar.artists')}</li>
+            <li className="uppercase font-light">{t('artistSection.artistCategory')}</li>
             <li className="mx-2 lg:mx-0 lg:hidden">/</li>
-            <li className="uppercase font-light">{t('navbar.collaborations')}</li>
+            <li className="uppercase font-light">{t('collaborationSection.collaborationCategory')}</li>
             <li className="mx-2 lg:mx-0 lg:hidden">/</li>
-            <li className="uppercase font-light">{t('navbar.events')}</li>
+            <li className="uppercase font-light">{t('eventSection.eventCategory')}</li>
           </ul>
         </div>
       </div>

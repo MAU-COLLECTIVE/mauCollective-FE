@@ -19,37 +19,37 @@ const NavComponent = ({ className }) => {
     <div className={`lg:space-x-4 ${className}`}>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="01" className="hidden lg:block" />
-        <a href="#" onClick={(e ) => { e.preventDefault(); scrollTo(0, 0); }} className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">{t('navbar.home')}</a>
+        <a href="#" onClick={(e ) => { e.preventDefault(); scrollTo(0, 0); }} className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">{t('homeSection.homeCategory')}</a>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="02" className="hidden lg:block" />
-        <a href="#news" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">{t('navbar.news')}</a>
+        <a href="#news" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">{t('newsSection.newsCategory')}</a>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="03" className="hidden lg:block" />
-        <a href="#about" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">{t('navbar.about')}</a>
+        <a href="#about" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">{t('aboutSection.aboutCategory')}</a>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="04" className="hidden lg:block" />
-        <a href="#artists" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">{t('navbar.artists')}</a>
+        <a href="#artists" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">{t('artistSection.artistCategory')}</a>
         <button
           id="btn-artist-type"
           className="absolute w-max break-words hidden font-normal text-xs tracking-widest lg:font-medium uppercase focus:outline-none"
           onClick={toggleArtistType}>
-          {ctx.artistType === 'slider' ? t('navbar.artistsType1') : t('navbar.artistsType2')}
+          {ctx.artistType === 'slider' ? t('artistSection.artistViewAllStyle') : t('artistSection.shuffle')}
         </button>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="05" className="hidden lg:block" />
-        <a href="#collaborations" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">{t('navbar.collaborations')}</a>
+        <a href="#collaborations" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">{t('collaborationSection.collaborationCategory')}</a>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="06" className="hidden lg:block" />
-        <a href="#events" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">{t('navbar.events')}</a>
+        <a href="#events" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">{t('eventSection.eventCategory')}</a>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="07" className="hidden lg:block" />
-        <a href="#" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">{t('navbar.shop')}</a>
+        <a href="#" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">{t('shopSection.shopCategory')}</a>
       </div>
     </div>
   )
