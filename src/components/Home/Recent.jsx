@@ -14,7 +14,7 @@ const Recent = ({ id }) => {
         <OverlayLink
           type="secondary"
           to="/blog"
-          className="font-light text-sm uppercase">
+          className="font-light text-xs uppercase">
             {t('shared.viewAll')+' '+t('newsSection.newsCategory')}
         </OverlayLink>
       </div>
