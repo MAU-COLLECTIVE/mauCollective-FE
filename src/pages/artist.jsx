@@ -39,11 +39,11 @@ const Artist = () => {
                 <a href="#" className="block font-semibold text-3xl uppercase">{t('artistPage.music')}</a>
               </div>
               <ul className="px-6">
-                <li className="flex space-x-2 md:space-x-8 font-mono font-light text-lg text-gray-400 border-b border-gray-400 py-6 first:pt-0">
+                <li className="flex space-x-2 md:space-x-8 font-mono font-light text-sm xs:text-lg text-gray-400 border-b border-gray-400 py-6 first:pt-0">
                   <p className="tracking-wide">2019</p>
                   <div className="flex flex-col">
                     <p className="tracking-wide">Wean</p>
-                    <p className="text-sm">{t('artistPage.livePerform')}</p>
+                    <p className="text-xs xs:text-sm">{t('artistPage.livePerform')}</p>
                   </div>
                   <div className="flex flex-col flex-1 items-end">
                     <p className="text-right">{t('artistPage.streamOn')}:</p>
@@ -53,11 +53,11 @@ const Artist = () => {
                     </div>
                   </div>
                 </li>
-                <li className="flex space-x-2 md:space-x-8 font-mono font-light text-lg text-gray-400 border-b border-gray-400 py-6 first:pt-0">
+                <li className="flex space-x-2 md:space-x-8 font-mono font-light text-sm xs:text-lg text-gray-400 border-b border-gray-400 py-6 first:pt-0">
                   <p className="tracking-wide">2019</p>
                   <div className="flex flex-col">
                     <p className="tracking-wide">Wean</p>
-                    <p className="text-sm">{t('artistPage.livePerform')}</p>
+                    <p className="text-xs xs:text-sm">{t('artistPage.livePerform')}</p>
                   </div>
                   <div className="flex flex-col flex-1 items-end">
                     <p className="text-right">{t('artistPage.streamOn')}:</p>
@@ -67,11 +67,11 @@ const Artist = () => {
                     </div>
                   </div>
                 </li>
-                <li className="flex space-x-2 md:space-x-8 font-mono font-light text-lg text-gray-400 border-b border-gray-400 py-6 first:pt-0">
+                <li className="flex space-x-2 md:space-x-8 font-mono font-light text-sm xs:text-lg text-gray-400 border-b border-gray-400 py-6 first:pt-0">
                   <p className="tracking-wide">2019</p>
                   <div className="flex flex-col">
                     <p className="tracking-wide">Wean</p>
-                    <p className="text-sm">{t('artistPage.livePerform')}</p>
+                    <p className="text-xs xs:text-sm">{t('artistPage.livePerform')}</p>
                   </div>
                   <div className="flex flex-col flex-1 items-end">
                     <p className="text-right">{t('artistPage.streamOn')}:</p>
@@ -81,7 +81,7 @@ const Artist = () => {
                     </div>
                   </div>
                 </li>
-                <li className="flex justify-end space-x-8 font-light text-sm text-gray-200 py-6 first:pt-0">
+                <li className="flex justify-end space-x-8 font-light text-xs xs:text-sm text-gray-400 py-6 first:pt-0">
                   1/2
                 </li>
               </ul>
@@ -92,11 +92,11 @@ const Artist = () => {
                 <a href="#" className="block font-semibold text-3xl uppercase">{t('artistPage.video')}</a>
               </div>
               <ul className="px-6">
-                <li className="flex space-x-2 md:space-x-8 font-mono font-light text-lg text-gray-400 border-b border-gray-400 py-6 first:pt-0">
+                <li className="flex space-x-2 md:space-x-8 font-mono font-light text-sm xs:text-lg text-gray-400 border-b border-gray-400 py-6 first:pt-0">
                   <p className="tracking-wide">2019</p>
                   <div className="flex flex-col">
                     <p className="tracking-wide">Wean</p>
-                    <p className="text-sm">{t('artistPage.livePerform')}</p>
+                    <p className="text-xs xs:text-sm">{t('artistPage.livePerform')}</p>
                   </div>
                   <div className="flex flex-col flex-1 items-end">
                     <p className="text-right">{t('artistPage.streamOn')}:</p>
@@ -106,11 +106,11 @@ const Artist = () => {
                     </div>
                   </div>
                 </li>
-                <li className="flex space-x-2 md:space-x-8 font-mono font-light text-lg text-gray-400 border-b border-gray-400 py-6 first:pt-0">
+                <li className="flex space-x-2 md:space-x-8 font-mono font-light text-sm xs:text-lg text-gray-400 border-b border-gray-400 py-6 first:pt-0">
                   <p className="tracking-wide">2019</p>
                   <div className="flex flex-col">
                     <p className="tracking-wide">Wean</p>
-                    <p className="text-sm">{t('artistPage.livePerform')}</p>
+                    <p className="text-xs xs:text-sm">{t('artistPage.livePerform')}</p>
                   </div>
                   <div className="flex flex-col flex-1 items-end">
                     <p className="text-right">{t('artistPage.streamOn')}:</p>
@@ -120,11 +120,11 @@ const Artist = () => {
                     </div>
                   </div>
                 </li>
-                <li className="flex space-x-2 md:space-x-8 font-mono font-light text-lg text-gray-400 border-b border-gray-400 py-6 first:pt-0">
+                <li className="flex space-x-2 md:space-x-8 font-mono font-light text-sm xs:text-lg text-gray-400 border-b border-gray-400 py-6 first:pt-0">
                   <p className="tracking-wide">2019</p>
                   <div className="flex flex-col">
                     <p className="tracking-wide">Wean</p>
-                    <p className="text-sm">{t('artistPage.livePerform')}</p>
+                    <p className="text-xs xs:text-sm">{t('artistPage.livePerform')}</p>
                   </div>
                   <div className="flex flex-col flex-1 items-end">
                     <p className="text-right">{t('artistPage.streamOn')}:</p>
@@ -134,7 +134,7 @@ const Artist = () => {
                     </div>
                   </div>
                 </li>
-                <li className="flex justify-end space-x-8 font-light text-sm text-gray-200 py-6 first:pt-0">
+                <li className="flex justify-end space-x-8 font-light text-xs xs:text-sm text-gray-400 py-6 first:pt-0">
                   1/2
                 </li>
               </ul>

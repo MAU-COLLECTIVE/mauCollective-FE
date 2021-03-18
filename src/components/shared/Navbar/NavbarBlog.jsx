@@ -17,7 +17,7 @@ const NavbarBlog = ({ title }) => {
           <span className="block font-medium uppercase text-xs">{t('shared.close')}</span>
       </OverlayLink>
       <div className="lg:px-6 block w-full">
-        <h1 className="lg:hidden font-black text-2xl md:text-3xl xl:text-5xl mb-8 xl:mb-28 uppercase xl:tracking-wide">{title}</h1>
+        <h1 className="lg:hidden font-black text-2xl xs:text-5xl mb-8 xl:mb-28 uppercase xl:tracking-wide">{title}</h1>
         <div className="flex lg:flex-col space-x-6">
           <h2 className="uppercase w-1/2 lg:w-auto font-light mb-6 text-xs">{t('shared.categories')}</h2>
           <ul className="lg:ml-5 w-1/2 lg:w-auto lg:space-y-1 flex flex-wrap lg:flex-col text-xs">
