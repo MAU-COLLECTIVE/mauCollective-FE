@@ -66,7 +66,7 @@ const RecentCollaboration = ({ id }) => {
       </div>
       <div className="flex flex-col lg:flex-row px-2 lg:px-6 z-10 flex-1 items-center">
         <div className="relative w-full lg:w-1/2 xl:w-1/3">
-          <h1 className="font-black text-2xl xs:text-5xl mb-8 xl:mb-28 uppercase xl:tracking-wide">{data?.[currentIndex]?.title}</h1>
+          <h1 className="font-black text-2xl xs:text-3xl lg:text-5xl mb-8 xl:mb-28 uppercase xl:tracking-wide">{data?.[currentIndex]?.title}</h1>
           <p className="font-mono xl:text-lg mb-8">{data?.[currentIndex]?.desc}</p>
           <OverlayLink
             type="secondary"
