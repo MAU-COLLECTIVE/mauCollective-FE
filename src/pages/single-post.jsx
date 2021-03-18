@@ -1,9 +1,13 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 import BadgeNumber from 'components/shared/BadgeNumber'
 import CardPost from 'components/shared/CardPost'
 import OverlayLink from 'components/shared/OverlayLink'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 
 const SinglePost = () => {
+  const { t } = useTranslation();
+
 	return (
     <div className="min-h-screen max-w-screen bg-white py-6 2xl:py-10 flex flex-col items-start">
       <OverlayLink
@@ -11,21 +15,21 @@ const SinglePost = () => {
         to="/"
         className="relative mx-4 2xl:mx-10 px-6 py-4">
           <BadgeNumber number="01" />
-          <span className="block font-medium uppercase text-xs">Close</span>
+          <span className="block font-medium uppercase text-xs">{t('shared.close')}</span>
       </OverlayLink>
       <div className="flex flex-col items-center w-full space-y-12">
-        <h1 className="font-black text-2xl sm:text-3xl md:text-4xl xl:text-5xl uppercase tracking-wide px-6 2xl:px-0 w-full 2xl:w-2/3 text-center">MOST RECENT NEWS HEADLINE</h1>
+        <h1 className="font-black text-2xl md:text-3xl xl:text-6xl uppercase xl:tracking-wide px-6 2xl:px-0 w-full 2xl:w-2/3 text-center">MOST RECENT NEWS HEADLINE</h1>
         <ul className="text-xs font-light font-mono flex flex-col items-center">
           <li className="tracking-wide">
-            <span className="uppercase mr-2 tracking-wider">Text:</span>
+            <span className="uppercase mr-2 tracking-widest">Text:</span>
             Jenna Wortham
           </li>
           <li className="tracking-wide">
-            <span className="uppercase mr-2 tracking-wider">Photography:</span>
+            <span className="uppercase mr-2 tracking-widest">Photography:</span>
             Jenna Wortham
           </li>
           <li className="tracking-wide">
-            <span className="uppercase mr-2 tracking-wider">Date:</span>
+            <span className="uppercase mr-2 tracking-widest">Date:</span>
             19.01.2021
           </li>
         </ul>
@@ -63,27 +67,27 @@ const SinglePost = () => {
         </div>
         <ul className="text-xs font-light font-mono flex flex-col self-start mx-6 2xl:mx-16">
           <li className="tracking-wide">
-            <span className="uppercase mr-2 tracking-wider">Text:</span>
+            <span className="uppercase mr-2 tracking-widest">Text:</span>
             Jenna Wortham
           </li>
           <li className="tracking-wide">
-            <span className="uppercase mr-2 tracking-wider">Photography:</span>
+            <span className="uppercase mr-2 tracking-widest">Photography:</span>
             Jenna Wortham
           </li>
           <li className="tracking-wide">
-            <span className="uppercase mr-2 tracking-wider">Date:</span>
+            <span className="uppercase mr-2 tracking-widest">Date:</span>
             19.01.2021
           </li>
         </ul>
         <div className="flex flex-wrap px-6 2xl:px-16 w-full flex-col md:flex-row space-y-4 2xl:space-y-0">
           <div className="w-full text-right md:mb-4 hidden md:block">
-            <a href="#view-all-news" className="font-light text-sm uppercase">View all news</a>
+            <a href="#view-all-news" className="font-light text-sm uppercase">{t('shared.viewAll')+' '+t('newsSection.newsCategory')}</a>
           </div>
           <div className="w-full md:w-1/3">
-            <h2 className="font-black text-2xl sm:text-3xl md:text-4xl xl:text-5xl mb-8 xl:mb-16 uppercase tracking-wide">NEXT STORY</h2>
+            <h2 className="font-black text-2xl md:text-3xl xl:text-5xl mb-8 xl:mb-16 uppercase xl:tracking-wide">{t('shared.nextStory')}</h2>
           </div>
           <div className="w-full text-right md:mb-4 md:hidden">
-            <a href="#view-all-news" className="font-light text-sm uppercase">View all news</a>
+            <a href="#view-all-news" className="font-light text-sm uppercase">{t('shared.viewAll')+' '+t('newsSection.newsCategory')}</a>
           </div>
           <div className="flex-1 flex space-x-6">
             <div className="w-1/2 2xl:w-1/3">
@@ -101,5 +105,19 @@ const SinglePost = () => {
 	  </div>
 	)
 }
+
+export const query = graphql`
+  query($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;
 
 export default SinglePost

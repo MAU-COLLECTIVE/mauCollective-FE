@@ -1,0 +1,41 @@
+{
+  "shared": {
+    "close": "Close JP",
+    "loadMore": "Load more JP",
+    "categories": "Categories JP",
+    "viewAll": "View all JP",
+    "continueRead": "Continue reading JP",
+    "watchVideo": "Watch Video JP",
+    "nextStory": "Next Story JP"
+  },
+  "homeSection": {
+    "homeCategory": "Home JP"
+  },
+  "newsSection": {
+    "newsCategory": "News JP"
+  },
+  "aboutSection": {
+    "aboutCategory": "About M.A.U JP",
+    "contactUsField": "Contact Us JP"
+  },
+  "artistSection": {
+    "artistCategory": "Artist JP",
+    "artistViewAllStyle": "View all artists JP",
+    "artistShuffleStyle": "Shuffle JP"
+  },
+  "collaborationSection": {
+    "collaborationCategory": "Collaborations JP"
+  },
+  "eventSection": {
+    "eventCategory": "Events JP"
+  },
+  "shopSection": {
+    "shopCategory": "Shop JP"
+  },
+  "artistPage": {
+    "music": "Music JP",
+    "video": "Video JP",
+    "livePerform": "Live Performance JP",
+    "streamOn": "Stream on JP"
+  }
+}

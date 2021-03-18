@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { TweenLite } from 'gsap/all'
 import OverlayLink from 'components/shared/OverlayLink'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 
 const data = [
   {
@@ -27,7 +28,7 @@ function usePrevious(value) {
 }
 
 const RecentCollaboration = ({ id }) => {
-  
+  const { t } = useTranslation();
   const [currentIndex, setCurrentIndex] = useState(0);
   const prevCurrentIndex = usePrevious(currentIndex);
   const imgRef = useRef([]);
@@ -58,24 +59,25 @@ const RecentCollaboration = ({ id }) => {
         <OverlayLink
           type="secondary"
           to="/blog"
-          className="font-light text-sm uppercase">
-            View all <br/>collaborations
+          className="font-light text-sm uppercase flex flex-col">
+            {t('shared.viewAll')}
+            <span>{t('collaborationSection.collaborationCategory')}</span>
         </OverlayLink>
       </div>
       <div className="flex flex-col lg:flex-row px-2 lg:px-6 z-10 flex-1 items-center">
         <div className="relative w-full lg:w-1/2 xl:w-1/3">
-          <h1 className="font-black text-2xl sm:text-3xl md:text-4xl xl:text-5xl mb-8 xl:mb-28 uppercase tracking-wide">{data?.[currentIndex]?.title}</h1>
+          <h1 className="font-black text-2xl md:text-3xl xl:text-5xl mb-8 xl:mb-28 uppercase xl:tracking-wide">{data?.[currentIndex]?.title}</h1>
           <p className="font-mono xl:text-lg mb-8">{data?.[currentIndex]?.desc}</p>
           <OverlayLink
             type="secondary"
             to="/single-post"
             className="font-light text-sm uppercase border-b-2 border-white border-solid whitespace-nowrap">
-              Watch video
+              {t('shared.watchVideo')}
           </OverlayLink>
         </div>
         <ul className="flex flex-row mt-28 lg:mt-0 lg:flex-col lg:flex-1 lg:items-end justify-center space-x-4 lg:space-x-0 lg:space-y-4 text-sm md:text-base">
-          <li onClick={() => setCurrentIndex(0)} className={`cursor-pointer transition-all ${currentIndex == 0 && 'border-b-2 border-white'}`}>01</li>
-          <li onClick={() => setCurrentIndex(1)} className={`cursor-pointer transition-all ${currentIndex == 1 && 'border-b-2 border-white'}`}>02</li>
+          <li onClick={() => setCurrentIndex(0)} className={`cursor-pointer transition-all ${currentIndex === 0 && 'border-b-2 border-white'}`}>01</li>
+          <li onClick={() => setCurrentIndex(1)} className={`cursor-pointer transition-all ${currentIndex === 1 && 'border-b-2 border-white'}`}>02</li>
         </ul>
       </div>
     </div>

@@ -12,7 +12,7 @@ const Artists = ({ id }) => {
           className="w-full">
             <div className="max-w-max flex flex-col justify-center items-center 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0">
               <img src="/img/artist.png" alt="artist" className="w-full md:w-52 md:h-52" />
-              <h2 className="font-semibold text-sm tracking-wide uppercase text-center">DYCAL</h2>
+              <h2 className="font-semibold text-xs tracking-widest uppercase text-center">DYCAL</h2>
             </div>
         </OverlayLink>
         <OverlayLink
@@ -21,7 +21,7 @@ const Artists = ({ id }) => {
           className="w-full">
           <div className="max-w-max flex flex-col justify-center items-center 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0">
             <img src="/img/artist.png" alt="artist" className="w-full md:w-52 md:h-52" />
-            <h2 className="font-semibold text-sm tracking-wide uppercase text-center">DYCAL</h2>
+            <h2 className="font-semibold text-xs tracking-widest uppercase text-center">DYCAL</h2>
           </div>
         </OverlayLink>
         <OverlayLink
@@ -30,7 +30,7 @@ const Artists = ({ id }) => {
           className="w-full">
           <div className="max-w-max flex flex-col justify-center items-center 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0">
             <img src="/img/artist.png" alt="artist" className="w-full md:w-52 md:h-52" />
-            <h2 className="font-semibold text-sm tracking-wide uppercase text-center">DYCAL</h2>
+            <h2 className="font-semibold text-xs tracking-widest uppercase text-center">DYCAL</h2>
           </div>
         </OverlayLink>
         <OverlayLink
@@ -39,7 +39,7 @@ const Artists = ({ id }) => {
           className="w-full">
           <div className="max-w-max flex flex-col justify-center items-center 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0">
             <img src="/img/artist.png" alt="artist" className="w-full md:w-52 md:h-52" />
-            <h2 className="font-semibold text-sm tracking-wide uppercase text-center">DYCAL</h2>
+            <h2 className="font-semibold text-xs tracking-widest uppercase text-center">DYCAL</h2>
           </div>
         </OverlayLink>
         <OverlayLink
@@ -48,7 +48,7 @@ const Artists = ({ id }) => {
           className="w-full">
           <div className="max-w-max flex flex-col justify-center items-center 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0">
             <img src="/img/artist.png" alt="artist" className="w-full md:w-52 md:h-52" />
-            <h2 className="font-semibold text-sm tracking-wide uppercase text-center">DYCAL</h2>
+            <h2 className="font-semibold text-xs tracking-widest uppercase text-center">DYCAL</h2>
           </div>
         </OverlayLink>
         <OverlayLink
@@ -57,7 +57,7 @@ const Artists = ({ id }) => {
           className="w-full">
           <div className="max-w-max flex flex-col justify-center items-center 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0">
             <img src="/img/artist.png" alt="artist" className="w-full md:w-52 md:h-52" />
-            <h2 className="font-semibold text-sm tracking-wide uppercase text-center">DYCAL</h2>
+            <h2 className="font-semibold text-xs tracking-widest uppercase text-center">DYCAL</h2>
           </div>
         </OverlayLink>
       </div>
