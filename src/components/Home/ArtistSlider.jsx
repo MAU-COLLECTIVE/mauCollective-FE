@@ -171,49 +171,49 @@ const ArtistSlider = () => {
         <div className="cell" ref={elm => cells[0] = elm}>
           <div className="cell-content" onClick={() => scrollTo(1)}>
             <img src="/img/artist.png" className="rounded-full w-full h-full" />
-            <h1 className="text-center font-medium text-xl tracking-wide uppercase mt-8">1 Dycal 1</h1>
+            <h1 className="text-center font-medium text-xs tracking-widest uppercase mt-8">1 Dycal 1</h1>
           </div>
         </div>     
         <div className="cell" ref={elm => cells[1] = elm}>
           <div className="cell-content" onClick={() => scrollTo(2)}>
             <img src="/img/artist.png" className="rounded-full w-full h-full" />
-            <h1 className="text-center font-medium text-xl tracking-wide uppercase mt-8">2 Dycal 2</h1>
+            <h1 className="text-center font-medium text-xs tracking-widest uppercase mt-8">2 Dycal 2</h1>
           </div>
         </div>  
         <div className="cell" ref={elm => cells[2] = elm}>
           <div className="cell-content" onClick={() => scrollTo(3)}>
             <img src="/img/artist.png" className="rounded-full w-full h-full" />
-            <h1 className="text-center font-medium text-xl tracking-wide uppercase mt-8">3 Dycal 3</h1>
+            <h1 className="text-center font-medium text-xs tracking-widest uppercase mt-8">3 Dycal 3</h1>
           </div>
         </div>  
         <div className="cell" ref={elm => cells[3] = elm}>
           <div className="cell-content" onClick={() => scrollTo(4)}>
             <img src="/img/artist.png" className="rounded-full w-full h-full" />
-            <h1 className="text-center font-medium text-xl tracking-wide uppercase mt-8">4 Dycal 4</h1>
+            <h1 className="text-center font-medium text-xs tracking-widest uppercase mt-8">4 Dycal 4</h1>
           </div>
         </div>  
         <div className="cell" ref={elm => cells[4] = elm}>
           <div className="cell-content" onClick={() => scrollTo(5)}>
             <img src="/img/artist.png" className="rounded-full w-full h-full" />
-            <h1 className="text-center font-medium text-xl tracking-wide uppercase mt-8">5 Dycal 5</h1>
+            <h1 className="text-center font-medium text-xs tracking-widest uppercase mt-8">5 Dycal 5</h1>
           </div>
         </div>
          <div className="cell" ref={elm => cells[5] = elm}>
           <div className="cell-content" onClick={() => scrollTo(6)}>
             <img src="/img/artist.png" className="rounded-full w-full h-full" />
-            <h1 className="text-center font-medium text-xl tracking-wide uppercase mt-8">6 Dycal 6</h1>
+            <h1 className="text-center font-medium text-xs tracking-widest uppercase mt-8">6 Dycal 6</h1>
           </div>
         </div>
         {/*<div className="cell" ref={elm => cells[6] = elm}>
           <div className="cell-content" onClick={() => scrollTo(6)}>
             <img src="/img/artist.png" className="rounded-full w-full h-full" />
-            <h1 className="text-center font-medium text-xl tracking-wide uppercase mt-8">7 Dycal 7</h1>
+            <h1 className="text-center font-medium text-xs tracking-widest uppercase mt-8">7 Dycal 7</h1>
           </div>
         </div> */}
         {/* <div className="cell" ref={elm => cells[7] = elm}>
           <div className="cell-content" onClick={() => scrollTo(7)}>
             <img src="/img/artist.png" className="rounded-full w-full h-full" />
-            <h1 className="text-center font-medium text-xl tracking-wide uppercase mt-8">8 Dycal 8</h1>
+            <h1 className="text-center font-medium text-xs tracking-widest uppercase mt-8">8 Dycal 8</h1>
           </div>
         </div> */}
       </div>  
