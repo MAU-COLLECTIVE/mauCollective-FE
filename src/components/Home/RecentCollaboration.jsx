@@ -59,7 +59,7 @@ const RecentCollaboration = ({ id }) => {
         <OverlayLink
           type="secondary"
           to="/blog"
-          className="font-light text-sm uppercase flex flex-col">
+          className="font-light text-xs uppercase flex flex-col">
             {t('shared.viewAll')}
             <span>{t('collaborationSection.collaborationCategory')}</span>
         </OverlayLink>
@@ -71,11 +71,11 @@ const RecentCollaboration = ({ id }) => {
           <OverlayLink
             type="secondary"
             to="/single-post"
-            className="font-light text-sm uppercase border-b-2 border-white border-solid whitespace-nowrap">
+            className="font-light text-sm leading-6 uppercase border-b-2 border-white border-solid whitespace-nowrap">
               {t('shared.watchVideo')}
           </OverlayLink>
         </div>
-        <ul className="flex flex-row mt-28 lg:mt-0 lg:flex-col lg:flex-1 lg:items-end justify-center space-x-4 lg:space-x-0 lg:space-y-4 text-sm md:text-base">
+        <ul className="flex flex-row mt-28 lg:mt-0 lg:flex-col lg:flex-1 lg:items-end justify-center space-x-4 lg:space-x-0 lg:space-y-4 text-xs">
           <li onClick={() => setCurrentIndex(0)} className={`cursor-pointer transition-all ${currentIndex === 0 && 'border-b-2 border-white'}`}>01</li>
           <li onClick={() => setCurrentIndex(1)} className={`cursor-pointer transition-all ${currentIndex === 1 && 'border-b-2 border-white'}`}>02</li>
         </ul>
