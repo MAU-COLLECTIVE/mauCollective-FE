@@ -84,9 +84,9 @@ const SinglePost = () => {
             <a href="#view-all-news" className="font-light text-sm uppercase">{t('shared.viewAll')+' '+t('newsSection.newsCategory')}</a>
           </div>
           <div className="w-full md:w-1/3">
-            <h2 className="font-black text-2xl md:text-3xl xl:text-5xl mb-8 xl:mb-16 uppercase xl:tracking-wide">{t('shared.nextStory')}</h2>
+            <h2 className="font-black text-2xl sm:text-5xl mb-4 xl:mb-16 uppercase xl:tracking-wide">{t('shared.nextStory')}</h2>
           </div>
-          <div className="w-full text-right md:mb-4 md:hidden">
+          <div className="w-full md:mb-4 md:hidden">
             <a href="#view-all-news" className="font-light text-sm uppercase">{t('shared.viewAll')+' '+t('newsSection.newsCategory')}</a>
           </div>
           <div className="flex-1 flex space-x-6">
