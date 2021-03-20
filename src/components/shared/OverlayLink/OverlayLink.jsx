@@ -32,8 +32,8 @@ const swipe = ({node, exit, type, triggerName}) => {
 }
 
 export default function SwipeOver({to, type, ...props}) {
-  const {language} = useI18next();
-  const linkTo = `/${language}${to}`
+  const {language, defaultLanguage} = useI18next();
+  const linkTo = `${language !== defaultLanguage ? `/${language}` : ''}${to}`
 
   const exitLength = 0.7
   const entryLength = 0.7
