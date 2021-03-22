@@ -36,7 +36,7 @@ const NavComponent = ({ className }) => {
           id="btn-artist-type"
           className="absolute w-max break-words hidden font-normal text-xs tracking-widest lg:font-medium uppercase focus:outline-none"
           onClick={toggleArtistType}>
-          {ctx.artistType === 'slider' ? t('artistSection.artistViewAllStyle') : t('artistSection.shuffle')}
+          {ctx.artistType === 'slider' ? t('artistSection.artistViewAllStyle') : t('artistSection.artistShuffleStyle')}
         </button>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">

@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => (
   <footer className="px-4 lg:px-12 py-12 flex flex-col space-y-4 xl:space-y-0 xl:flex-row">
     <div className="xl:w-1/3 flex justify-between xl:justify-start">
-      <h1 className="font-light text-sm">M.A.U Collective</h1>
+      <h1 className="font-light text-xs">M.A.U Collective</h1>
       <div className="flex justify-end space-x-2 xl:hidden">
         <a href="#fb"><img src="/icons/fb-dark.svg"/></a>
         <a href="#fb"><img src="/icons/ig-dark.svg"/></a>
