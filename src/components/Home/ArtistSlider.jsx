@@ -44,12 +44,12 @@ const ArtistSlider = () => {
         }}
         breakpoints={{
           1124: {
-            spaceBetween: 100
-          },
-          1530: {
             spaceBetween: 140
           },
-          1920: {
+          1530: {
+            spaceBetween: 170
+          },
+          1800: {
             spaceBetween: 220
           }
         }}
