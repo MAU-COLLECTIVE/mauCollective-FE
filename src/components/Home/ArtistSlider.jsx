@@ -42,6 +42,17 @@ const ArtistSlider = () => {
           modifier: 1,
           slideShadows: false,
         }}
+        breakpoints={{
+          1124: {
+            spaceBetween: 140
+          },
+          1530: {
+            spaceBetween: 170
+          },
+          1800: {
+            spaceBetween: 220
+          }
+        }}
       >
         {slides}
       </Swiper>
