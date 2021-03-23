@@ -3,19 +3,15 @@ import { graphql } from 'gatsby'
 import BadgeNumber from 'components/shared/BadgeNumber'
 import OverlayLink from 'components/shared/OverlayLink'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
-import { useLocation } from '@reach/router'
-import queryString from 'query-string'
 
 const Artist = () => {
   const { t } = useTranslation();
-  const location = useLocation();
-  const { back } = queryString.parse(location.search);
 
   return (
     <div className="min-h-screen max-w-screen py-6 2xl:py-10 flex flex-col items-start bg-black text-white">
       <OverlayLink
         type="main"
-        to={back ? `/#${back}` : `/`}
+        to="/"
         className="relative mx-4 2xl:mx-10 px-6 py-4 mb-8">
           <BadgeNumber number="01" />
           <span className="block font-medium uppercase text-xs">{t('shared.close')}</span>
