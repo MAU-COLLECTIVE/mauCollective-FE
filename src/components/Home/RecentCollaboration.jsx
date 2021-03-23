@@ -58,7 +58,7 @@ const RecentCollaboration = ({ id }) => {
       <div className="text-right px-2 lg:px-6 mb-4 z-10">
         <OverlayLink
           type="secondary"
-          to="/blog"
+          to="/blog?back=collaborations"
           className="font-light text-xs uppercase flex flex-col">
             {t('shared.viewAll')}
             <span>{t('collaborationSection.collaborationCategory')}</span>
@@ -70,7 +70,7 @@ const RecentCollaboration = ({ id }) => {
           <p className="font-mono xl:text-lg mb-8">{data?.[currentIndex]?.desc}</p>
           <OverlayLink
             type="secondary"
-            to="/single-post"
+            to="/single-post?back=collaborations"
             className="font-light text-sm leading-6 uppercase border-b-2 border-white border-solid whitespace-nowrap">
               {t('shared.watchVideo')}
           </OverlayLink>
