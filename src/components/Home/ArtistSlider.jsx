@@ -20,7 +20,7 @@ const ArtistSlider = () => {
             section="artists"
             className={`flex flex-col items-center space-y-6 transition-transform cursor-pointer ${!isActive && 'pointer-events-none'}`}
           >
-            <img src="/img/artist.png" alt={`slide-${i}`} className="slide-img" />
+            <img src="/img/artist.png" alt={`slide-${i}`} className="slide-img transition-transform" />
             <h1 className="text-xs">Slide {i}</h1>
           </OverlayLink>
         )}
