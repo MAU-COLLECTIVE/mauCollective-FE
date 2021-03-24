@@ -1,18 +1,21 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import PropTypes from 'prop-types'
 import BadgeNumber from 'components/shared/BadgeNumber'
 import CardPost from 'components/shared/CardPost'
 import OverlayLink from 'components/shared/OverlayLink'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 
-const SinglePost = () => {
+const SinglePost = ({ location }) => {
   const { t } = useTranslation();
+  const section = location?.state?.section;
 
 	return (
     <div className="min-h-screen max-w-screen bg-white py-6 2xl:py-10 flex flex-col items-start">
       <OverlayLink
         type="main"
         to="/"
+        section={section}
         className="relative mx-4 2xl:mx-10 px-6 py-4">
           <BadgeNumber number="01" />
           <span className="block font-medium uppercase text-xs">{t('shared.close')}</span>
@@ -119,5 +122,9 @@ export const query = graphql`
     }
   }
 `;
+
+SinglePost.propTypes = {
+  location: PropTypes.object.isRequired
+}
 
 export default SinglePost

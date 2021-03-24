@@ -31,7 +31,7 @@ const swipe = ({node, exit, type, triggerName}) => {
   }
 }
 
-export default function SwipeOver({to, type, ...props}) {
+export default function SwipeOver({to, type, section, ...props}) {
   const {language, defaultLanguage} = useI18next();
   const linkTo = `${language !== defaultLanguage ? `/${language}` : ''}${to}`
 
@@ -65,6 +65,7 @@ export default function SwipeOver({to, type, ...props}) {
         zIndex: entryZ,
       }}
       to={linkTo}
+      state={{ section }}
       {...props}>
       {props.children}
     </TransitionLink>
@@ -74,5 +75,6 @@ export default function SwipeOver({to, type, ...props}) {
 SwipeOver.propTypes = {
   to: PropTypes.string.isRequired,
   type: PropTypes.oneOf(["main", "secondary"]).isRequired,
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  section: PropTypes.string
 }
