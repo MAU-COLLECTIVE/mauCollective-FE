@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect, useContext, useLayoutEffect } from 'react'
 import PropTypes from 'prop-types'
 import BadgeNumber from 'components/shared/BadgeNumber'
 import LanguageSwitcher from 'components/shared/LanguageSwitcher'
@@ -25,17 +25,17 @@ const NavComponent = ({ className }) => {
     const elementRect = element.getBoundingClientRect().top;
     const elementPosition = elementRect - bodyRect;
     const offsetPosition = elementPosition - offset;
-  
+
     window.scrollTo({
       top: offsetPosition,
       behavior: "smooth"
     });
   }
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if(section) handleNav(section)
   }, [section])
-  
+    
 
   return (
     <div className={`lg:space-x-4 ${className}`}>
