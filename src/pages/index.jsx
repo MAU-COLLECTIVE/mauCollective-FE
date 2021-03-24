@@ -19,7 +19,7 @@ const HomePage = () => {
     <HomeLayout>
       <Recent id="news" />
       <About id="about" />
-      <div id="artists">
+      <div id="artists" className="h-screen">
         {ctx.artistType === 'slider' ? (
           <ArtistSlider />
         ) : (
