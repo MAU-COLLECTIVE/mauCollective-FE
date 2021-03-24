@@ -59,6 +59,7 @@ const RecentCollaboration = ({ id }) => {
         <OverlayLink
           type="secondary"
           to="/blog"
+          section={id}
           className="font-light text-xs uppercase flex flex-col">
             {t('shared.viewAll')}
             <span>{t('collaborationSection.collaborationCategory')}</span>
@@ -71,6 +72,7 @@ const RecentCollaboration = ({ id }) => {
           <OverlayLink
             type="secondary"
             to="/single-post"
+            section={id}
             className="font-light text-sm leading-6 uppercase border-b-2 border-white border-solid whitespace-nowrap">
               {t('shared.watchVideo')}
           </OverlayLink>

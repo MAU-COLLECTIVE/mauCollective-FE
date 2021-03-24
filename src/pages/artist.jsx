@@ -1,17 +1,20 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import PropTypes from 'prop-types'
 import BadgeNumber from 'components/shared/BadgeNumber'
 import OverlayLink from 'components/shared/OverlayLink'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 
-const Artist = () => {
+const Artist = ({ location }) => {
   const { t } = useTranslation();
+  const section = location?.state?.section;
 
   return (
     <div className="min-h-screen max-w-screen py-6 2xl:py-10 flex flex-col items-start bg-black text-white">
       <OverlayLink
         type="main"
         to="/"
+        section={section}
         className="relative mx-4 2xl:mx-10 px-6 py-4 mb-8">
           <BadgeNumber number="01" />
           <span className="block font-medium uppercase text-xs">{t('shared.close')}</span>
@@ -168,5 +171,9 @@ export const query = graphql`
     }
   }
 `;
+
+Artist.propTypes = {
+  location: PropTypes.object.isRequired
+}
 
 export default Artist

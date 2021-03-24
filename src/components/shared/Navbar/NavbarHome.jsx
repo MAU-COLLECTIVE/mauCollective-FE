@@ -4,10 +4,13 @@ import BadgeNumber from 'components/shared/BadgeNumber'
 import LanguageSwitcher from 'components/shared/LanguageSwitcher'
 import HomeContext from 'contexts/HomeContext'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
+import { useLocation } from '@reach/router'
 
 const NavComponent = ({ className }) => {
   const { t } = useTranslation();
   const ctx = useContext(HomeContext);
+  const location = useLocation();
+  const section = location?.state?.section;
 
   const toggleArtistType = () => {
     const artistSection = document.getElementById('artists')
@@ -15,41 +18,60 @@ const NavComponent = ({ className }) => {
     ctx.changeArtistType();
   }
 
+  const handleNav = (id) => {
+    const element = document.getElementById(id);
+    const offset = 0;
+    const bodyRect = document.body.getBoundingClientRect().top;
+    const elementRect = element.getBoundingClientRect().top;
+    const elementPosition = elementRect - bodyRect;
+    const offsetPosition = elementPosition - offset;
+  
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+
+  useEffect(() => {
+    if(section) handleNav(section)
+  }, [section])
+  
+
   return (
     <div className={`lg:space-x-4 ${className}`}>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="01" className="hidden lg:block" />
-        <a href="#" onClick={(e ) => { e.preventDefault(); scrollTo(0, 0); }} className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">{t('homeSection.homeCategory')}</a>
+        <button onClick={(e ) => { e.preventDefault(); scrollTo(0, 0); }} className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase focus:outline-none">{t('homeSection.homeCategory')}</button>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="02" className="hidden lg:block" />
-        <a href="#news" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">{t('newsSection.newsCategory')}</a>
+        <button onClick={() => handleNav('news')} className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase focus:outline-none">{t('newsSection.newsCategory')}</button>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="03" className="hidden lg:block" />
-        <a href="#about" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">{t('aboutSection.aboutCategory')}</a>
+        <button onClick={() => handleNav('about')} className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase focus:outline-none">{t('aboutSection.aboutCategory')}</button>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="04" className="hidden lg:block" />
-        <a href="#artists" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">{t('artistSection.artistCategory')}</a>
+        <button onClick={() => handleNav('artists')} className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase focus:outline-none">{t('artistSection.artistCategory')}</button>
         <button
           id="btn-artist-type"
-          className="absolute w-max break-words hidden font-normal text-xs tracking-widest lg:font-medium uppercase focus:outline-none"
+          className="absolute w-max break-words hidden font-normal text-xs tracking-widest lg:font-medium uppercas focus:outline-nonee focus:outline-none"
           onClick={toggleArtistType}>
           {ctx.artistType === 'slider' ? t('artistSection.artistViewAllStyle') : t('artistSection.artistShuffleStyle')}
         </button>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="05" className="hidden lg:block" />
-        <a href="#collaborations" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">{t('collaborationSection.collaborationCategory')}</a>
+        <button onClick={() => handleNav('collaborations')} className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase focus:outline-none">{t('collaborationSection.collaborationCategory')}</button>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="06" className="hidden lg:block" />
-        <a href="#events" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">{t('eventSection.eventCategory')}</a>
+        <button onClick={() => handleNav('events')} className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase focus:outline-none">{t('eventSection.eventCategory')}</button>
       </div>
       <div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
         <BadgeNumber number="07" className="hidden lg:block" />
-        <a href="#" className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase">{t('shopSection.shopCategory')}</a>
+        <button className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase focus:outline-none">{t('shopSection.shopCategory')}</button>
       </div>
     </div>
   )

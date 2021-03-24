@@ -14,6 +14,7 @@ const Recent = ({ id }) => {
         <OverlayLink
           type="secondary"
           to="/blog"
+          section={id}
           className="font-light text-xs uppercase">
             {t('shared.viewAll')+' '+t('newsSection.newsCategory')}
         </OverlayLink>
@@ -28,6 +29,7 @@ const Recent = ({ id }) => {
             <OverlayLink
               type="secondary"
               to="/single-post"
+              section={id}
               className="font-light text-sm leading-6 uppercase border-b-2 border-black border-solid whitespace-nowrap">
                 {t('shared.continueRead')}</OverlayLink>
           </div>
@@ -39,6 +41,7 @@ const Recent = ({ id }) => {
               <OverlayLink
                 type="secondary"
                 to="/blog"
+                section={id}
                 className="font-light text-xs uppercase">
                 {t('shared.viewAll')+' '+t('newsSection.newsCategory')}
               </OverlayLink>
