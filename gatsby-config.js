@@ -1,11 +1,26 @@
 const { languages, defaultLanguage } = require('./languages')
 
+require("dotenv").config({
+  path: '.env',
+})
+
 module.exports = {
   siteMetadata: {
     title: "mau-collective",
     siteUrl: "localhost:8000"
   },
   plugins: [
+    {
+      resolve: 'gatsby-source-sanity',
+      options: {
+        projectId: process.env.SANITY_PROJECT_ID,
+        dataset: process.env.SANITY_DATASET,
+        token: process.env.SANITY_TOKEN,
+        // If the Sanity GraphQL API was deployed using `--tag <name>`,
+        // use `graphqlTag` to specify the tag name. Defaults to `default`.
+        graphqlTag: 'default',
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -48,6 +63,7 @@ module.exports = {
     },
     "gatsby-plugin-transition-link",
     "gatsby-plugin-postcss",
+    "gatsby-plugin-image",
     "gatsby-plugin-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
