@@ -1,3 +1,5 @@
+const { languages, defaultLanguage } = require('./languages')
+
 module.exports = {
   siteMetadata: {
     title: "mau-collective",
@@ -15,8 +17,8 @@ module.exports = {
       resolve: `gatsby-plugin-react-i18next`,
       options: {
         localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.
-        languages: [`en`, `vn`, `jp`],
-        defaultLanguage: `en`,
+        languages,
+        defaultLanguage,
         // if you are using Helmet, you must include siteUrl, and make sure you add http:https
         siteUrl: `localhost:8000/`,
         // you can pass any i18next options
