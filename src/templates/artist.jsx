@@ -5,9 +5,33 @@ import BadgeNumber from 'components/shared/BadgeNumber'
 import OverlayLink from 'components/shared/OverlayLink'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 
-const Artist = ({ location }) => {
+export const query = graphql`
+  query ArtistPage($language: String!, $slug: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+    sanityArtist(slug: {current: {eq: $slug}}) {
+      artistName
+      description {
+        en
+        vn
+        jp
+      }
+    }
+  }
+`;
+
+const Artist = ({ pageContext, location, data }) => {
   const { t } = useTranslation();
+  const { language } = pageContext;
   const section = location?.state?.section;
+  const { sanityArtist: artist } = data;
 
   return (
     <div className="min-h-screen max-w-screen py-6 2xl:py-10 flex flex-col items-start bg-black text-white">
@@ -19,15 +43,19 @@ const Artist = ({ location }) => {
           <BadgeNumber number="01" />
           <span className="block font-medium uppercase text-xs">{t('shared.close')}</span>
       </OverlayLink>
-      <div className="flex mx-4 2xl:mx-10">
+      <div className="w-full flex px-4 2xl:px-10">
         <div className="lg:w-2/3">
           <div className="relative px-6 py-4 mb-6">
             <BadgeNumber number="02" />
-            <h1 className="block font-semibold text-3xl uppercase">Joe Karnavian</h1>
+            <h1 className="block font-semibold text-3xl uppercase">
+              {artist?.artistName}
+            </h1>
           </div>
-          <p className="px-6 font-mono xl:text-lg text-gray-300 mb-32">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad animi, assumenda nisi, quisquam molestias iste quod ratione officia aut dignissimos, adipisci hic. Ratione, distinctio? Magni optio exercitationem vel molestias suscipit.</p>
+          <p className="px-6 font-mono xl:text-lg text-gray-300 mb-32">
+            {artist?.description?.[language]}
+          </p>
           <div className="lg:hidden flex flex-1 flex-col items-center space-y-8 mb-32">
-            <img src="/img/artist.png" alt="artist" className="w-full" style={{  maxWidth: '600px' }} />
+            <img src="/img/artist.png" alt="artist" className="w-full" style={{ maxWidth: '600px' }} />
             <div className="flex space-x-2">
               <a href="#fb"><img src="/icons/fb.svg"/></a>
               <a href="#fb"><img src="/icons/ig.svg"/></a>
@@ -158,22 +186,10 @@ const Artist = ({ location }) => {
   )
 }
 
-export const query = graphql`
-  query($language: String!) {
-    locales: allLocale(filter: {language: {eq: $language}}) {
-      edges {
-        node {
-          ns
-          data
-          language
-        }
-      }
-    }
-  }
-`;
-
 Artist.propTypes = {
-  location: PropTypes.object.isRequired
+  pageContext: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  data: PropTypes.object.isRequired,
 }
 
 export default Artist

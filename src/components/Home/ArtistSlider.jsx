@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination, EffectCoverflow } from 'swiper';
 import OverlayLink from 'components/shared/OverlayLink';
@@ -7,27 +8,7 @@ import 'swiper/swiper-bundle.css';
 
 SwiperCore.use([Navigation, Pagination, EffectCoverflow]);
 
-const ArtistSlider = () => {
-  const slides = [];
-
-  for(let i = 0; i < 5; i++) {
-    slides.push(
-      <SwiperSlide key={`slide-${i}`}>
-        {({ isActive }) => (
-          <OverlayLink
-            type="secondary"
-            to="/artist"
-            section="artists"
-            className={`flex flex-col items-center space-y-6 transition-transform cursor-pointer ${!isActive && 'pointer-events-none'}`}
-          >
-            <img src="/img/artist.png" alt={`slide-${i}`} className="slide-img transition-transform" />
-            <h1 className="text-xs">Slide {i}</h1>
-          </OverlayLink>
-        )}
-      </SwiperSlide>
-    )
-  }
-
+const ArtistSlider = ({ data }) => {
   return (
     <div className="min-h-screen bg-black text-white py-28 flex items-center">
       <Swiper
@@ -55,10 +36,29 @@ const ArtistSlider = () => {
           }
         }}
       >
-        {slides}
+        {data.map(dt => (
+          <SwiperSlide key={dt._id}>
+            {({ isActive }) => (
+              <OverlayLink
+                type="secondary"
+                to={`/artist/${dt?.slug?.current}`}
+                section="artists"
+                className={`flex flex-col items-center space-y-6 transition-transform cursor-pointer ${!isActive && 'pointer-events-none'}`}
+              >
+                <img src="/img/artist.png" alt={dt?.artistName} className="slide-img transition-transform" />
+                <h1 className="text-xs">Slide {dt?.artistName}</h1>
+              </OverlayLink>
+            )}
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );
 };
+
+
+ArtistSlider.propTypes = {
+  data: PropTypes.array.isRequired,
+}
 
 export default ArtistSlider

@@ -4,9 +4,11 @@ import BadgeNumber from 'components/shared/BadgeNumber'
 import CardPost from 'components/shared/CardPost'
 import OverlayLink from 'components/shared/OverlayLink'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
+import { useI18next } from 'gatsby-plugin-react-i18next'
 
-const Recent = ({ id }) => {
+const Recent = ({ id, data }) => {
   const { t } = useTranslation();
+  const { language } = useI18next();
 
   return (
     <div id={id} className="min-h-screen bg-white px-2 lg:px-6 py-28 flex flex-col justify-center">
@@ -16,13 +18,15 @@ const Recent = ({ id }) => {
           to="/blog"
           section={id}
           className="font-light text-xs uppercase">
-            {t('shared.viewAll')+' '+t('newsSection.newsCategory')}
+            {`${t('shared.viewAll')} ${id === 'news' ? t('newsSection.newsCategory') : t('eventSection.eventCategory')}`}
         </OverlayLink>
       </div>
       <div className="flex flex-col xl:flex-row">
         <div className="relative px-2 lg:px-6 py-4 w-full xl:w-1/3">
           <BadgeNumber number="02" />
-          <h1 className="font-black text-2xl xs:text-3xl lg:text-5xl mb-8 xl:mb-28 uppercase xl:tracking-wide">MOST RECENT NEWS HEADLINE</h1>
+          <h1 className="font-black text-2xl xs:text-3xl lg:text-5xl mb-8 xl:mb-28 uppercase xl:tracking-wide">
+            {data?.[0].title?.[language]}
+          </h1>
           <div className="xl:hidden md:block w-full h-96 mb-8 xl:mb-0 bg-gray-300">Image</div>
           <div className="flex flex-col md:flex-row xl:flex-col md:space-x-8 items-start justify-start xl:space-x-0 space-y-8 md:space-y-0 xl:space-y-8">
             <p className="font-mono text-sm xs:text-lg font-light xl:font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum adipisci, voluptates excepturi molestias dolorum ducimus soluta cupiditate possimus nobis quam dicta sint illo doloremque pariatur quae, quia aut, officiis animi.</p>
@@ -43,37 +47,25 @@ const Recent = ({ id }) => {
                 to="/blog"
                 section={id}
                 className="font-light text-xs uppercase">
-                {t('shared.viewAll')+' '+t('newsSection.newsCategory')}
+                  {`${t('shared.viewAll')} ${id === 'news' ? t('newsSection.newsCategory') : t('eventSection.eventCategory')}`}
               </OverlayLink>
             </div>
-            <div className="w-full sm:w-2/3 lg:w-full grid grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 gap-x-6 gap-y-12">
-              <div>
-                <CardPost />
+            {data?.length > 0 && (
+              <div className="w-full sm:w-2/3 lg:w-full grid grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 gap-x-6 gap-y-12">
+                {data.filter((_, i) => i !== 0).map((dt, i) => {
+                  let className;
+                  if(i === 2) className = 'block sm:hidden xl:block'
+                  else if(i === 3) className = 'block sm:hidden 3xl:block'
+                  else className = '';
+                  return (
+                    <div key={dt._id} className={className}>
+                      <CardPost
+                        title={dt?.title?.[language]}
+                      />
+                    </div>
+                  )})}
               </div>
-              <div>
-                <CardPost />
-              </div>
-              <div className="block sm:hidden xl:block">
-                <CardPost />
-              </div>
-              <div className="block sm:hidden 3xl:block">
-                <CardPost />
-              </div>
-            </div>
-            {/*<div className="flex flex-wrap sm:flex-nowrap space-x-6 w-full sm:w-2/3 lg:w-full">*/}
-            {/*  <div className="w-1/2 xl:w-1/3 3xl:w-1/4">*/}
-            {/*    <CardPost />*/}
-            {/*  </div>*/}
-            {/*  <div className="w-1/2 xl:w-1/3 3xl:w-1/4">*/}
-            {/*    <CardPost />*/}
-            {/*  </div>*/}
-            {/*  <div className="block sm:hidden xl:block w-1/2 lg:w-1/3 3xl:w-1/4">*/}
-            {/*    <CardPost />*/}
-            {/*  </div>*/}
-            {/*  <div className="block sm:hidden 3xl:block w-1/2 lg:w-1/3 3xl:w-1/4">*/}
-            {/*    <CardPost />*/}
-            {/*  </div>*/}
-            {/*</div>*/}
+            )}
           </div>
         </div>
       </div>
@@ -82,7 +74,8 @@ const Recent = ({ id }) => {
 };
 
 Recent.propTypes = {
-  id: PropTypes.string
+  id: PropTypes.string,
+  data: PropTypes.array.isRequired,
 }
 
 export default Recent
