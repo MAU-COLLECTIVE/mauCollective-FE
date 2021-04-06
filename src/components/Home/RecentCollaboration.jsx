@@ -3,21 +3,9 @@ import PropTypes from 'prop-types'
 import { TweenLite } from 'gsap/all'
 import OverlayLink from 'components/shared/OverlayLink'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
-
-const data = [
-  {
-    id: 1,
-    title: 'AVRIL OMO WITH RHYMASTIC & SUBOI IN TET HOLIDAY CAMPAIGN.',
-    desc: 'Avril Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum adipisci, voluptates excepturi molestias dolorum ducimus soluta cupiditate possimus nobis quam dicta sint illo doloremque pariatur quae, quia aut, officiis animi.',
-    img: '/img/avril.jpg'
-  },
-  {
-    id: 2,
-    title: 'OMO WITH RHYMASTIC & SUBOI IN TET HOLIDAY CAMPAIGN.',
-    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum adipisci, voluptates excepturi molestias dolorum ducimus soluta cupiditate possimus nobis quam dicta sint illo doloremque pariatur quae, quia aut, officiis animi.',
-    img: '/img/collab.png'
-  }
-]
+import { useI18next } from 'gatsby-plugin-react-i18next'
+import { GatsbyImage } from 'gatsby-plugin-image'
+import { getGatsbyImage } from 'components/helper'
 
 function usePrevious(value) {
   const ref = useRef();
@@ -27,8 +15,9 @@ function usePrevious(value) {
   return ref.current;
 }
 
-const RecentCollaboration = ({ id }) => {
+const RecentCollaboration = ({ id, data }) => {
   const { t } = useTranslation();
+  const { language } = useI18next();
   const [currentIndex, setCurrentIndex] = useState(0);
   const prevCurrentIndex = usePrevious(currentIndex);
   const imgRef = useRef([]);
@@ -48,17 +37,21 @@ const RecentCollaboration = ({ id }) => {
   return (
     <div id={id} className="min-h-screen relative px-2 lg:px-6 py-28 flex flex-col justify-between text-gray-200">
       {data.map((dt, index) => (
-        <img
-          key={dt.id}
-          className="absolute w-full h-full object-cover -mx-2 lg:-mx-6 -my-28 z-0 transition-all invisible"
+        <div
+          className="absolute w-full h-full -mx-2 lg:-mx-6 -my-28 z-0 transition-all invisible"
           style={{ filter: 'brightness(75%)' }}
-          src={dt?.img}
-          ref={elm => imgRef.current[index] = elm} />
+          key={index} ref={elm => imgRef.current[index] = elm}>
+          <GatsbyImage
+            className="w-full h-full object-cover"
+            image={getGatsbyImage(dt?.mainImage?.asset?.id, {maxWidth: 1920})}  
+            alt={`Image of ${data?.[0].title?.[language]}`}
+          />
+        </div>
       ))}
       <div className="text-right px-2 lg:px-6 mb-4 z-10">
         <OverlayLink
           type="secondary"
-          to="/blog"
+          to="/blog/collaborations"
           section={id}
           className="font-light text-xs uppercase flex flex-col">
             {t('shared.viewAll')}
@@ -67,13 +60,15 @@ const RecentCollaboration = ({ id }) => {
       </div>
       <div className="flex flex-col lg:flex-row px-2 lg:px-6 z-10 flex-1 items-center">
         <div className="relative w-full lg:w-1/2 xl:w-1/3">
-          <h1 className="font-black text-2xl xs:text-3xl lg:text-5xl mb-8 xl:mb-28 uppercase xl:tracking-wide">{data?.[currentIndex]?.title}</h1>
-          <p className="font-mono xl:text-lg mb-8">{data?.[currentIndex]?.desc}</p>
+          <h1 className="font-black text-2xl xs:text-3xl lg:text-5xl mb-8 xl:mb-28 uppercase xl:tracking-wide">{data?.[currentIndex]?.title?.[language]}</h1>
+          <p className="font-mono xl:text-lg mb-8">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, tempore mollitia. Eligendi, eum amet aperiam voluptas eveniet voluptate saepe aspernatur facere nisi perspiciatis dolor vitae, totam, neque quam facilis illum.
+          </p>
           <OverlayLink
             type="secondary"
-            to="/single-post"
+            to={`/blog/${data?.[0]?.slug?.current}`}
             section={id}
-            className="font-light text-sm leading-6 uppercase border-b-2 border-white border-solid whitespace-nowrap">
+            className="font-light text-sm leading-6 uppercase border-b-2 border-white border-solid whitespace-nowrap hover:text-gray-300 hover:border-gray-300 transition-colors">
               {t('shared.watchVideo')}
           </OverlayLink>
         </div>
@@ -87,7 +82,8 @@ const RecentCollaboration = ({ id }) => {
 }
 
 RecentCollaboration.propTypes = {
-  id: PropTypes.string
+  id: PropTypes.string,
+  data: PropTypes.array.isRequired,
 }
 
 export default RecentCollaboration

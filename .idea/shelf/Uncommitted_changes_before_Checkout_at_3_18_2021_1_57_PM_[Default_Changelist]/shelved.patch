@@ -1,0 +1,772 @@
+Index: src/pages/single-post.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react'\r\nimport { graphql } from 'gatsby'\r\nimport BadgeNumber from 'components/shared/BadgeNumber'\r\nimport CardPost from 'components/shared/CardPost'\r\nimport OverlayLink from 'components/shared/OverlayLink'\r\nimport { useTranslation } from 'gatsby-plugin-react-i18next'\r\n\r\nconst SinglePost = () => {\r\n  const { t } = useTranslation();\r\n\r\n\treturn (\r\n    <div className=\"min-h-screen max-w-screen bg-white py-6 2xl:py-10 flex flex-col items-start\">\r\n      <OverlayLink\r\n        type=\"main\"\r\n        to=\"/\"\r\n        className=\"relative mx-4 2xl:mx-10 px-6 py-4\">\r\n          <BadgeNumber number=\"01\" />\r\n          <span className=\"block font-medium uppercase text-xs\">{t('shared.close')}</span>\r\n      </OverlayLink>\r\n      <div className=\"flex flex-col items-center w-full space-y-12\">\r\n        <h1 className=\"font-black text-2xl sm:text-3xl md:text-4xl xl:text-5xl uppercase tracking-wide px-6 2xl:px-0 w-full 2xl:w-2/3 text-center\">MOST RECENT NEWS HEADLINE</h1>\r\n        <ul className=\"text-xs font-light font-mono flex flex-col items-center\">\r\n          <li className=\"tracking-wide\">\r\n            <span className=\"uppercase mr-2 tracking-wider\">Text:</span>\r\n            Jenna Wortham\r\n          </li>\r\n          <li className=\"tracking-wide\">\r\n            <span className=\"uppercase mr-2 tracking-wider\">Photography:</span>\r\n            Jenna Wortham\r\n          </li>\r\n          <li className=\"tracking-wide\">\r\n            <span className=\"uppercase mr-2 tracking-wider\">Date:</span>\r\n            19.01.2021\r\n          </li>\r\n        </ul>\r\n        <div className=\"flex flex-col\">\r\n          <img src=\"/img/avril.jpg\" alt=\"img-banner\" className=\"w-full mb-4\" />\r\n          <span className=\"mx-6 2xl:mx-16 font-light self-start font-mono text-sm\">This is the largest CMA Awards tally the label group has achieved since 2006. SMN scores seven out of the 11 possible categories. </span>\r\n        </div>\r\n        <div className=\"w-full px-6 2xl:w-1/2 font-mono space-y-12 text-xl sm:text-2xl md:text-3xl\">\r\n          <p className=\"font-mono text-gray-800 text-justify\" style={{ textIndent: \"3rem\" }}>\r\n            This is the largest CMA Awards tally the label group has achieved since 2006. SMN scores seven out of the 11 possible categories. Most-awarded of the evening, Maren Morris took home trophies for Female Vocalist of the Year as well as Single. There are clothes that need to be held before wearing understood on an animal and mineral level. This does not include the purple sweatpants I slither into each morning, hoping to avoid as much friction possible. I am not alone in this small surrender: 2020 has cued a surge in the sweatpant market share, with brands creating entire taxonomies of buttery separates that offer an illusion of vast selection. Designed to disappear with the body, this is a link help us become invisible to ourselves. I feel the sharpness of this <a href=\"#link\" className=\"text-gray-400 opacity-75 hover:underline\">this link</a> knowledge while clicking through the UK-based Chopova Lowena’s lookbooks. What would it feel like to hold that pleated skirt in my arms? To negotiate its weight on my body? \r\n          </p>\r\n          <p className=\"font-mono text-gray-800 text-justify\" style={{ textIndent: \"3rem\" }}>\r\n            Perhaps this is the occult draw of the formidable and handmade: clothes meant to be seen and felt. Chopova Lowena’s two halves comprise Emma Chopova and Laura Lowena, who formed the label while completing their joint MA at London’s Central Saint Martins in 2017, from which they launched five (soon to be six) collections.\r\n          </p>\r\n          <p className=\"font-mono text-gray-800 text-justify\" style={{ textIndent: \"3rem\" }}>\r\n            They’ve since staged a campaign starring Britain’s Equestrian Vaulting Team, won the first ever jointly-awarded LVMH Prize, and were worn this year by the likes of (shirtless) Harry Styles in Vogue and Michaela Coel in The Wall Street Journal. Chopova, who was born in Bulgaria but moved to the U.S. when she was 7, met the English Lowena (her family bred Cavalier King Charles spaniels), at Please click me, where a mutual love of skirts drew them together, as skirts will on the first day of fashion school. Skirts have since become a staple and something of a phenomenon within their collaboration, a plaiting of their vintage Eastern European-meets-sportswear aesthetic that sits at the very centre of the body. To misquote The Dude, they really tie the looks together.\r\n          </p>\r\n          <div className=\"flex flex-col\">\r\n            <img src=\"/img/avril.jpg\" alt=\"img-banner\" className=\"w-full\" />\r\n            <span className=\"mx-8 mt-2 font-light font-mono text-base\">This is the largest CMA Awards tally the label group has achieved since 2006.</span>\r\n          </div>\r\n          <p className=\"font-mono text-gray-800 text-justify\" style={{ textIndent: \"3rem\" }}>\r\n            This is the largest CMA Awards tally the label group has achieved since 2006. SMN scores seven out of the 11 possible categories. Most-awarded of the evening, Maren Morris took home trophies for Female Vocalist of the Year as well as Single. There are clothes that need to be held before wearing understood on an animal and mineral level. This does not include the purple sweatpants I slither into each morning, hoping to avoid as much friction possible. I am not alone in this small surrender: 2020 has cued a surge in the sweatpant market share, with brands creating entire taxonomies of buttery separates that offer an illusion of vast selection. Designed to disappear with the body, this is a link help us become invisible to ourselves. I feel the sharpness of this knowledge while clicking through the UK-based Chopova Lowena’s lookbooks. What would it feel like to hold that pleated skirt in my arms? To negotiate its weight on my body? \r\n          </p>\r\n          <p className=\"font-mono text-gray-800 text-justify\" style={{ textIndent: \"3rem\" }}>\r\n            Perhaps this is the occult draw of the formidable and handmade: clothes meant to be seen and felt. Chopova Lowena’s two halves comprise Emma Chopova and Laura Lowena, who formed the label while completing their joint MA at London’s Central Saint Martins in 2017, from which they launched five (soon to be six) collections.\r\n          </p>\r\n          <p className=\"font-mono text-gray-800 text-justify\" style={{ textIndent: \"3rem\" }}>\r\n            They’ve since staged a campaign starring Britain’s Equestrian Vaulting Team, won the first ever jointly-awarded LVMH Prize, and were worn this year by the likes of (shirtless) Harry Styles in Vogue and Michaela Coel in The Wall Street Journal. Chopova, who was born in Bulgaria but moved to the U.S. when she was 7, met the English Lowena (her family bred Cavalier King Charles spaniels), at Please click me, where a mutual love of skirts drew them together, as skirts will on the first day of fashion school. Skirts have since become a staple and something of a phenomenon within their collaboration, a plaiting of their vintage Eastern European-meets-sportswear aesthetic that sits at the very centre of the body. To misquote The Dude, they really tie the looks together.\r\n          </p>\r\n        </div>\r\n        <div className=\"flex flex-col\">\r\n          <img src=\"/img/avril.jpg\" alt=\"img-banner\" className=\"w-full mb-4\" />\r\n          <span className=\"mx-6 2xl:mx-16 font-light self-start font-mono text-sm\">This is the largest CMA Awards tally the label group has achieved since 2006. SMN scores seven out of the 11 possible categories. </span>\r\n        </div>\r\n        <ul className=\"text-xs font-light font-mono flex flex-col self-start mx-6 2xl:mx-16\">\r\n          <li className=\"tracking-wide\">\r\n            <span className=\"uppercase mr-2 tracking-wider\">Text:</span>\r\n            Jenna Wortham\r\n          </li>\r\n          <li className=\"tracking-wide\">\r\n            <span className=\"uppercase mr-2 tracking-wider\">Photography:</span>\r\n            Jenna Wortham\r\n          </li>\r\n          <li className=\"tracking-wide\">\r\n            <span className=\"uppercase mr-2 tracking-wider\">Date:</span>\r\n            19.01.2021\r\n          </li>\r\n        </ul>\r\n        <div className=\"flex flex-wrap px-6 2xl:px-16 w-full flex-col md:flex-row space-y-4 2xl:space-y-0\">\r\n          <div className=\"w-full text-right md:mb-4 hidden md:block\">\r\n            <a href=\"#view-all-news\" className=\"font-light text-sm uppercase\">{t('shared.viewAll')+' '+t('newsSection.newsCategory')}</a>\r\n          </div>\r\n          <div className=\"w-full md:w-1/3\">\r\n            <h2 className=\"font-black text-2xl sm:text-3xl md:text-4xl xl:text-5xl mb-8 xl:mb-16 uppercase tracking-wide\">{t('shared.nextStory')}</h2>\r\n          </div>\r\n          <div className=\"w-full text-right md:mb-4 md:hidden\">\r\n            <a href=\"#view-all-news\" className=\"font-light text-sm uppercase\">{t('shared.viewAll')+' '+t('newsSection.newsCategory')}</a>\r\n          </div>\r\n          <div className=\"flex-1 flex space-x-6\">\r\n            <div className=\"w-1/2 2xl:w-1/3\">\r\n              <CardPost />\r\n            </div>\r\n            <div className=\"w-1/2 2xl:w-1/3\">\r\n              <CardPost />\r\n            </div>\r\n            <div className=\"hidden 2xl:block 2xl:w-1/3\">\r\n              <CardPost />\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\t  </div>\r\n\t)\r\n}\r\n\r\nexport const query = graphql`\r\n  query($language: String!) {\r\n    locales: allLocale(filter: {language: {eq: $language}}) {\r\n      edges {\r\n        node {\r\n          ns\r\n          data\r\n          language\r\n        }\r\n      }\r\n    }\r\n  }\r\n`;\r\n\r\nexport default SinglePost
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/pages/single-post.jsx b/src/pages/single-post.jsx
+--- a/src/pages/single-post.jsx	
++++ b/src/pages/single-post.jsx	
+@@ -18,7 +18,7 @@
+           <span className="block font-medium uppercase text-xs">{t('shared.close')}</span>
+       </OverlayLink>
+       <div className="flex flex-col items-center w-full space-y-12">
+-        <h1 className="font-black text-2xl sm:text-3xl md:text-4xl xl:text-5xl uppercase tracking-wide px-6 2xl:px-0 w-full 2xl:w-2/3 text-center">MOST RECENT NEWS HEADLINE</h1>
++        <h1 className="font-black text-2xl md:text-3xl xl:text-5xl uppercase tracking-wide px-6 2xl:px-0 w-full 2xl:w-2/3 text-center">MOST RECENT NEWS HEADLINE</h1>
+         <ul className="text-xs font-light font-mono flex flex-col items-center">
+           <li className="tracking-wide">
+             <span className="uppercase mr-2 tracking-wider">Text:</span>
+@@ -84,7 +84,7 @@
+             <a href="#view-all-news" className="font-light text-sm uppercase">{t('shared.viewAll')+' '+t('newsSection.newsCategory')}</a>
+           </div>
+           <div className="w-full md:w-1/3">
+-            <h2 className="font-black text-2xl sm:text-3xl md:text-4xl xl:text-5xl mb-8 xl:mb-16 uppercase tracking-wide">{t('shared.nextStory')}</h2>
++            <h2 className="font-black text-2xl md:text-3xl xl:text-5xl mb-8 xl:mb-16 uppercase tracking-wide">{t('shared.nextStory')}</h2>
+           </div>
+           <div className="w-full text-right md:mb-4 md:hidden">
+             <a href="#view-all-news" className="font-light text-sm uppercase">{t('shared.viewAll')+' '+t('newsSection.newsCategory')}</a>
+Index: src/components/shared/BadgeNumber/BadgeNumber.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react'\r\nimport PropTypes from 'prop-types'\r\n\r\nconst BadgeNumber = ({ number, className }) => (\r\n  <span className={`absolute text-xs left-0 top-0 font-light ${className}`}>{number}</span>\r\n)\r\n\r\nBadgeNumber.propTypes = {\r\n  number: PropTypes.string.isRequired,\r\n  className: PropTypes.string\r\n}\r\n\r\nexport default BadgeNumber
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/shared/BadgeNumber/BadgeNumber.jsx b/src/components/shared/BadgeNumber/BadgeNumber.jsx
+--- a/src/components/shared/BadgeNumber/BadgeNumber.jsx	
++++ b/src/components/shared/BadgeNumber/BadgeNumber.jsx	
+@@ -2,7 +2,7 @@
+ import PropTypes from 'prop-types'
+ 
+ const BadgeNumber = ({ number, className }) => (
+-  <span className={`absolute text-xs left-0 top-0 font-light ${className}`}>{number}</span>
++  <span className={`absolute text-xss left-1 top-1 font-light ${className}`}>{number}</span>
+ )
+ 
+ BadgeNumber.propTypes = {
+Index: src/pages/blog.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react'\r\nimport { graphql } from 'gatsby'\r\n\r\nimport BlogLayout from 'layouts/BlogLayout'\r\nimport CardPost from 'components/shared/CardPost'\r\n\r\nconst BlogPage = () => {\r\n  return (\r\n    <BlogLayout title=\"NEWS JG\">\r\n      <div className=\"flex flex-col\">\r\n        <h1 className=\"hidden lg:block font-black text-2xl sm:text-3xl md:text-4xl xl:text-5xl mb-8 xl:mb-16 uppercase tracking-wide\">NEWS</h1>\r\n        <div className=\"grid grid-cols-2 2xl:grid-cols-3 3xl:grid-cols-4 gap-x-6 gap-y-12\">\r\n          <CardPost />\r\n          <CardPost />\r\n          <CardPost />\r\n          <CardPost />\r\n        </div>\r\n      </div>\r\n    </BlogLayout>\r\n  )\r\n}\r\n\r\nexport const query = graphql`\r\n  query($language: String!) {\r\n    locales: allLocale(filter: {language: {eq: $language}}) {\r\n      edges {\r\n        node {\r\n          ns\r\n          data\r\n          language\r\n        }\r\n      }\r\n    }\r\n  }\r\n`;\r\n\r\nexport default BlogPage
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/pages/blog.jsx b/src/pages/blog.jsx
+--- a/src/pages/blog.jsx	
++++ b/src/pages/blog.jsx	
+@@ -8,7 +8,7 @@
+   return (
+     <BlogLayout title="NEWS JG">
+       <div className="flex flex-col">
+-        <h1 className="hidden lg:block font-black text-2xl sm:text-3xl md:text-4xl xl:text-5xl mb-8 xl:mb-16 uppercase tracking-wide">NEWS</h1>
++        <h1 className="hidden lg:block font-black text-2xl md:text-3xl xl:text-5xl mb-8 xl:mb-16 uppercase tracking-wide">NEWS</h1>
+         <div className="grid grid-cols-2 2xl:grid-cols-3 3xl:grid-cols-4 gap-x-6 gap-y-12">
+           <CardPost />
+           <CardPost />
+Index: package-lock.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/package-lock.json b/package-lock.json
+--- a/package-lock.json	
++++ b/package-lock.json	
+@@ -2717,6 +2717,27 @@
+       "resolved": "https://registry.npmjs.org/address/-/address-1.1.2.tgz",
+       "integrity": "sha512-aT6camzM4xEA54YVJYSqxz1kv4IHnQZRtThJJHhUMRExaU5spC7jX5ugSwTaTgJliIgs4VhZOk7htClvQ/LmRA=="
+     },
++    "adjust-sourcemap-loader": {
++      "version": "3.0.0",
++      "resolved": "https://registry.npmjs.org/adjust-sourcemap-loader/-/adjust-sourcemap-loader-3.0.0.tgz",
++      "integrity": "sha512-YBrGyT2/uVQ/c6Rr+t6ZJXniY03YtHGMJQYal368burRGYKqhx9qGTWqcBU5s1CwYY9E/ri63RYyG1IacMZtqw==",
++      "requires": {
++        "loader-utils": "^2.0.0",
++        "regex-parser": "^2.2.11"
++      },
++      "dependencies": {
++        "loader-utils": {
++          "version": "2.0.0",
++          "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.0.tgz",
++          "integrity": "sha512-rP4F0h2RaWSvPEkD7BLDFQnvSf+nK+wr3ESUjNTyAGobqrijmW92zc+SO6d4p4B1wh7+B/Jg1mkQe5NYUEHtHQ==",
++          "requires": {
++            "big.js": "^5.2.2",
++            "emojis-list": "^3.0.0",
++            "json5": "^2.1.2"
++          }
++        }
++      }
++    },
+     "after": {
+       "version": "0.8.2",
+       "resolved": "https://registry.npmjs.org/after/-/after-0.8.2.tgz",
+@@ -2919,6 +2940,11 @@
+         "@babel/runtime-corejs3": "^7.10.2"
+       }
+     },
++    "arity-n": {
++      "version": "1.0.4",
++      "resolved": "https://registry.npmjs.org/arity-n/-/arity-n-1.0.4.tgz",
++      "integrity": "sha1-2edrEXM+CFacCEeuezmyhgswt0U="
++    },
+     "arr-diff": {
+       "version": "4.0.0",
+       "resolved": "https://registry.npmjs.org/arr-diff/-/arr-diff-4.0.0.tgz",
+@@ -5034,6 +5060,14 @@
+       "resolved": "https://registry.npmjs.org/component-inherit/-/component-inherit-0.0.3.tgz",
+       "integrity": "sha1-ZF/ErfWLcrZJ1crmUTVhnbJv8UM="
+     },
++    "compose-function": {
++      "version": "3.0.3",
++      "resolved": "https://registry.npmjs.org/compose-function/-/compose-function-3.0.3.tgz",
++      "integrity": "sha1-ntZ18TzFRQHTCVCkhv9qe6OrGF8=",
++      "requires": {
++        "arity-n": "^1.0.4"
++      }
++    },
+     "compressible": {
+       "version": "2.0.18",
+       "resolved": "https://registry.npmjs.org/compressible/-/compressible-2.0.18.tgz",
+@@ -5475,6 +5509,24 @@
+       "resolved": "https://registry.npmjs.org/crypto-random-string/-/crypto-random-string-2.0.0.tgz",
+       "integrity": "sha512-v1plID3y9r/lPhviJ1wrXpLeyUIGAZ2SHNYTEapm7/8A9nLPoyvVp3RK/EPFqn5kEznyWgYZNsRtYYIWbuG8KA=="
+     },
++    "css": {
++      "version": "2.2.4",
++      "resolved": "https://registry.npmjs.org/css/-/css-2.2.4.tgz",
++      "integrity": "sha512-oUnjmWpy0niI3x/mPL8dVEI1l7MnG3+HHyRPHf+YFSbK+svOhXpmSOcDURUh2aOCgl2grzrOPt1nHLuCVFULLw==",
++      "requires": {
++        "inherits": "^2.0.3",
++        "source-map": "^0.6.1",
++        "source-map-resolve": "^0.5.2",
++        "urix": "^0.1.0"
++      },
++      "dependencies": {
++        "source-map": {
++          "version": "0.6.1",
++          "resolved": "https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz",
++          "integrity": "sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g=="
++        }
++      }
++    },
+     "css-blank-pseudo": {
+       "version": "0.1.4",
+       "resolved": "https://registry.npmjs.org/css-blank-pseudo/-/css-blank-pseudo-0.1.4.tgz",
+@@ -6779,6 +6831,14 @@
+       "resolved": "https://registry.npmjs.org/dom-walk/-/dom-walk-0.1.2.tgz",
+       "integrity": "sha512-6QvTW9mrGeIegrFXdtQi9pk7O/nSK6lSdXW2eqUspN5LWD7UTji2Fqw5V2YLjBpHEoU9Xl/eUWNpDeZvoyOv2w=="
+     },
++    "dom7": {
++      "version": "3.0.0",
++      "resolved": "https://registry.npmjs.org/dom7/-/dom7-3.0.0.tgz",
++      "integrity": "sha512-oNlcUdHsC4zb7Msx7JN3K0Nro1dzJ48knvBOnDPKJ2GV9wl1i5vydJZUSyOfrkKFDZEud/jBsTk92S/VGSAe/g==",
++      "requires": {
++        "ssr-window": "^3.0.0-alpha.1"
++      }
++    },
+     "domain-browser": {
+       "version": "1.2.0",
+       "resolved": "https://registry.npmjs.org/domain-browser/-/domain-browser-1.2.0.tgz",
+@@ -9628,6 +9688,16 @@
+         }
+       }
+     },
++    "gatsby-plugin-sass": {
++      "version": "4.1.0",
++      "resolved": "https://registry.npmjs.org/gatsby-plugin-sass/-/gatsby-plugin-sass-4.1.0.tgz",
++      "integrity": "sha512-lVm+DGSkAIM2APosbaBqi9OlS5YP1bXVmA2MXJqGdIrb/x9FkrN3psFjiTIuBob2YesAgeQV2OJtJefGGAf4bQ==",
++      "requires": {
++        "@babel/runtime": "^7.12.5",
++        "resolve-url-loader": "^3.1.2",
++        "sass-loader": "^10.1.1"
++      }
++    },
+     "gatsby-plugin-sharp": {
+       "version": "2.14.1",
+       "resolved": "https://registry.npmjs.org/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.14.1.tgz",
+@@ -19319,6 +19389,11 @@
+         "safe-regex": "^1.1.0"
+       }
+     },
++    "regex-parser": {
++      "version": "2.2.11",
++      "resolved": "https://registry.npmjs.org/regex-parser/-/regex-parser-2.2.11.tgz",
++      "integrity": "sha512-jbD/FT0+9MBU2XAZluI7w2OBs1RBi6p9M83nkoZayQXXU9e8Robt69FcZc7wU4eJD/YFTjn1JdCk3rbMJajz8Q=="
++    },
+     "regexp.prototype.flags": {
+       "version": "1.3.1",
+       "resolved": "https://registry.npmjs.org/regexp.prototype.flags/-/regexp.prototype.flags-1.3.1.tgz",
+@@ -19662,6 +19737,91 @@
+       "resolved": "https://registry.npmjs.org/resolve-url/-/resolve-url-0.2.1.tgz",
+       "integrity": "sha1-LGN/53yJOv0qZj/iGqkIAGjiBSo="
+     },
++    "resolve-url-loader": {
++      "version": "3.1.2",
++      "resolved": "https://registry.npmjs.org/resolve-url-loader/-/resolve-url-loader-3.1.2.tgz",
++      "integrity": "sha512-QEb4A76c8Mi7I3xNKXlRKQSlLBwjUV/ULFMP+G7n3/7tJZ8MG5wsZ3ucxP1Jz8Vevn6fnJsxDx9cIls+utGzPQ==",
++      "requires": {
++        "adjust-sourcemap-loader": "3.0.0",
++        "camelcase": "5.3.1",
++        "compose-function": "3.0.3",
++        "convert-source-map": "1.7.0",
++        "es6-iterator": "2.0.3",
++        "loader-utils": "1.2.3",
++        "postcss": "7.0.21",
++        "rework": "1.0.1",
++        "rework-visit": "1.0.0",
++        "source-map": "0.6.1"
++      },
++      "dependencies": {
++        "chalk": {
++          "version": "2.4.2",
++          "resolved": "https://registry.npmjs.org/chalk/-/chalk-2.4.2.tgz",
++          "integrity": "sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==",
++          "requires": {
++            "ansi-styles": "^3.2.1",
++            "escape-string-regexp": "^1.0.5",
++            "supports-color": "^5.3.0"
++          },
++          "dependencies": {
++            "supports-color": {
++              "version": "5.5.0",
++              "resolved": "https://registry.npmjs.org/supports-color/-/supports-color-5.5.0.tgz",
++              "integrity": "sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==",
++              "requires": {
++                "has-flag": "^3.0.0"
++              }
++            }
++          }
++        },
++        "emojis-list": {
++          "version": "2.1.0",
++          "resolved": "https://registry.npmjs.org/emojis-list/-/emojis-list-2.1.0.tgz",
++          "integrity": "sha1-TapNnbAPmBmIDHn6RXrlsJof04k="
++        },
++        "json5": {
++          "version": "1.0.1",
++          "resolved": "https://registry.npmjs.org/json5/-/json5-1.0.1.tgz",
++          "integrity": "sha512-aKS4WQjPenRxiQsC93MNfjx+nbF4PAdYzmd/1JIj8HYzqfbu86beTuNgXDzPknWk0n0uARlyewZo4s++ES36Ow==",
++          "requires": {
++            "minimist": "^1.2.0"
++          }
++        },
++        "loader-utils": {
++          "version": "1.2.3",
++          "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-1.2.3.tgz",
++          "integrity": "sha512-fkpz8ejdnEMG3s37wGL07iSBDg99O9D5yflE9RGNH3hRdx9SOwYfnGYdZOUIZitN8E+E2vkq3MUMYMvPYl5ZZA==",
++          "requires": {
++            "big.js": "^5.2.2",
++            "emojis-list": "^2.0.0",
++            "json5": "^1.0.1"
++          }
++        },
++        "postcss": {
++          "version": "7.0.21",
++          "resolved": "https://registry.npmjs.org/postcss/-/postcss-7.0.21.tgz",
++          "integrity": "sha512-uIFtJElxJo29QC753JzhidoAhvp/e/Exezkdhfmt8AymWT6/5B7W1WmponYWkHk2eg6sONyTch0A3nkMPun3SQ==",
++          "requires": {
++            "chalk": "^2.4.2",
++            "source-map": "^0.6.1",
++            "supports-color": "^6.1.0"
++          }
++        },
++        "source-map": {
++          "version": "0.6.1",
++          "resolved": "https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz",
++          "integrity": "sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g=="
++        },
++        "supports-color": {
++          "version": "6.1.0",
++          "resolved": "https://registry.npmjs.org/supports-color/-/supports-color-6.1.0.tgz",
++          "integrity": "sha512-qe1jfm1Mg7Nq/NSh6XE24gPXROEVsWHxC1LIx//XNlD9iw7YZQGjZNjYN7xGaEG6iKdA8EtNFW6R0gjnVXp+wQ==",
++          "requires": {
++            "has-flag": "^3.0.0"
++          }
++        }
++      }
++    },
+     "responselike": {
+       "version": "1.0.2",
+       "resolved": "https://registry.npmjs.org/responselike/-/responselike-1.0.2.tgz",
+@@ -19694,6 +19854,27 @@
+       "resolved": "https://registry.npmjs.org/reusify/-/reusify-1.0.4.tgz",
+       "integrity": "sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw=="
+     },
++    "rework": {
++      "version": "1.0.1",
++      "resolved": "https://registry.npmjs.org/rework/-/rework-1.0.1.tgz",
++      "integrity": "sha1-MIBqhBNCtUUQqkEQhQzUhTQUSqc=",
++      "requires": {
++        "convert-source-map": "^0.3.3",
++        "css": "^2.0.0"
++      },
++      "dependencies": {
++        "convert-source-map": {
++          "version": "0.3.5",
++          "resolved": "https://registry.npmjs.org/convert-source-map/-/convert-source-map-0.3.5.tgz",
++          "integrity": "sha1-8dgClQr33SYxof6+BZZVDIarMZA="
++        }
++      }
++    },
++    "rework-visit": {
++      "version": "1.0.0",
++      "resolved": "https://registry.npmjs.org/rework-visit/-/rework-visit-1.0.0.tgz",
++      "integrity": "sha1-mUWygD8hni96ygCtuLyfZA+ELJo="
++    },
+     "rgb-regex": {
+       "version": "1.0.1",
+       "resolved": "https://registry.npmjs.org/rgb-regex/-/rgb-regex-1.0.1.tgz",
+@@ -19781,6 +19962,48 @@
+       "resolved": "https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz",
+       "integrity": "sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg=="
+     },
++    "sass": {
++      "version": "1.32.8",
++      "resolved": "https://registry.npmjs.org/sass/-/sass-1.32.8.tgz",
++      "integrity": "sha512-Sl6mIeGpzjIUZqvKnKETfMf0iDAswD9TNlv13A7aAF3XZlRPMq4VvJWBC2N2DXbp94MQVdNSFG6LfF/iOXrPHQ==",
++      "requires": {
++        "chokidar": ">=2.0.0 <4.0.0"
++      }
++    },
++    "sass-loader": {
++      "version": "10.1.1",
++      "resolved": "https://registry.npmjs.org/sass-loader/-/sass-loader-10.1.1.tgz",
++      "integrity": "sha512-W6gVDXAd5hR/WHsPicvZdjAWHBcEJ44UahgxcIE196fW2ong0ZHMPO1kZuI5q0VlvMQZh32gpv69PLWQm70qrw==",
++      "requires": {
++        "klona": "^2.0.4",
++        "loader-utils": "^2.0.0",
++        "neo-async": "^2.6.2",
++        "schema-utils": "^3.0.0",
++        "semver": "^7.3.2"
++      },
++      "dependencies": {
++        "loader-utils": {
++          "version": "2.0.0",
++          "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-2.0.0.tgz",
++          "integrity": "sha512-rP4F0h2RaWSvPEkD7BLDFQnvSf+nK+wr3ESUjNTyAGobqrijmW92zc+SO6d4p4B1wh7+B/Jg1mkQe5NYUEHtHQ==",
++          "requires": {
++            "big.js": "^5.2.2",
++            "emojis-list": "^3.0.0",
++            "json5": "^2.1.2"
++          }
++        },
++        "schema-utils": {
++          "version": "3.0.0",
++          "resolved": "https://registry.npmjs.org/schema-utils/-/schema-utils-3.0.0.tgz",
++          "integrity": "sha512-6D82/xSzO094ajanoOSbe4YvXWMfn2A//8Y1+MUqFAJul5Bs+yn36xbK9OtNDcRVSBJ9jjeoXftM6CfztsjOAA==",
++          "requires": {
++            "@types/json-schema": "^7.0.6",
++            "ajv": "^6.12.5",
++            "ajv-keywords": "^3.5.2"
++          }
++        }
++      }
++    },
+     "sax": {
+       "version": "1.2.4",
+       "resolved": "https://registry.npmjs.org/sax/-/sax-1.2.4.tgz",
+@@ -20770,6 +20993,11 @@
+       "resolved": "https://registry.npmjs.org/sse-z/-/sse-z-0.3.0.tgz",
+       "integrity": "sha512-jfcXynl9oAOS9YJ7iqS2JMUEHOlvrRAD+54CENiWnc4xsuVLQVSgmwf7cwOTcBd/uq3XkQKBGojgvEtVXcJ/8w=="
+     },
++    "ssr-window": {
++      "version": "3.0.0",
++      "resolved": "https://registry.npmjs.org/ssr-window/-/ssr-window-3.0.0.tgz",
++      "integrity": "sha512-q+8UfWDg9Itrg0yWK7oe5p/XRCJpJF9OBtXfOPgSJl+u3Xd5KI328RUEvUqSMVM9CiQUEf1QdBzJMkYGErj9QA=="
++    },
+     "ssri": {
+       "version": "7.1.0",
+       "resolved": "https://registry.npmjs.org/ssri/-/ssri-7.1.0.tgz",
+@@ -21339,6 +21567,15 @@
+         }
+       }
+     },
++    "swiper": {
++      "version": "6.5.0",
++      "resolved": "https://registry.npmjs.org/swiper/-/swiper-6.5.0.tgz",
++      "integrity": "sha512-cSx1SpfgrHlgwku++3Ce3cjPBpXgB7P+bGik5S3+F+j6ID0NUeV6qtmedFdr3C8jXR/W+TJPVNIT9fH/cwVAiA==",
++      "requires": {
++        "dom7": "^3.0.0",
++        "ssr-window": "^3.0.0"
++      }
++    },
+     "symbol-observable": {
+       "version": "1.2.0",
+       "resolved": "https://registry.npmjs.org/symbol-observable/-/symbol-observable-1.2.0.tgz",
+Index: src/components/Home/About.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react'\r\nimport PropTypes from 'prop-types'\r\nimport BadgeNumber from 'components/shared/BadgeNumber'\r\nimport { useTranslation } from 'gatsby-plugin-react-i18next'\r\n\r\nconst About = ({ id }) => {\r\n  const { t } = useTranslation();\r\n\r\n  return (\r\n    <div id={id} className=\"min-h-screen bg-black text-white px-2 lg:px-6 py-28 flex flex-col justify-center space-y-20\">\r\n      <div className=\"flex flex-col lg:flex-row space-y-20 lg:space-y-0\">\r\n        <div className=\"relative lg:w-1/2 px-2 lg:px-6 py-4\">\r\n          <BadgeNumber number=\"03\" />\r\n          <h1 className=\"font-semibold text-3xl mb-4 text-white uppercase\">{t('aboutSection.aboutCategory')}</h1>\r\n          <p className=\"font-mono xl:text-lg text-gray-200\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum adipisci, voluptates excepturi molestias dolorum ducimus soluta cupiditate possimus nobis quam dicta sint illo doloremque pariatur quae, quia aut, officiis animi.\r\n          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate laboriosam accusamus quibusdam sit beatae, dignissimos quod natus est non impedit id voluptates obcaecati. Id quo ducimus odit? Ea, sapiente dolore.\r\n          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores odit aspernatur quisquam praesentium quasi molestias aliquid nesciunt natus dolor? Nulla possimus quae omnis perferendis ut dignissimos sequi iste reiciendis tempore.</p>\r\n        </div>\r\n        <div className=\"flex flex-1 flex-col items-center space-y-8\">\r\n          <img src=\"/img/logo.svg\" alt=\"logo\" />\r\n          <div className=\"flex space-x-2\">\r\n            <a href=\"#fb\"><img src=\"/icons/fb.svg\"/></a>\r\n            <a href=\"#fb\"><img src=\"/icons/ig.svg\"/></a>\r\n            <a href=\"#fb\"><img src=\"/icons/youtube.svg\"/></a>\r\n            <a href=\"#fb\"><img src=\"/icons/spotify.svg\"/></a>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div className=\"relative px-2 lg:px-6 py-4\">\r\n        <h1 className=\"font-semibold text-3xl mb-8 text-white uppercase\">{t('aboutSection.contactUsField')}</h1>\r\n        <div className=\"flex sm:space-x-28 space-y-8 sm:space-y-0 flex-col sm:flex-row\">\r\n          <div>\r\n            <p className=\"font-mono xl:text-lg text-gray-200\">M.A.U Collective</p>\r\n          </div>\r\n          <div className=\"flex space-x-14 sm:space-x-28\">\r\n            <div>\r\n              <p className=\"font-mono xl:text-lg text-gray-200\">371/4 Hai Ba Trung</p>\r\n              <p className=\"font-mono xl:text-lg text-gray-200 mb-6\">District 3</p>\r\n              <p className=\"font-mono xl:text-lg text-gray-200\">Ho Chi Minh City</p>\r\n              <p className=\"font-mono xl:text-lg text-gray-200\">Vietnam</p>\r\n            </div>\r\n            <div>\r\n              <p className=\"font-mono xl:text-lg text-gray-200\">Email</p>\r\n              <p className=\"font-mono xl:text-lg text-gray-200 mb-6\">info@mau.network</p>\r\n              <p className=\"font-mono xl:text-lg text-gray-200 block md:hidden\">Phone</p>\r\n              <p className=\"font-mono xl:text-lg text-gray-200 block md:hidden\">+84 93 785 10 36</p>\r\n            </div>\r\n            <div className=\"hidden md:block\">\r\n              <p className=\"font-mono xl:text-lg text-gray-200\">Phone</p>\r\n              <p className=\"font-mono xl:text-lg text-gray-200\">+84 93 785 10 36</p>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  )\r\n}\r\n\r\nAbout.propTypes = {\r\n  id: PropTypes.string\r\n}\r\n\r\nexport default About
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/Home/About.jsx b/src/components/Home/About.jsx
+--- a/src/components/Home/About.jsx	
++++ b/src/components/Home/About.jsx	
+@@ -8,8 +8,8 @@
+ 
+   return (
+     <div id={id} className="min-h-screen bg-black text-white px-2 lg:px-6 py-28 flex flex-col justify-center space-y-20">
+-      <div className="flex flex-col lg:flex-row space-y-20 lg:space-y-0">
+-        <div className="relative lg:w-1/2 px-2 lg:px-6 py-4">
++      <div className="flex flex-col xl:flex-row space-y-20 xl:space-y-0">
++        <div className="relative xl:w-1/2 px-2 lg:px-6 py-4">
+           <BadgeNumber number="03" />
+           <h1 className="font-semibold text-3xl mb-4 text-white uppercase">{t('aboutSection.aboutCategory')}</h1>
+           <p className="font-mono xl:text-lg text-gray-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum adipisci, voluptates excepturi molestias dolorum ducimus soluta cupiditate possimus nobis quam dicta sint illo doloremque pariatur quae, quia aut, officiis animi.
+@@ -26,28 +26,34 @@
+           </div>
+         </div>
+       </div>
+-      <div className="relative px-2 lg:px-6 py-4">
++      <div className="relative px-2 lg:px-6 py-4 lg:w-1/2">
+         <h1 className="font-semibold text-3xl mb-8 text-white uppercase">{t('aboutSection.contactUsField')}</h1>
+-        <div className="flex sm:space-x-28 space-y-8 sm:space-y-0 flex-col sm:flex-row">
++        <div className="flex sm:space-x-28 space-y-8 sm:space-y-0 flex-col sm:flex-row justify-between lg:justify-start">
+           <div>
+             <p className="font-mono xl:text-lg text-gray-200">M.A.U Collective</p>
+           </div>
+-          <div className="flex space-x-14 sm:space-x-28">
+-            <div>
+-              <p className="font-mono xl:text-lg text-gray-200">371/4 Hai Ba Trung</p>
+-              <p className="font-mono xl:text-lg text-gray-200 mb-6">District 3</p>
+-              <p className="font-mono xl:text-lg text-gray-200">Ho Chi Minh City</p>
+-              <p className="font-mono xl:text-lg text-gray-200">Vietnam</p>
++          <div className="flex space-x-14 lg:space-x-28">
++            <div className="flex space-x-0 md:space-x-28 lg:space-x-0 flex-col md:flex-row lg:flex-col space-y-6 md:space-y-0 lg:space-y-6">
++              <div className="flex flex-col">
++                <p className="font-mono xl:text-lg text-gray-200">371/4 Hai Ba Trung</p>
++                <p className="font-mono xl:text-lg text-gray-200">District 3</p>
++              </div>
++              <div className="flex flex-col">
++                <p className="font-mono xl:text-lg text-gray-200">Ho Chi Minh City</p>
++                <p className="font-mono xl:text-lg text-gray-200">Vietnam</p>
++              </div>
+             </div>
+-            <div>
+-              <p className="font-mono xl:text-lg text-gray-200">Email</p>
+-              <p className="font-mono xl:text-lg text-gray-200 mb-6">info@mau.network</p>
+-              <p className="font-mono xl:text-lg text-gray-200 block md:hidden">Phone</p>
+-              <p className="font-mono xl:text-lg text-gray-200 block md:hidden">+84 93 785 10 36</p>
+-            </div>
+-            <div className="hidden md:block">
+-              <p className="font-mono xl:text-lg text-gray-200">Phone</p>
+-              <p className="font-mono xl:text-lg text-gray-200">+84 93 785 10 36</p>
++            <div className="flex space-x-14 lg:space-x-28">
++              <div className="flex space-x-0 md:space-x-28 lg:space-x-0 flex-col md:flex-row lg:flex-col xl:flex-row space-y-6 md:space-y-0 lg:space-y-6 xl:space-y-0 xl:space-x-28">
++                <div className="flex flex-col">
++                  <p className="font-mono xl:text-lg text-gray-200">Email</p>
++                  <p className="font-mono xl:text-lg text-gray-200">info@mau.network</p>
++                </div>
++                <div className="flex flex-col">
++                  <p className="font-mono xl:text-lg text-gray-200">Phone</p>
++                  <p className="font-mono xl:text-lg text-gray-200">+84 93 785 10 36</p>
++                </div>
++              </div>
+             </div>
+           </div>
+         </div>
+Index: src/components/Home/ArtistSlider.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, { useEffect, useRef, useState } from 'react'\r\nimport AniLink from 'gatsby-plugin-transition-link/AniLink'\r\nimport gsap from 'gsap'\r\nimport { Draggable } from 'gsap/Draggable'\r\n\r\nconst isEven = (value) => (value%2 == 0);\r\n\r\nconst ArtistSlider = () => {\r\n\r\n  const picker = useRef();\r\n  const { current: cells } = useRef([]);\r\n  const animation = useRef();\r\n  const proxy = useRef();\r\n  const [values, setValues] = useState();\r\n  \r\n  useEffect(() => {\r\n    gsap.defaults({\r\n      ease: \"none\"\r\n    });\r\n\r\n    gsap.registerPlugin(Draggable);\r\n\r\n    let baseTl = gsap.timeline({ paused: true });\r\n\r\n    const newValues = {\r\n      cellWidth: window.innerWidth * 0.5,\r\n      rotation: -90,\r\n      numCells: cells.length,\r\n      cellStep: 1 / cells.length,\r\n      wrapWidth: (window.innerWidth * 0.5) * cells.length\r\n    }\r\n\r\n    setValues(newValues);\r\n\r\n    gsap.set(picker.current, {\r\n      perspective: 1100,\r\n      width: newValues.wrapWidth - newValues.cellWidth\r\n    });\r\n\r\n    for (let i = 0; i < cells.length; i++) {\r\n      initCell(cells[i], i);\r\n    }\r\n\r\n    let progress = newValues.cellStep;\r\n    if(!isEven(newValues.numCells))\r\n      progress = newValues.cellStep / 2;\r\n\r\n    animation.current = gsap\r\n      .timeline({ repeat: -1, paused: true })\r\n      .add(baseTl.tweenFromTo(1, 2))\r\n      .progress(progress);\r\n\r\n    new Draggable(proxy.current, {\r\n      allowContextMenu: true,\r\n      type: \"x\",\r\n      trigger: picker.current,\r\n      throwProps: true,\r\n      onDrag: updateProgress,\r\n      snap: {\r\n        x: snapX\r\n      }\r\n    });\r\n\r\n    function snapX(x) {\r\n      return Math.round(x / newValues.cellWidth) * newValues.cellWidth;\r\n    }\r\n\r\n    function updateProgress() {\r\n      let newProg = this.x / newValues.wrapWidth;\r\n      newProg = newProg - Math.floor(newProg);\r\n      // animation.current.pause();\r\n      animation.current.progress(newProg);\r\n      console.log(newProg)\r\n    }\r\n\r\n    function initCell(element, index) {\r\n      gsap.set(element, {\r\n        width: newValues.cellWidth,\r\n        scale: 0.9,\r\n        rotation: newValues.rotation,\r\n        x: -newValues.cellWidth\r\n      });\r\n\r\n      let tl = gsap\r\n        .timeline({ repeat: 1 })\r\n        .to(element, 1, { x: \"+=\" + newValues.wrapWidth, rotation: -newValues.rotation }, 0)\r\n        .to(element, newValues.cellStep, { scale: 1, repeat: 1, yoyo: true }, 0.5 - newValues.cellStep);\r\n\r\n      baseTl.add(tl, index * -newValues.cellStep);\r\n    }\r\n  }, [picker, proxy])\r\n\r\n  const scrollTo = (id) => {\r\n\r\n    // console.log(values.cellStep)\r\n    let newProgress;\r\n\r\n    // step: 0.5\r\n    // 1: 0\r\n    // 2: 0.5\r\n\r\n    // step: 0.333\r\n    // 1: 0.166\r\n    // 2: 0.833\r\n    // 3: 0.500\r\n\r\n    // step: 0.25\r\n    // 1: 0.25\r\n    // 2: 0\r\n    // 3: 0.75\r\n    // 4: 0.50\r\n\r\n    // step: 0.20\r\n    // 1: 0.30\r\n    // 2: 0.10\r\n    // 3: 0.90\r\n    // 4: 0.70\r\n    // 5: 0.50\r\n\r\n    // step: 0.166\r\n    // 1: 0.332\r\n    // 2: 0.166\r\n    // 3: 0\r\n    // 4: 0.830\r\n    // 5: 0.664\r\n    // 6: 0.498\r\n\r\n    // step: 0.142\r\n    // 1: 0.354\r\n    // 2: 0.212\r\n    // 3: 0.070\r\n    // 4: 0.926\r\n    // 5: 0.784\r\n    // 6: 0.642\r\n    // 7: 0.500\r\n\r\n    // step: 0.125\r\n    // 1: 0.375\r\n    // 2: 0.250\r\n    // 3: 0.125\r\n    // 4: 0\r\n    // 5: 0.875\r\n    // 6: 0.750\r\n    // 7: 0.625\r\n    // 8: 0.500\r\n\r\n    const center = Math.floor(values.numCells / 2)\r\n    if(id === center) {\r\n      if(isEven(values.numCells))\r\n        newProgress = 0;\r\n      else\r\n        newProgress = values.cellStep / 2;\r\n    }\r\n    else if(id < center)\r\n      newProgress = 0.5 - (values.cellStep * (id));\r\n    else {\r\n      const count = id - center;\r\n      if(!isEven(values.numCells))\r\n        newProgress = 1 - (values.cellStep * count - (values.cellStep / 2));\r\n      else\r\n        newProgress = 1 - (values.cellStep * count);\r\n    }\r\n\r\n    gsap.timeline().to(animation.current, 0.5, { progress: newProgress });\r\n  }\r\n\r\n  return (\r\n    <div className=\"bg-black text-white h-screen relative flex flex-col w-full items-center justify-center overflow-hidden\">\r\n      <div ref={proxy}></div>\r\n      <div id=\"picker\" className=\"picker\" ref={picker}>\r\n        <div className=\"cell\" ref={elm => cells[0] = elm}>\r\n          <div className=\"cell-content\" onClick={() => scrollTo(1)}>\r\n            <img src=\"/img/artist.png\" className=\"rounded-full w-full h-full\" />\r\n            <h1 className=\"text-center font-medium text-xl tracking-wide uppercase mt-8\">1 Dycal 1</h1>\r\n          </div>\r\n        </div>     \r\n        <div className=\"cell\" ref={elm => cells[1] = elm}>\r\n          <div className=\"cell-content\" onClick={() => scrollTo(2)}>\r\n            <img src=\"/img/artist.png\" className=\"rounded-full w-full h-full\" />\r\n            <h1 className=\"text-center font-medium text-xl tracking-wide uppercase mt-8\">2 Dycal 2</h1>\r\n          </div>\r\n        </div>  \r\n        <div className=\"cell\" ref={elm => cells[2] = elm}>\r\n          <div className=\"cell-content\" onClick={() => scrollTo(3)}>\r\n            <img src=\"/img/artist.png\" className=\"rounded-full w-full h-full\" />\r\n            <h1 className=\"text-center font-medium text-xl tracking-wide uppercase mt-8\">3 Dycal 3</h1>\r\n          </div>\r\n        </div>  \r\n        <div className=\"cell\" ref={elm => cells[3] = elm}>\r\n          <div className=\"cell-content\" onClick={() => scrollTo(4)}>\r\n            <img src=\"/img/artist.png\" className=\"rounded-full w-full h-full\" />\r\n            <h1 className=\"text-center font-medium text-xl tracking-wide uppercase mt-8\">4 Dycal 4</h1>\r\n          </div>\r\n        </div>  \r\n        <div className=\"cell\" ref={elm => cells[4] = elm}>\r\n          <div className=\"cell-content\" onClick={() => scrollTo(5)}>\r\n            <img src=\"/img/artist.png\" className=\"rounded-full w-full h-full\" />\r\n            <h1 className=\"text-center font-medium text-xl tracking-wide uppercase mt-8\">5 Dycal 5</h1>\r\n          </div>\r\n        </div>\r\n         <div className=\"cell\" ref={elm => cells[5] = elm}>\r\n          <div className=\"cell-content\" onClick={() => scrollTo(6)}>\r\n            <img src=\"/img/artist.png\" className=\"rounded-full w-full h-full\" />\r\n            <h1 className=\"text-center font-medium text-xl tracking-wide uppercase mt-8\">6 Dycal 6</h1>\r\n          </div>\r\n        </div>\r\n        {/*<div className=\"cell\" ref={elm => cells[6] = elm}>\r\n          <div className=\"cell-content\" onClick={() => scrollTo(6)}>\r\n            <img src=\"/img/artist.png\" className=\"rounded-full w-full h-full\" />\r\n            <h1 className=\"text-center font-medium text-xl tracking-wide uppercase mt-8\">7 Dycal 7</h1>\r\n          </div>\r\n        </div> */}\r\n        {/* <div className=\"cell\" ref={elm => cells[7] = elm}>\r\n          <div className=\"cell-content\" onClick={() => scrollTo(7)}>\r\n            <img src=\"/img/artist.png\" className=\"rounded-full w-full h-full\" />\r\n            <h1 className=\"text-center font-medium text-xl tracking-wide uppercase mt-8\">8 Dycal 8</h1>\r\n          </div>\r\n        </div> */}\r\n      </div>  \r\n    </div>\r\n  )\r\n}\r\n\r\nexport default ArtistSlider
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/Home/ArtistSlider.jsx b/src/components/Home/ArtistSlider.jsx
+--- a/src/components/Home/ArtistSlider.jsx	
++++ b/src/components/Home/ArtistSlider.jsx	
+@@ -1,224 +1,52 @@
+-import React, { useEffect, useRef, useState } from 'react'
+-import AniLink from 'gatsby-plugin-transition-link/AniLink'
+-import gsap from 'gsap'
+-import { Draggable } from 'gsap/Draggable'
+-
+-const isEven = (value) => (value%2 == 0);
+-
+-const ArtistSlider = () => {
+-
+-  const picker = useRef();
+-  const { current: cells } = useRef([]);
+-  const animation = useRef();
+-  const proxy = useRef();
+-  const [values, setValues] = useState();
+-  
+-  useEffect(() => {
+-    gsap.defaults({
+-      ease: "none"
+-    });
+-
+-    gsap.registerPlugin(Draggable);
+-
+-    let baseTl = gsap.timeline({ paused: true });
+-
+-    const newValues = {
+-      cellWidth: window.innerWidth * 0.5,
+-      rotation: -90,
+-      numCells: cells.length,
+-      cellStep: 1 / cells.length,
+-      wrapWidth: (window.innerWidth * 0.5) * cells.length
+-    }
+-
+-    setValues(newValues);
+-
+-    gsap.set(picker.current, {
+-      perspective: 1100,
+-      width: newValues.wrapWidth - newValues.cellWidth
+-    });
+-
+-    for (let i = 0; i < cells.length; i++) {
+-      initCell(cells[i], i);
+-    }
+-
+-    let progress = newValues.cellStep;
+-    if(!isEven(newValues.numCells))
+-      progress = newValues.cellStep / 2;
+-
+-    animation.current = gsap
+-      .timeline({ repeat: -1, paused: true })
+-      .add(baseTl.tweenFromTo(1, 2))
+-      .progress(progress);
+-
+-    new Draggable(proxy.current, {
+-      allowContextMenu: true,
+-      type: "x",
+-      trigger: picker.current,
+-      throwProps: true,
+-      onDrag: updateProgress,
+-      snap: {
+-        x: snapX
+-      }
+-    });
+-
+-    function snapX(x) {
+-      return Math.round(x / newValues.cellWidth) * newValues.cellWidth;
+-    }
+-
+-    function updateProgress() {
+-      let newProg = this.x / newValues.wrapWidth;
+-      newProg = newProg - Math.floor(newProg);
+-      // animation.current.pause();
+-      animation.current.progress(newProg);
+-      console.log(newProg)
+-    }
+-
+-    function initCell(element, index) {
+-      gsap.set(element, {
+-        width: newValues.cellWidth,
+-        scale: 0.9,
+-        rotation: newValues.rotation,
+-        x: -newValues.cellWidth
+-      });
++import React, { useState, useEffect } from 'react';
++import { Swiper, SwiperSlide } from 'swiper/react';
++import SwiperCore, { Navigation, Pagination, EffectCoverflow, Controller } from 'swiper';
+ 
+-      let tl = gsap
+-        .timeline({ repeat: 1 })
+-        .to(element, 1, { x: "+=" + newValues.wrapWidth, rotation: -newValues.rotation }, 0)
+-        .to(element, newValues.cellStep, { scale: 1, repeat: 1, yoyo: true }, 0.5 - newValues.cellStep);
++import 'swiper/swiper-bundle.css';
+ 
+-      baseTl.add(tl, index * -newValues.cellStep);
+-    }
+-  }, [picker, proxy])
++SwiperCore.use([Navigation, Pagination, EffectCoverflow, Controller])
+ 
+-  const scrollTo = (id) => {
++export default () => {
++  const slides = [];
+ 
+-    // console.log(values.cellStep)
+-    let newProgress;
+-
+-    // step: 0.5
+-    // 1: 0
+-    // 2: 0.5
+-
+-    // step: 0.333
+-    // 1: 0.166
+-    // 2: 0.833
+-    // 3: 0.500
+-
+-    // step: 0.25
+-    // 1: 0.25
+-    // 2: 0
+-    // 3: 0.75
+-    // 4: 0.50
+-
+-    // step: 0.20
+-    // 1: 0.30
+-    // 2: 0.10
+-    // 3: 0.90
+-    // 4: 0.70
+-    // 5: 0.50
+-
+-    // step: 0.166
+-    // 1: 0.332
+-    // 2: 0.166
+-    // 3: 0
+-    // 4: 0.830
+-    // 5: 0.664
+-    // 6: 0.498
+-
+-    // step: 0.142
+-    // 1: 0.354
+-    // 2: 0.212
+-    // 3: 0.070
+-    // 4: 0.926
+-    // 5: 0.784
+-    // 6: 0.642
+-    // 7: 0.500
+-
+-    // step: 0.125
+-    // 1: 0.375
+-    // 2: 0.250
+-    // 3: 0.125
+-    // 4: 0
+-    // 5: 0.875
+-    // 6: 0.750
+-    // 7: 0.625
+-    // 8: 0.500
+-
+-    const center = Math.floor(values.numCells / 2)
+-    if(id === center) {
+-      if(isEven(values.numCells))
+-        newProgress = 0;
+-      else
+-        newProgress = values.cellStep / 2;
+-    }
+-    else if(id < center)
+-      newProgress = 0.5 - (values.cellStep * (id));
+-    else {
+-      const count = id - center;
+-      if(!isEven(values.numCells))
+-        newProgress = 1 - (values.cellStep * count - (values.cellStep / 2));
+-      else
+-        newProgress = 1 - (values.cellStep * count);
+-    }
+-
+-    gsap.timeline().to(animation.current, 0.5, { progress: newProgress });
+-  }
+-
+-  return (
+-    <div className="bg-black text-white h-screen relative flex flex-col w-full items-center justify-center overflow-hidden">
+-      <div ref={proxy}></div>
+-      <div id="picker" className="picker" ref={picker}>
+-        <div className="cell" ref={elm => cells[0] = elm}>
+-          <div className="cell-content" onClick={() => scrollTo(1)}>
+-            <img src="/img/artist.png" className="rounded-full w-full h-full" />
+-            <h1 className="text-center font-medium text-xl tracking-wide uppercase mt-8">1 Dycal 1</h1>
+-          </div>
+-        </div>     
+-        <div className="cell" ref={elm => cells[1] = elm}>
+-          <div className="cell-content" onClick={() => scrollTo(2)}>
+-            <img src="/img/artist.png" className="rounded-full w-full h-full" />
+-            <h1 className="text-center font-medium text-xl tracking-wide uppercase mt-8">2 Dycal 2</h1>
+-          </div>
+-        </div>  
+-        <div className="cell" ref={elm => cells[2] = elm}>
+-          <div className="cell-content" onClick={() => scrollTo(3)}>
+-            <img src="/img/artist.png" className="rounded-full w-full h-full" />
+-            <h1 className="text-center font-medium text-xl tracking-wide uppercase mt-8">3 Dycal 3</h1>
+-          </div>
+-        </div>  
+-        <div className="cell" ref={elm => cells[3] = elm}>
+-          <div className="cell-content" onClick={() => scrollTo(4)}>
+-            <img src="/img/artist.png" className="rounded-full w-full h-full" />
+-            <h1 className="text-center font-medium text-xl tracking-wide uppercase mt-8">4 Dycal 4</h1>
+-          </div>
+-        </div>  
+-        <div className="cell" ref={elm => cells[4] = elm}>
+-          <div className="cell-content" onClick={() => scrollTo(5)}>
+-            <img src="/img/artist.png" className="rounded-full w-full h-full" />
+-            <h1 className="text-center font-medium text-xl tracking-wide uppercase mt-8">5 Dycal 5</h1>
+-          </div>
+-        </div>
+-         <div className="cell" ref={elm => cells[5] = elm}>
+-          <div className="cell-content" onClick={() => scrollTo(6)}>
+-            <img src="/img/artist.png" className="rounded-full w-full h-full" />
+-            <h1 className="text-center font-medium text-xl tracking-wide uppercase mt-8">6 Dycal 6</h1>
+-          </div>
+-        </div>
+-        {/*<div className="cell" ref={elm => cells[6] = elm}>
+-          <div className="cell-content" onClick={() => scrollTo(6)}>
+-            <img src="/img/artist.png" className="rounded-full w-full h-full" />
+-            <h1 className="text-center font-medium text-xl tracking-wide uppercase mt-8">7 Dycal 7</h1>
+-          </div>
+-        </div> */}
+-        {/* <div className="cell" ref={elm => cells[7] = elm}>
+-          <div className="cell-content" onClick={() => scrollTo(7)}>
+-            <img src="/img/artist.png" className="rounded-full w-full h-full" />
+-            <h1 className="text-center font-medium text-xl tracking-wide uppercase mt-8">8 Dycal 8</h1>
+-          </div>
+-        </div> */}
+-      </div>  
+-    </div>
+-  )
+-}
+-
+-export default ArtistSlider
+\ No newline at end of file
++  for(let i = 0; i < 10; i++) {
++    slides.push(
++      <SwiperSlide key={`slide-${i}`}>
++        <div className="flex flex-col items-center justify-center">
++          <img src="/img/artist.png" className="rounded-full swiper-img transition-transform" />
++          <h1 className="text-center font-medium text-xl tracking-wide uppercase mt-8">Dycal {i}</h1>
++        </div>
++      </SwiperSlide>
++    )
++  }
++
++  return (
++    <div className="min-h-screen bg-black text-white py-28 flex items-center">
++      <Swiper
++        id="mainSwiper"
++        // navigation
++        // pagination
++        slideToClickedSlide
++        spaceBetween={400}
++        slidesPerView={3}
++        centeredSlides={true}
++        effect="coverflow"
++        coverflowEffect={{
++          rotate: 20,
++          stretch: 1,
++          depth: 100,
++          modifier: 1,
++          slideShadows: false,
++        }}
++        // onClick={(swiper, event) => {
++        //   let element = event.target;
++        //   //specific element that was clicked i.e.: p or img tag
++        //   swiper.slideTo(element.id)
++        //   console.log(element.id)
++        // }}
++      >
++        {slides}
++      </Swiper>
++    </div>
++  );
++};
+\ No newline at end of file
+Index: src/components/Home/Recent.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react'\r\nimport PropTypes from 'prop-types'\r\nimport BadgeNumber from 'components/shared/BadgeNumber'\r\nimport CardPost from 'components/shared/CardPost'\r\nimport OverlayLink from 'components/shared/OverlayLink'\r\nimport { useTranslation } from 'gatsby-plugin-react-i18next'\r\n\r\nconst Recent = ({ id }) => {\r\n  const { t } = useTranslation();\r\n\r\n  return (\r\n    <div id={id} className=\"min-h-screen bg-white px-2 lg:px-6 py-28 flex flex-col justify-center\">\r\n      <div className=\"text-right px-2 lg:px-6 mb-2\">\r\n        <OverlayLink\r\n          type=\"secondary\"\r\n          to=\"/blog\"\r\n          className=\"font-light text-sm uppercase\">\r\n            {t('shared.viewAll')+' '+t('newsSection.newsCategory')}\r\n        </OverlayLink>\r\n      </div>\r\n      <div className=\"flex flex-col xl:flex-row\">\r\n        <div className=\"relative px-2 lg:px-6 py-4 w-full xl:w-1/3\">\r\n          <BadgeNumber number=\"02\" />\r\n          <h1 className=\"font-black text-2xl sm:text-3xl md:text-4xl xl:text-5xl mb-8 xl:mb-28 uppercase tracking-wide\">MOST RECENT NEWS HEADLINE</h1>\r\n          <div className=\"xl:hidden md:block w-full h-96 mb-8 xl:mb-0 bg-gray-300\">Image</div>\r\n          <div className=\"flex flex-col md:flex-row xl:flex-col md:space-x-8 items-start justify-start xl:space-x-0 space-y-8 md:space-y-0 xl:space-y-8\">\r\n            <p className=\"font-mono xl:text-lg font-light xl:font-normal\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum adipisci, voluptates excepturi molestias dolorum ducimus soluta cupiditate possimus nobis quam dicta sint illo doloremque pariatur quae, quia aut, officiis animi.</p>\r\n            <OverlayLink\r\n              type=\"secondary\"\r\n              to=\"/single-post\"\r\n              className=\"font-light text-sm leading-6 uppercase border-b-2 border-black border-solid whitespace-nowrap\">\r\n                {t('shared.continueRead')}</OverlayLink>\r\n          </div>\r\n        </div>\r\n        <div className=\"px-2 lg:px-6 py-2 flex-1 space-y-6\">\r\n          <div className=\"hidden xl:block w-full h-96 bg-gray-300\">Image</div>\r\n          <div className=\"flex space-x-6\">\r\n            <div className=\"w-1/2 lg:w-1/3\">\r\n              <CardPost />\r\n            </div>\r\n            <div className=\"w-1/2 lg:w-1/3\">\r\n              <CardPost />\r\n            </div>\r\n            <div className=\"hidden lg:block lg:w-1/3\">\r\n              <CardPost />\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  )\r\n};\r\n\r\nRecent.propTypes = {\r\n  id: PropTypes.string\r\n}\r\n\r\nexport default Recent
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/Home/Recent.jsx b/src/components/Home/Recent.jsx
+--- a/src/components/Home/Recent.jsx	
++++ b/src/components/Home/Recent.jsx	
+@@ -21,7 +21,7 @@
+       <div className="flex flex-col xl:flex-row">
+         <div className="relative px-2 lg:px-6 py-4 w-full xl:w-1/3">
+           <BadgeNumber number="02" />
+-          <h1 className="font-black text-2xl sm:text-3xl md:text-4xl xl:text-5xl mb-8 xl:mb-28 uppercase tracking-wide">MOST RECENT NEWS HEADLINE</h1>
++          <h1 className="font-black text-2xl md:text-3xl xl:text-5xl mb-8 xl:mb-28 uppercase tracking-wide">MOST RECENT NEWS HEADLINE</h1>
+           <div className="xl:hidden md:block w-full h-96 mb-8 xl:mb-0 bg-gray-300">Image</div>
+           <div className="flex flex-col md:flex-row xl:flex-col md:space-x-8 items-start justify-start xl:space-x-0 space-y-8 md:space-y-0 xl:space-y-8">
+             <p className="font-mono xl:text-lg font-light xl:font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum adipisci, voluptates excepturi molestias dolorum ducimus soluta cupiditate possimus nobis quam dicta sint illo doloremque pariatur quae, quia aut, officiis animi.</p>
