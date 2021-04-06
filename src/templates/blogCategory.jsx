@@ -22,6 +22,9 @@ export const query = graphql`
     ) {
       nodes {
         _id
+        slug {
+          current
+        }
         title {
           en
           vn
