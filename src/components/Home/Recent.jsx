@@ -6,8 +6,7 @@ import OverlayLink from 'components/shared/OverlayLink'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import { getGatsbyImage, capitalize } from 'components/helper'
-import BlockContent from 'components/shared/BlockContent'
+import { getGatsbyImage } from 'components/helper'
 
 const Recent = ({ id, data }) => {
   const { t } = useTranslation();
@@ -37,10 +36,9 @@ const Recent = ({ id, data }) => {
             alt={`Image of ${data?.[0].title?.[language]}`}
           />
           <div className="flex flex-col md:flex-row xl:flex-col md:space-x-8 items-start justify-start xl:space-x-0 space-y-8 md:space-y-0 xl:space-y-8">
-            {/* <p className="font-mono text-sm xs:text-lg font-light xl:font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum adipisci, voluptates excepturi molestias dolorum ducimus soluta cupiditate possimus nobis quam dicta sint illo doloremque pariatur quae, quia aut, officiis animi.</p> */}
-            <BlockContent
-              blocks={data?.[0].body?.[`_raw${capitalize(language)}`]}
-              className="font-mono text-sm xs:text-lg font-light xl:font-normal w-full break-all" />
+            <p className="font-mono text-sm xs:text-lg font-light xl:font-normal">
+              {data?.[0]?.shortDesc?.[language]}
+            </p>
             <OverlayLink
               type="secondary"
               to={`/blog/${data?.[0]?.slug?.current}`}
@@ -65,7 +63,7 @@ const Recent = ({ id, data }) => {
                   {`${t('shared.viewAll')} ${id === 'news' ? t('newsSection.newsCategory') : t('eventSection.eventCategory')}`}
               </OverlayLink>
             </div>
-            {data?.length && (
+            {data?.length > 0 && (
               <div className="w-full sm:w-2/3 lg:w-full grid grid-cols-2 xl:grid-cols-3 3xl:grid-cols-4 gap-x-6 gap-y-12">
                 {data.filter((_, i) => i !== 0).map((dt, i) => {
                   let className;

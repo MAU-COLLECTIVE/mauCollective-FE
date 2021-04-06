@@ -27,6 +27,7 @@ export const query = graphql`
         jp
       }
       mainImage {
+        caption
         asset {
           id
         }
@@ -109,7 +110,11 @@ const SinglePost = ({ pageContext, location, data }) => {
             image={image}
             alt={`Image of ${post?.title?.[language]}`}
           />
-          <span className="mx-6 2xl:mx-16 font-light self-start font-mono text-sm">This is the largest CMA Awards tally the label group has achieved since 2006. SMN scores seven out of the 11 possible categories. </span>
+          {post?.mainImage?.caption && (
+            <span className="mx-6 2xl:mx-16 font-light self-start font-mono text-sm">
+              {post?.mainImage?.caption}
+            </span>
+          )}
         </div>
         <BlockContent
           blocks={post?.body?.[`_raw${capitalize(language)}`]}
@@ -120,7 +125,11 @@ const SinglePost = ({ pageContext, location, data }) => {
             image={image}
             alt={`Image of ${post?.title?.[language]}`}
           />
-          <span className="mx-6 2xl:mx-16 font-light self-start font-mono text-sm">This is the largest CMA Awards tally the label group has achieved since 2006. SMN scores seven out of the 11 possible categories. </span>
+          {post?.mainImage?.caption && (
+            <span className="mx-6 2xl:mx-16 font-light self-start font-mono text-sm">
+              {post?.mainImage?.caption}
+            </span>
+          )}
         </div>
         <ul className="text-xs font-light font-mono flex flex-col self-start mx-6 2xl:mx-16">
           <li className="tracking-wide">
@@ -169,6 +178,7 @@ const SinglePost = ({ pageContext, location, data }) => {
                     <CardPost
                       image={getGatsbyImage(dt?.mainImage?.asset?.id, {maxWidth: 600, aspectRatio: 2.0})}
                       title={dt?.title?.[language]}
+                      slug={dt?.slug?.current}
                     />
                   </div>
                 )})}
