@@ -15,11 +15,18 @@ const NavbarBlog = () => {
       </OverlayLink>
       <div className="px-4 block w-full">
         <ul className="w-auto flex flex-wrap flex-col text-xs space-y-4">
-          <li className="uppercase font-light">{t('newsSection.newsCategory')}</li>
-          <li className="uppercase font-light">{t('aboutSection.aboutCategory')}</li>
-          <li className="uppercase font-light">{t('artistSection.artistCategory')}</li>
-          <li className="uppercase font-light">{t('collaborationSection.collaborationCategory')}</li>
-          <li className="uppercase font-light">{t('eventSection.eventCategory')}</li>
+          <li className="uppercase font-light">
+            <OverlayLink type="secondary" to='/blog/news'>{t('newsSection.newsCategory')}</OverlayLink>
+          </li>
+          <li className="uppercase font-light">
+            <OverlayLink type="secondary" to='/blog/artist'>{t('artistSection.artistCategory')}</OverlayLink>
+          </li>
+          <li className="uppercase font-light">
+            <OverlayLink type="secondary" to='/blog/collaborations'>{t('collaborationSection.collaborationCategory')}</OverlayLink>
+          </li>
+          <li className="uppercase font-light">
+            <OverlayLink type="secondary" to='/blog/events'>{t('eventSection.eventCategory')}</OverlayLink>
+          </li>
         </ul>
       </div>
     </nav>

@@ -12,9 +12,12 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   const artistTemplate = path.resolve(`src/templates/artist.jsx`)
+  const categoryTemplate = path.resolve(`src/templates/blogCategory.jsx`)
+  const postTemplate = path.resolve(`src/templates/singlePost.jsx`)
 
   return graphql(`
-    query GetArtists {
+    query {
+      # Get all artist
       allSanityArtist {
         nodes {
           slug {
@@ -28,14 +31,32 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
+      # Get all category
+      allSanityCategory {
+        nodes {
+          _id
+          title
+        }
+      }
+      # Get all post
+      allSanityPost {
+        nodes {
+          _id
+          slug {
+            current
+          }
+        }
+      }
     }  
   `).then(result => {
     if (result.errors) {
       throw result.errors
     }
 
+    const { allSanityArtist, allSanityCategory, allSanityPost } = result.data;
+
     // Create artist pages.
-    result.data.allSanityArtist.nodes.forEach(node => {
+    allSanityArtist.nodes.forEach(node => {
       languages.forEach(lang => {
         const langPrefix = lang === defaultLanguage ? `` : `${lang}/`;
         createPage({
@@ -48,5 +69,35 @@ exports.createPages = ({ graphql, actions }) => {
         })
       })
     })
+
+    // Create category pages
+    allSanityCategory.nodes.forEach(node => {
+      languages.forEach(lang => {
+        const langPrefix = lang === defaultLanguage ? `` : `${lang}/`;
+        createPage({
+          // Path for this page — required
+          path: `${langPrefix}blog/${node.title.toLowerCase()}`,
+          component: categoryTemplate,
+          context: {
+            id: node._id
+          },
+        })
+      })
+    })
+
+    // Create post pages
+    allSanityPost.nodes.forEach(node => {
+      languages.forEach(lang => {
+        const langPrefix = lang === defaultLanguage ? `` : `${lang}/`;
+        createPage({
+          // Path for this page — required
+          path: `${langPrefix}blog/${node.slug.current}`,
+          component: postTemplate,
+          context: {
+            id: node._id
+          },
+        })
+      })
+    })    
   })
 }
