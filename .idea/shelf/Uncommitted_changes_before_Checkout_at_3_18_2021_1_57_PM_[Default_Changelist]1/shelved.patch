@@ -1,0 +1,218 @@
+Index: src/components/Home/Artists.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react'\r\nimport PropTypes from 'prop-types'\r\nimport OverlayLink from 'components/shared/OverlayLink'\r\n\r\nconst Artists = ({ id }) => {\r\n  return (\r\n    <div id={id} className=\"min-h-screen bg-black text-white px-4 lg:px-14 py-28 flex flex-col justify-center space-y-20\">\r\n      <div className=\"grid gap-x-10 gap-y-16 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4\">\r\n        <OverlayLink\r\n          type=\"secondary\"\r\n          to=\"/artist\"\r\n          className=\"w-full\">\r\n            <div className=\"max-w-max flex flex-col justify-center items-center 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0\">\r\n              <img src=\"/img/artist.png\" alt=\"artist\" className=\"w-full md:w-52 md:h-52\" />\r\n              <h2 className=\"font-semibold text-sm tracking-wide uppercase text-center\">DYCAL</h2>\r\n            </div>\r\n        </OverlayLink>\r\n        <OverlayLink\r\n          type=\"secondary\"\r\n          to=\"/artist\"\r\n          className=\"w-full\">\r\n          <div className=\"max-w-max flex flex-col justify-center items-center 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0\">\r\n            <img src=\"/img/artist.png\" alt=\"artist\" className=\"w-full md:w-52 md:h-52\" />\r\n            <h2 className=\"font-semibold text-sm tracking-wide uppercase text-center\">DYCAL</h2>\r\n          </div>\r\n        </OverlayLink>\r\n        <OverlayLink\r\n          type=\"secondary\"\r\n          to=\"/artist\"\r\n          className=\"w-full\">\r\n          <div className=\"max-w-max flex flex-col justify-center items-center 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0\">\r\n            <img src=\"/img/artist.png\" alt=\"artist\" className=\"w-full md:w-52 md:h-52\" />\r\n            <h2 className=\"font-semibold text-sm tracking-wide uppercase text-center\">DYCAL</h2>\r\n          </div>\r\n        </OverlayLink>\r\n        <OverlayLink\r\n          type=\"secondary\"\r\n          to=\"/artist\"\r\n          className=\"w-full\">\r\n          <div className=\"max-w-max flex flex-col justify-center items-center 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0\">\r\n            <img src=\"/img/artist.png\" alt=\"artist\" className=\"w-full md:w-52 md:h-52\" />\r\n            <h2 className=\"font-semibold text-sm tracking-wide uppercase text-center\">DYCAL</h2>\r\n          </div>\r\n        </OverlayLink>\r\n        <OverlayLink\r\n          type=\"secondary\"\r\n          to=\"/artist\"\r\n          className=\"w-full\">\r\n          <div className=\"max-w-max flex flex-col justify-center items-center 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0\">\r\n            <img src=\"/img/artist.png\" alt=\"artist\" className=\"w-full md:w-52 md:h-52\" />\r\n            <h2 className=\"font-semibold text-sm tracking-wide uppercase text-center\">DYCAL</h2>\r\n          </div>\r\n        </OverlayLink>\r\n        <OverlayLink\r\n          type=\"secondary\"\r\n          to=\"/artist\"\r\n          className=\"w-full\">\r\n          <div className=\"max-w-max flex flex-col justify-center items-center 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0\">\r\n            <img src=\"/img/artist.png\" alt=\"artist\" className=\"w-full md:w-52 md:h-52\" />\r\n            <h2 className=\"font-semibold text-sm tracking-wide uppercase text-center\">DYCAL</h2>\r\n          </div>\r\n        </OverlayLink>\r\n      </div>\r\n    </div>\r\n  )\r\n}\r\n\r\nArtists.propTypes = {\r\n  id: PropTypes.string\r\n}\r\n\r\nexport default Artists
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/Home/Artists.jsx b/src/components/Home/Artists.jsx
+--- a/src/components/Home/Artists.jsx	
++++ b/src/components/Home/Artists.jsx	
+@@ -12,7 +12,7 @@
+           className="w-full">
+             <div className="max-w-max flex flex-col justify-center items-center 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0">
+               <img src="/img/artist.png" alt="artist" className="w-full md:w-52 md:h-52" />
+-              <h2 className="font-semibold text-sm tracking-wide uppercase text-center">DYCAL</h2>
++              <h2 className="font-semibold text-xs uppercase text-center">DYCAL</h2>
+             </div>
+         </OverlayLink>
+         <OverlayLink
+@@ -21,7 +21,7 @@
+           className="w-full">
+           <div className="max-w-max flex flex-col justify-center items-center 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0">
+             <img src="/img/artist.png" alt="artist" className="w-full md:w-52 md:h-52" />
+-            <h2 className="font-semibold text-sm tracking-wide uppercase text-center">DYCAL</h2>
++            <h2 className="font-semibold text-xs uppercase text-center">DYCAL</h2>
+           </div>
+         </OverlayLink>
+         <OverlayLink
+@@ -30,7 +30,7 @@
+           className="w-full">
+           <div className="max-w-max flex flex-col justify-center items-center 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0">
+             <img src="/img/artist.png" alt="artist" className="w-full md:w-52 md:h-52" />
+-            <h2 className="font-semibold text-sm tracking-wide uppercase text-center">DYCAL</h2>
++            <h2 className="font-semibold text-xs uppercase text-center">DYCAL</h2>
+           </div>
+         </OverlayLink>
+         <OverlayLink
+@@ -39,7 +39,7 @@
+           className="w-full">
+           <div className="max-w-max flex flex-col justify-center items-center 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0">
+             <img src="/img/artist.png" alt="artist" className="w-full md:w-52 md:h-52" />
+-            <h2 className="font-semibold text-sm tracking-wide uppercase text-center">DYCAL</h2>
++            <h2 className="font-semibold text-xs uppercase text-center">DYCAL</h2>
+           </div>
+         </OverlayLink>
+         <OverlayLink
+@@ -48,7 +48,7 @@
+           className="w-full">
+           <div className="max-w-max flex flex-col justify-center items-center 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0">
+             <img src="/img/artist.png" alt="artist" className="w-full md:w-52 md:h-52" />
+-            <h2 className="font-semibold text-sm tracking-wide uppercase text-center">DYCAL</h2>
++            <h2 className="font-semibold text-xs uppercase text-center">DYCAL</h2>
+           </div>
+         </OverlayLink>
+         <OverlayLink
+@@ -57,7 +57,7 @@
+           className="w-full">
+           <div className="max-w-max flex flex-col justify-center items-center 2xl:flex-row 2xl:space-x-6 space-y-6 2xl:space-y-0">
+             <img src="/img/artist.png" alt="artist" className="w-full md:w-52 md:h-52" />
+-            <h2 className="font-semibold text-sm tracking-wide uppercase text-center">DYCAL</h2>
++            <h2 className="font-semibold text-xs uppercase text-center">DYCAL</h2>
+           </div>
+         </OverlayLink>
+       </div>
+Index: src/components/Home/RecentCollaboration.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, { useState, useEffect, useRef } from 'react'\r\nimport PropTypes from 'prop-types'\r\nimport { TweenLite } from 'gsap/all'\r\nimport OverlayLink from 'components/shared/OverlayLink'\r\nimport { useTranslation } from 'gatsby-plugin-react-i18next'\r\n\r\nconst data = [\r\n  {\r\n    id: 1,\r\n    title: 'AVRIL OMO WITH RHYMASTIC & SUBOI IN TET HOLIDAY CAMPAIGN.',\r\n    desc: 'Avril Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum adipisci, voluptates excepturi molestias dolorum ducimus soluta cupiditate possimus nobis quam dicta sint illo doloremque pariatur quae, quia aut, officiis animi.',\r\n    img: '/img/avril.jpg'\r\n  },\r\n  {\r\n    id: 2,\r\n    title: 'OMO WITH RHYMASTIC & SUBOI IN TET HOLIDAY CAMPAIGN.',\r\n    desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum adipisci, voluptates excepturi molestias dolorum ducimus soluta cupiditate possimus nobis quam dicta sint illo doloremque pariatur quae, quia aut, officiis animi.',\r\n    img: '/img/collab.png'\r\n  }\r\n]\r\n\r\nfunction usePrevious(value) {\r\n  const ref = useRef();\r\n  useEffect(() => {\r\n    ref.current = value;\r\n  });\r\n  return ref.current;\r\n}\r\n\r\nconst RecentCollaboration = ({ id }) => {\r\n  const { t } = useTranslation();\r\n  const [currentIndex, setCurrentIndex] = useState(0);\r\n  const prevCurrentIndex = usePrevious(currentIndex);\r\n  const imgRef = useRef([]);\r\n\r\n  useEffect(() => {\r\n    TweenLite.to(imgRef.current[0], 0.5, {css:{autoAlpha:1}})\r\n  },[])\r\n\r\n  useEffect(() => {\r\n    if(imgRef.current[prevCurrentIndex] !== undefined &&\r\n       imgRef.current[currentIndex] !== undefined) {\r\n         TweenLite.to(imgRef.current[prevCurrentIndex], 0.5, {css:{autoAlpha:0}}) \r\n         TweenLite.to(imgRef.current[currentIndex], 0.5, {css:{autoAlpha:1}})\r\n       }\r\n  }, [currentIndex])\r\n\r\n  return (\r\n    <div id={id} className=\"min-h-screen relative px-2 lg:px-6 py-28 flex flex-col justify-between text-gray-200\">\r\n      {data.map((dt, index) => (\r\n        <img\r\n          key={dt.id}\r\n          className=\"absolute w-full h-full object-cover -mx-2 lg:-mx-6 -my-28 z-0 transition-all invisible\"\r\n          style={{ filter: 'brightness(75%)' }}\r\n          src={dt?.img}\r\n          ref={elm => imgRef.current[index] = elm} />\r\n      ))}\r\n      <div className=\"text-right px-2 lg:px-6 mb-4 z-10\">\r\n        <OverlayLink\r\n          type=\"secondary\"\r\n          to=\"/blog\"\r\n          className=\"font-light text-sm uppercase flex flex-col\">\r\n            {t('shared.viewAll')}\r\n            <span>{t('collaborationSection.collaborationCategory')}</span>\r\n        </OverlayLink>\r\n      </div>\r\n      <div className=\"flex flex-col lg:flex-row px-2 lg:px-6 z-10 flex-1 items-center\">\r\n        <div className=\"relative w-full lg:w-1/2 xl:w-1/3\">\r\n          <h1 className=\"font-black text-2xl sm:text-3xl md:text-4xl xl:text-5xl mb-8 xl:mb-28 uppercase tracking-wide\">{data?.[currentIndex]?.title}</h1>\r\n          <p className=\"font-mono xl:text-lg mb-8\">{data?.[currentIndex]?.desc}</p>\r\n          <OverlayLink\r\n            type=\"secondary\"\r\n            to=\"/single-post\"\r\n            className=\"font-light text-sm uppercase border-b-2 border-white border-solid whitespace-nowrap\">\r\n              {t('shared.watchVideo')}\r\n          </OverlayLink>\r\n        </div>\r\n        <ul className=\"flex flex-row mt-28 lg:mt-0 lg:flex-col lg:flex-1 lg:items-end justify-center space-x-4 lg:space-x-0 lg:space-y-4 text-sm md:text-base\">\r\n          <li onClick={() => setCurrentIndex(0)} className={`cursor-pointer transition-all ${currentIndex === 0 && 'border-b-2 border-white'}`}>01</li>\r\n          <li onClick={() => setCurrentIndex(1)} className={`cursor-pointer transition-all ${currentIndex === 1 && 'border-b-2 border-white'}`}>02</li>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n  )\r\n}\r\n\r\nRecentCollaboration.propTypes = {\r\n  id: PropTypes.string\r\n}\r\n\r\nexport default RecentCollaboration
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/Home/RecentCollaboration.jsx b/src/components/Home/RecentCollaboration.jsx
+--- a/src/components/Home/RecentCollaboration.jsx	
++++ b/src/components/Home/RecentCollaboration.jsx	
+@@ -66,7 +66,7 @@
+       </div>
+       <div className="flex flex-col lg:flex-row px-2 lg:px-6 z-10 flex-1 items-center">
+         <div className="relative w-full lg:w-1/2 xl:w-1/3">
+-          <h1 className="font-black text-2xl sm:text-3xl md:text-4xl xl:text-5xl mb-8 xl:mb-28 uppercase tracking-wide">{data?.[currentIndex]?.title}</h1>
++          <h1 className="font-black text-2xl md:text-3xl xl:text-5xl mb-8 xl:mb-28 uppercase tracking-wide">{data?.[currentIndex]?.title}</h1>
+           <p className="font-mono xl:text-lg mb-8">{data?.[currentIndex]?.desc}</p>
+           <OverlayLink
+             type="secondary"
+Index: package.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"name\": \"mau-collective\",\r\n  \"version\": \"1.0.0\",\r\n  \"private\": true,\r\n  \"description\": \"mau-collective\",\r\n  \"author\": \"difaananda40 & anbeangry\",\r\n  \"keywords\": [\r\n    \"gatsby\"\r\n  ],\r\n  \"scripts\": {\r\n    \"dev\": \"gatsby develop\",\r\n    \"start\": \"gatsby develop\",\r\n    \"build\": \"gatsby build\",\r\n    \"serve\": \"gatsby serve\",\r\n    \"clean\": \"gatsby clean\"\r\n  },\r\n  \"dependencies\": {\r\n    \"gatsby\": \"^2.32.3\",\r\n    \"gatsby-image\": \"^2.11.0\",\r\n    \"gatsby-plugin-manifest\": \"^2.12.0\",\r\n    \"gatsby-plugin-offline\": \"^3.10.0\",\r\n    \"gatsby-plugin-postcss\": \"^3.7.0\",\r\n    \"gatsby-plugin-react-helmet\": \"^3.10.0\",\r\n    \"gatsby-plugin-react-i18next\": \"^1.0.4\",\r\n    \"gatsby-plugin-sharp\": \"^2.14.1\",\r\n    \"gatsby-plugin-sitemap\": \"^2.12.0\",\r\n    \"gatsby-plugin-transition-link\": \"^1.20.5\",\r\n    \"gatsby-source-filesystem\": \"^2.11.0\",\r\n    \"gatsby-transformer-sharp\": \"^2.12.0\",\r\n    \"gsap\": \"^3.6.0\",\r\n    \"i18next\": \"^19.9.2\",\r\n    \"react\": \"^16.13.1\",\r\n    \"react-dom\": \"^16.13.1\",\r\n    \"react-helmet\": \"^6.1.0\",\r\n    \"react-i18next\": \"^11.8.10\",\r\n    \"smoothscroll-polyfill\": \"^0.4.4\"\r\n  },\r\n  \"devDependencies\": {\r\n    \"@tailwindcss/jit\": \"^0.1.1\",\r\n    \"babel-eslint\": \"^10.1.0\",\r\n    \"eslint\": \"^7.20.0\",\r\n    \"eslint-plugin-react\": \"^7.22.0\",\r\n    \"eslint-webpack-plugin\": \"^2.5.1\",\r\n    \"gatsby-plugin-eslint\": \"^3.0.0\",\r\n    \"postcss\": \"^8.2.4\",\r\n    \"postcss-preset-env\": \"^6.7.0\",\r\n    \"tailwindcss\": \"^2.0.2\"\r\n  }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/package.json b/package.json
+--- a/package.json	
++++ b/package.json	
+@@ -22,6 +22,7 @@
+     "gatsby-plugin-postcss": "^3.7.0",
+     "gatsby-plugin-react-helmet": "^3.10.0",
+     "gatsby-plugin-react-i18next": "^1.0.4",
++    "gatsby-plugin-sass": "^4.1.0",
+     "gatsby-plugin-sharp": "^2.14.1",
+     "gatsby-plugin-sitemap": "^2.12.0",
+     "gatsby-plugin-transition-link": "^1.20.5",
+@@ -33,7 +34,9 @@
+     "react-dom": "^16.13.1",
+     "react-helmet": "^6.1.0",
+     "react-i18next": "^11.8.10",
+-    "smoothscroll-polyfill": "^0.4.4"
++    "sass": "^1.32.8",
++    "smoothscroll-polyfill": "^0.4.4",
++    "swiper": "^6.5.0"
+   },
+   "devDependencies": {
+     "@tailwindcss/jit": "^0.1.1",
+Index: gatsby-config.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>module.exports = {\r\n  siteMetadata: {\r\n    title: \"mau-collective\",\r\n    siteUrl: \"localhost:8000\"\r\n  },\r\n  plugins: [\r\n    {\r\n      resolve: `gatsby-source-filesystem`,\r\n      options: {\r\n        path: `src/locales`,\r\n        name: `locale`\r\n      }\r\n    },\r\n    {\r\n      resolve: `gatsby-plugin-react-i18next`,\r\n      options: {\r\n        localeJsonSourceName: `locale`, // name given to `gatsby-source-filesystem` plugin.\r\n        languages: [`en`, `vn`, `jp`],\r\n        defaultLanguage: `en`,\r\n        // if you are using Helmet, you must include siteUrl, and make sure you add http:https\r\n        siteUrl: `localhost:8000/`,\r\n        // you can pass any i18next options\r\n        // pass following options to allow message content as a key\r\n        i18nextOptions: {\r\n          defaultNS: `translation`,\r\n          debug: false,\r\n          lowerCaseLng: true,\r\n          saveMissing: false,\r\n          interpolation: {\r\n            escapeValue: false // not needed for react as it escapes by default\r\n          }\r\n        },\r\n      }\r\n    },\r\n    {\r\n      resolve: 'gatsby-plugin-eslint',\r\n      options: {\r\n        test: /\\.js$|\\.jsx$/,\r\n        exclude: /(node_modules|.cache|public)/,\r\n        stages: ['develop'],\r\n        options: {\r\n          emitWarning: true,\r\n          failOnError: false\r\n        }\r\n      }\r\n    },\r\n    \"gatsby-plugin-transition-link\",\r\n    \"gatsby-plugin-postcss\",\r\n    \"gatsby-plugin-sharp\",\r\n    \"gatsby-plugin-react-helmet\",\r\n    \"gatsby-plugin-sitemap\",\r\n    \"gatsby-plugin-offline\",\r\n    {\r\n      resolve: \"gatsby-plugin-manifest\",\r\n      options: {\r\n        icon: \"src/images/icon.png\",\r\n      },\r\n    },\r\n    \"gatsby-transformer-sharp\",\r\n    {\r\n      resolve: \"gatsby-source-filesystem\",\r\n      options: {\r\n        name: \"images\",\r\n        path: \"./src/images/\",\r\n      },\r\n      __key: \"images\",\r\n    },\r\n  ],\r\n};\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/gatsby-config.js b/gatsby-config.js
+--- a/gatsby-config.js	
++++ b/gatsby-config.js	
+@@ -44,6 +44,7 @@
+         }
+       }
+     },
++    "gatsby-plugin-sass",
+     "gatsby-plugin-transition-link",
+     "gatsby-plugin-postcss",
+     "gatsby-plugin-sharp",
+Index: tailwind.config.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>module.exports = {\r\n  purge: ['./src/**/*.{js,jsx,ts,tsx}'],\r\n  darkMode: false, // or 'media' or 'class'\r\n  theme: {\r\n    minWidth: {\r\n      '0': '0',\r\n      '3/4': '75%'\r\n     },\r\n    screens: {\r\n      'xs': '414px',\r\n      'sm': '600px',\r\n      'md': '900px',\r\n      'lg': '1124px',\r\n      'xl': '1265px',\r\n      '2xl': '1530px',\r\n      '3xl': '1920px'\r\n    },\r\n    fontFamily: {\r\n      sans: ['Source Code Pro', 'sans-serif'],\r\n      serif: ['Source Serif Pro', 'serif'],\r\n      mono: ['Source Sans Pro', 'monospace'],\r\n    },\r\n    fontSize: {\r\n      xs: ['0.75rem', { lineHeight: '1rem' }],\r\n      sm: ['0.9375rem', { lineHeight: '1.25rem' }],\r\n      base: ['1rem', { lineHeight: '1.5rem' }],\r\n      lg: ['1.125rem', { lineHeight: '1.5rem' }],\r\n      xl: ['1.25rem', { lineHeight: '1.5rem' }],\r\n      '2xl': ['1.5rem', { lineHeight: '2rem' }],\r\n      '3xl': ['1.875rem', { lineHeight: '2.25rem' }],\r\n      '4xl': ['2.25rem', { lineHeight: '2.5rem' }],\r\n      '5xl': ['2.5rem', { lineHeight: '2.75rem' }],\r\n      '6xl': ['3.75rem', { lineHeight: '1' }],\r\n      '7xl': ['4.5rem', { lineHeight: '1' }],\r\n      '8xl': ['6rem', { lineHeight: '1' }],\r\n      '9xl': ['8rem', { lineHeight: '1' }],\r\n    },\r\n    extend: {\r\n      colors: {\r\n        black: '#000000'\r\n      },\r\n    },\r\n  },\r\n  variants: {\r\n    extend: {\r\n      padding: ['first'],\r\n      visibility: ['group-hover'],\r\n      display: ['group-hover']\r\n    },\r\n  },\r\n  plugins: [],\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/tailwind.config.js b/tailwind.config.js
+--- a/tailwind.config.js	
++++ b/tailwind.config.js	
+@@ -21,15 +21,16 @@
+       mono: ['Source Sans Pro', 'monospace'],
+     },
+     fontSize: {
+-      xs: ['0.75rem', { lineHeight: '1rem' }],
+-      sm: ['0.9375rem', { lineHeight: '1.25rem' }],
+-      base: ['1rem', { lineHeight: '1.5rem' }],
+-      lg: ['1.125rem', { lineHeight: '1.5rem' }],
+-      xl: ['1.25rem', { lineHeight: '1.5rem' }],
+-      '2xl': ['1.5rem', { lineHeight: '2rem' }],
+-      '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
+-      '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
+-      '5xl': ['2.5rem', { lineHeight: '2.75rem' }],
++      xss: ['0.6875rem', { lineHeight: '1rem', letterSpacing: '0.88px' }], // 11px
++      xs: ['0.75rem', { lineHeight: '1rem', letterSpacing: '1.344px' }], // 12px
++      sm: ['0.9375rem', { lineHeight: '1.25rem', letterSpacing: '0.15px' }], // 15px
++      base: ['1rem', { lineHeight: '1.5rem' }], // 16px
++      lg: ['1.125rem', { lineHeight: '1.5rem', letterSpacing: '0.432px' }], // 18px
++      xl: ['1.25rem', { lineHeight: '1.5rem' }], // 20px
++      '2xl': ['1.5rem', { lineHeight: '2rem' }], // 24px
++      '3xl': ['1.875rem', { lineHeight: '2.25rem', letterSpacing: '2.07px' }], // 30px
++      '4xl': ['2.25rem', { lineHeight: '2.5rem' }], // 36px
++      '5xl': ['2.5rem', { lineHeight: '2.75rem' }], // 40px
+       '6xl': ['3.75rem', { lineHeight: '1' }],
+       '7xl': ['4.5rem', { lineHeight: '1' }],
+       '8xl': ['6rem', { lineHeight: '1' }],
+Index: src/components/shared/Navbar/NavbarBlog.jsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react'\r\nimport PropTypes from 'prop-types'\r\nimport BadgeNumber from 'components/shared/BadgeNumber'\r\nimport OverlayLink from 'components/shared/OverlayLink'\r\nimport { useTranslation } from 'gatsby-plugin-react-i18next'\r\n\r\nconst NavbarBlog = ({ title }) => {\r\n  const { t } = useTranslation();\r\n\r\n  return (\r\n    <nav className=\"lg:h-screen p-4 lg:p-10 text-black flex flex-col items-start\">\r\n      <OverlayLink\r\n        type=\"main\"\r\n        to=\"/\"\r\n        className=\"relative px-6 py-4 mb-4 lg:mb-16\">\r\n          <BadgeNumber number=\"01\" />\r\n          <span className=\"block font-medium uppercase text-xs\">{t('shared.close')}</span>\r\n      </OverlayLink>\r\n      <div className=\"lg:px-6 block w-full\">\r\n        <h1 className=\"lg:hidden font-black text-2xl sm:text-3xl md:text-4xl xl:text-5xl mb-8 xl:mb-28 uppercase tracking-wide\">{title}</h1>\r\n        <div className=\"flex lg:flex-col space-x-6\">\r\n          <h2 className=\"uppercase w-1/2 lg:w-auto font-light mb-6 text-xs\">{t('shared.categories')}</h2>\r\n          <ul className=\"lg:ml-5 w-1/2 lg:w-auto lg:space-y-1 flex flex-wrap lg:flex-col text-xs\">\r\n            <li className=\"uppercase font-light\">{t('newsSection.newsCategory')}</li>\r\n            <li className=\"mx-2 lg:mx-0 lg:hidden\">/</li>\r\n            <li className=\"uppercase font-light\">{t('aboutSection.aboutCategory')}</li>\r\n            <li className=\"mx-2 lg:mx-0 lg:hidden\">/</li>\r\n            <li className=\"uppercase font-light\">{t('artistSection.artistCategory')}</li>\r\n            <li className=\"mx-2 lg:mx-0 lg:hidden\">/</li>\r\n            <li className=\"uppercase font-light\">{t('collaborationSection.collaborationCategory')}</li>\r\n            <li className=\"mx-2 lg:mx-0 lg:hidden\">/</li>\r\n            <li className=\"uppercase font-light\">{t('eventSection.eventCategory')}</li>\r\n          </ul>\r\n        </div>\r\n      </div>\r\n    </nav>\r\n  )\r\n}\r\n\r\nNavbarBlog.propTypes = {\r\n  title: PropTypes.string\r\n}\r\n\r\nexport default NavbarBlog
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/shared/Navbar/NavbarBlog.jsx b/src/components/shared/Navbar/NavbarBlog.jsx
+--- a/src/components/shared/Navbar/NavbarBlog.jsx	
++++ b/src/components/shared/Navbar/NavbarBlog.jsx	
+@@ -17,7 +17,7 @@
+           <span className="block font-medium uppercase text-xs">{t('shared.close')}</span>
+       </OverlayLink>
+       <div className="lg:px-6 block w-full">
+-        <h1 className="lg:hidden font-black text-2xl sm:text-3xl md:text-4xl xl:text-5xl mb-8 xl:mb-28 uppercase tracking-wide">{title}</h1>
++        <h1 className="lg:hidden font-black text-2xl md:text-3xl xl:text-5xl mb-8 xl:mb-28 uppercase tracking-wide">{title}</h1>
+         <div className="flex lg:flex-col space-x-6">
+           <h2 className="uppercase w-1/2 lg:w-auto font-light mb-6 text-xs">{t('shared.categories')}</h2>
+           <ul className="lg:ml-5 w-1/2 lg:w-auto lg:space-y-1 flex flex-wrap lg:flex-col text-xs">
+Index: src/css/main.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>@tailwind base;\r\n@tailwind components;\r\n@tailwind utilities;\r\n\r\nhtml, body {\r\n  scroll-behavior: smooth;\r\n}\r\n\r\n.tl-wrapper {\r\n  overflow-y: hidden !important;\r\n}\r\n\r\n.tl-wrapper-status--entered {\r\n  overflow-y: auto !important;\r\n  transform: none !important;\r\n  /* z-index: unset !important; */\r\n}\r\n\r\n/* Artist Slider CSS */\r\n.cell {\r\n  position: absolute;\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  -webkit-user-select: none;\r\n     -moz-user-select: none;\r\n      -ms-user-select: none;\r\n          user-select: none;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  /* background: #eee; */\r\n  height: 100%;\r\n  transform-origin: center bottom;\r\n}\r\n\r\n.picker {\r\n  background-color: transparent;\r\n  position: relative;\r\n  overflow: hidden;\r\n  width: 100%;\r\n  height: 90vh;\r\n  border-radius: 2px;\r\n}\r\n\r\n.cell-content img {\r\n  max-width: 600px;\r\n  max-height: 600px;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/css/main.css b/src/css/main.css
+--- a/src/css/main.css	
++++ b/src/css/main.css	
+@@ -46,4 +46,21 @@
+ .cell-content img {
+   max-width: 600px;
+   max-height: 600px;
++}
++
++.swiper-container {
++  padding: 150px 0 !important;
++}
++
++.swiper-slide-active div img {
++  transform: scale(1.5);
++}
++
++.swiper-slide-active div h1 {
++  margin-top: 120px;
++}
++
++.swiper-img {
++  width: 600px !important;
++  height: 600px !important;
+ }
+\ No newline at end of file

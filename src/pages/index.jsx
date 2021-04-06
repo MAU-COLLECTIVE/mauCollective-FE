@@ -30,10 +30,24 @@ export const query = graphql`
     ) {
       nodes {
         _id
+        slug {
+          current
+        }
         title {
           en
           vn
           jp
+        }
+        mainImage {
+          asset {
+            id
+            gatsbyImageData
+          }
+        }
+        body {
+          _rawEn
+          _rawVn
+          _rawJp
         }
       }
     }
@@ -44,10 +58,47 @@ export const query = graphql`
     ) {
       nodes {
         _id
+        slug {
+          current
+        }
         title {
           en
           vn
           jp
+        }
+        mainImage {
+          asset {
+            id
+            gatsbyImageData
+          }
+        }
+        body {
+          _rawEn
+          _rawVn
+          _rawJp
+        }
+      }
+    }
+    # Get all post (category: collaborations)
+    allCollaborationPost: allSanityPost(
+      filter: {categories: {elemMatch: {title: {eq: "Collaborations"}}}}
+      limit: 5  
+    ) {
+      nodes {
+        _id
+        slug {
+          current
+        }
+        title {
+          en
+          vn
+          jp
+        }
+        mainImage {
+          asset {
+            id
+            gatsbyImageData
+          }
         }
       }
     }
@@ -66,6 +117,53 @@ export const query = graphql`
         }
       }
     }
+    # Get about
+    sanityAbout {
+      name
+      aboutTab {
+        email
+        phoneNum
+        logo {
+          asset {
+            id
+            gatsbyImageData
+          }
+        }
+        description {
+          en
+          jp
+          vn
+        }
+        social {
+          facebook
+          instagram
+          spotify
+          youtube
+        }
+        address {
+          city {
+            en
+            jp
+            vn
+          }
+          country {
+            en
+            jp
+            vn
+          }
+          streetName {
+            en
+            jp
+            vn
+          }
+          streetNo {
+            en
+            jp
+            vn
+          }
+        }
+      }
+    }
   }
 `;
 
@@ -74,13 +172,15 @@ const HomePage = ({ data }) => {
   const {
     allSanityArtist: { nodes: artists },
     allNewsPost: { nodes: newsPost },
-    allEventPost: { nodes: eventPost }
+    allEventPost: { nodes: eventPost },
+    allCollaborationPost: { nodes: collaborationPost },
+    sanityAbout: about
   } = data;
 
   return (
     <HomeLayout>
       <Recent id="news" data={newsPost} />
-      <About id="about" />
+      <About id="about" data={about} />
       <div id="artists" className="h-screen">
         {ctx.artistType === 'slider' ? (
           <ArtistSlider data={artists} />
@@ -88,7 +188,7 @@ const HomePage = ({ data }) => {
           <Artists data={artists} />
         )}
       </div>
-      <RecentCollaboration id="collaborations" />
+      <RecentCollaboration id="collaborations" data={collaborationPost} />
       <Recent id="events" data={eventPost} />
     </HomeLayout>
   )

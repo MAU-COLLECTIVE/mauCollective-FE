@@ -27,7 +27,7 @@ export const query = graphql`
   }
 `;
 
-const Artist = ({ pageContext, location, data }) => {
+const ArtistPage = ({ pageContext, location, data }) => {
   const { t } = useTranslation();
   const { language } = pageContext;
   const section = location?.state?.section;
@@ -186,10 +186,10 @@ const Artist = ({ pageContext, location, data }) => {
   )
 }
 
-Artist.propTypes = {
+ArtistPage.propTypes = {
   pageContext: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired,
 }
 
-export default Artist
+export default ArtistPage
