@@ -46,7 +46,7 @@ const ArtistSlider = ({ data }) => {
                 className={`flex flex-col items-center space-y-6 transition-transform cursor-pointer ${!isActive && 'pointer-events-none'}`}
               >
                 <img src="/img/artist.png" alt={dt?.artistName} className="slide-img transition-transform" />
-                <h1 className="text-xs">Slide {dt?.artistName}</h1>
+                <h1 className="text-xs">{dt?.artistName}</h1>
               </OverlayLink>
             )}
           </SwiperSlide>
