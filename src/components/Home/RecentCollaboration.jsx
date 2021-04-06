@@ -62,7 +62,7 @@ const RecentCollaboration = ({ id, data }) => {
         <div className="relative w-full lg:w-1/2 xl:w-1/3">
           <h1 className="font-black text-2xl xs:text-3xl lg:text-5xl mb-8 xl:mb-28 uppercase xl:tracking-wide">{data?.[currentIndex]?.title?.[language]}</h1>
           <p className="font-mono xl:text-lg mb-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, tempore mollitia. Eligendi, eum amet aperiam voluptas eveniet voluptate saepe aspernatur facere nisi perspiciatis dolor vitae, totam, neque quam facilis illum.
+            {data?.[0]?.shortDesc?.[language]}
           </p>
           <OverlayLink
             type="secondary"

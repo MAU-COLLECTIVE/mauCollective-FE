@@ -38,6 +38,11 @@ export const query = graphql`
           vn
           jp
         }
+        shortDesc {
+          en
+          vn
+          jp
+        }
         mainImage {
           asset {
             id
@@ -66,6 +71,11 @@ export const query = graphql`
           vn
           jp
         }
+        shortDesc {
+          en
+          vn
+          jp
+        }
         mainImage {
           asset {
             id
@@ -90,6 +100,11 @@ export const query = graphql`
           current
         }
         title {
+          en
+          vn
+          jp
+        }
+        shortDesc {
           en
           vn
           jp
