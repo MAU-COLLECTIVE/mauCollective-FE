@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useMemo } from 'react'
 import PropTypes from 'prop-types'
 import { TweenLite } from 'gsap/all'
 import OverlayLink from 'components/shared/OverlayLink'
@@ -43,7 +43,7 @@ const RecentCollaboration = ({ id, data }) => {
           key={index} ref={elm => imgRef.current[index] = elm}>
           <GatsbyImage
             className="w-full h-full object-cover"
-            image={getGatsbyImage(dt?.mainImage?.asset?.id, {maxWidth: 1920})}  
+            image={useMemo(() => getGatsbyImage(dt?.mainImage?.asset?.id, {maxWidth: 1920}), [dt?.mainImage?.asset?.id])}  
             alt={`Image of ${data?.[0].title?.[language]}`}
           />
         </div>
@@ -86,4 +86,4 @@ RecentCollaboration.propTypes = {
   data: PropTypes.array.isRequired,
 }
 
-export default RecentCollaboration
+export default React.memo(RecentCollaboration)

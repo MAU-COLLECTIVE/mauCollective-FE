@@ -70,4 +70,4 @@ About.propTypes = {
   data: PropTypes.object.isRequired,
 }
 
-export default About
+export default React.memo(About)
