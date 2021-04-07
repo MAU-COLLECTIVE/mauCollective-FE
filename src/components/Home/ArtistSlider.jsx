@@ -61,4 +61,4 @@ ArtistSlider.propTypes = {
   data: PropTypes.array.isRequired,
 }
 
-export default ArtistSlider
+export default React.memo(ArtistSlider)

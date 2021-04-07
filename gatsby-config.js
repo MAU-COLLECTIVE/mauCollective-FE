@@ -6,7 +6,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: "mau-collective",
+    title: "M.A.U Collective",
     siteUrl: "localhost:8000"
   },
   plugins: [
