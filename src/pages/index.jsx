@@ -11,6 +11,7 @@ import {
 
 import HomeLayout from 'layouts/HomeLayout'
 import HomeContext from 'contexts/HomeContext'
+import SEO from 'components/shared/SEO'
 
 export const query = graphql`
   query Homepage($language: String!) {
@@ -30,6 +31,7 @@ export const query = graphql`
     ) {
       nodes {
         _id
+        _updatedAt(formatString: "DD.MM.YYYY")
         slug {
           current
         }
@@ -63,6 +65,7 @@ export const query = graphql`
     ) {
       nodes {
         _id
+        _updatedAt(formatString: "DD.MM.YYYY")
         slug {
           current
         }
@@ -96,6 +99,7 @@ export const query = graphql`
     ) {
       nodes {
         _id
+        _updatedAt(formatString: "DD.MM.YYYY")
         slug {
           current
         }
@@ -149,6 +153,11 @@ export const query = graphql`
           jp
           vn
         }
+        metaSeoDescription {
+          en
+          jp
+          vn
+        }
         social {
           facebook
           instagram
@@ -182,7 +191,8 @@ export const query = graphql`
   }
 `;
 
-const HomePage = ({ data }) => {
+const HomePage = ({ pageContext, data }) => {
+  const { language } = pageContext;
   const ctx = useContext(HomeContext);
   const {
     allSanityArtist: { nodes: artists },
@@ -194,6 +204,7 @@ const HomePage = ({ data }) => {
 
   return (
     <HomeLayout>
+      <SEO description={about.aboutTab.metaSeoDescription[language]} /> 
       <Recent id="news" data={newsPost} />
       <About id="about" data={about} />
       <div id="artists" className="h-screen">
@@ -210,7 +221,8 @@ const HomePage = ({ data }) => {
 }
 
 HomePage.propTypes = {
+  pageContext: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired,
 }
 
-export default HomePage
+export default React.memo(HomePage)

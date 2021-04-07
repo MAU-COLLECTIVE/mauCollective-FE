@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import PropTypes from 'prop-types'
 import BadgeNumber from 'components/shared/BadgeNumber'
 import CardPost from 'components/shared/CardPost'
@@ -11,8 +11,8 @@ import { getGatsbyImage } from 'components/helper'
 const Recent = ({ id, data }) => {
   const { t } = useTranslation();
   const { language } = useI18next();
-  const firstImage = getGatsbyImage(data?.[0]?.mainImage?.asset?.id, {maxWidth: 1600, aspectRatio: 2.0});
-
+  const firstImage = useMemo(() => getGatsbyImage(data?.[0]?.mainImage?.asset?.id, {maxWidth: 1600, aspectRatio: 2.0}), [data]);
+  
   return (
     <div id={id} className="min-h-screen bg-white px-2 lg:px-6 py-28 flex flex-col justify-center">
       <div className="text-right px-2 lg:px-6 mb-2 hidden xl:block">
@@ -30,11 +30,13 @@ const Recent = ({ id, data }) => {
           <h1 className="font-black text-2xl xs:text-3xl lg:text-5xl mb-8 xl:mb-28 uppercase xl:tracking-wide">
             {data?.[0]?.title?.[language]}
           </h1>
-          <GatsbyImage
-            className="xl:hidden md:block w-full mb-8 xl:mb-0"
-            image={firstImage}
-            alt={`Image of ${data?.[0].title?.[language]}`}
-          />
+          <div className="xl:hidden md:block w-full mb-8 xl:mb-0">
+            <GatsbyImage
+              className="w-full"
+              image={firstImage}
+              alt={`Image of ${data?.[0].title?.[language]}`}
+            />
+          </div>
           <div className="flex flex-col md:flex-row xl:flex-col md:space-x-8 items-start justify-start xl:space-x-0 space-y-8 md:space-y-0 xl:space-y-8">
             <p className="font-mono text-sm xs:text-lg font-light xl:font-normal">
               {data?.[0]?.shortDesc?.[language]}
@@ -48,11 +50,13 @@ const Recent = ({ id, data }) => {
           </div>
         </div>
         <div className="px-2 lg:px-6 py-2 flex-1 xl:space-y-6">
-          <GatsbyImage
-            className="hidden xl:block w-full h-96"
-            image={firstImage}
-            alt={`Image of ${data?.[0].title?.[language]}`}
-          />
+          <div className="hidden xl:block w-full">
+            <GatsbyImage
+              className="w-full max-h-96"
+              image={firstImage}
+              alt={`Image of ${data?.[0].title?.[language]}`}
+            />
+          </div>
           <div className="flex flex-col-reverse sm:flex-row">
             <div className="block mt-8 sm:mt-0 xl:hidden w-1/3 lg:pr-6 xl:pr-0">
               <OverlayLink
@@ -73,9 +77,10 @@ const Recent = ({ id, data }) => {
                   return (
                     <div key={dt?._id} className={className}>
                       <CardPost
-                        image={getGatsbyImage(dt?.mainImage?.asset?.id, {maxWidth: 600, aspectRatio: 2.0})}
+                        image={useMemo(() => getGatsbyImage(dt?.mainImage?.asset?.id, {maxWidth: 600, aspectRatio: 2.0}), [dt?.mainImage?.asset?.id])}
                         title={dt?.title?.[language]}
                         slug={dt?.slug?.current}
+                        date={dt?._updatedAt}
                       />
                     </div>
                   )})}
@@ -93,4 +98,4 @@ Recent.propTypes = {
   data: PropTypes.array.isRequired,
 }
 
-export default Recent
+export default React.memo(Recent)
