@@ -32,7 +32,7 @@ const serializers = {
         <code>{props.node.code}</code>
       </pre>
     ),
-    image: (props) => {
+    imageWithCaption: (props) => {
       const image = getGatsbyImage(props.node.asset._ref, {maxWidth: 1600, aspectRatio: 2.0});
       return (
         <div className="flex flex-col">
