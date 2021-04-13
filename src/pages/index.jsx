@@ -234,7 +234,7 @@ const HomePage = ({ pageContext, data }) => {
 
   return (
     <HomeLayout>
-      <SEO description={about.aboutTab.metaSeoDescription.lang[language]} /> 
+      <SEO description={about?.aboutTab?.metaSeoDescription?.lang?.[language]} /> 
       <Recent id="news" data={newsPost} />
       <About id="about" data={about} />
       <div id="artists" className="h-screen">
