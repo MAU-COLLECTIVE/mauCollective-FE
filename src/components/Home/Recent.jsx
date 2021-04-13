@@ -34,7 +34,7 @@ const Recent = ({ id, data }) => {
             <GatsbyImage
               className="w-full"
               image={firstImage}
-              alt={`Image of ${data?.[0].title?.lang?.[language]}`}
+              alt={`Image of ${data?.[0]?.title?.lang?.[language]}`}
             />
           </div>
           <div className="flex flex-col md:flex-row xl:flex-col md:space-x-8 items-start justify-start xl:space-x-0 space-y-8 md:space-y-0 xl:space-y-8">
@@ -54,7 +54,7 @@ const Recent = ({ id, data }) => {
             <GatsbyImage
               className="w-full max-h-96"
               image={firstImage}
-              alt={`Image of ${data?.[0].title?.lang?.[language]}`}
+              alt={`Image of ${data?.[0]?.title?.lang?.[language]}`}
             />
           </div>
           <div className="flex flex-col-reverse sm:flex-row">
