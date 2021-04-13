@@ -23,9 +23,11 @@ export const query = graphql`
     }
     sanityPost(_id: {eq: $id}) {
       title {
-        en
-        vn
-        jp
+        lang {
+          en
+          vn
+          jp
+        }
       }
       mainImage {
         caption
@@ -34,9 +36,11 @@ export const query = graphql`
         }
       }
       body {
-        _rawEn
-        _rawVn
-        _rawJp
+        lang {
+          _rawEn
+          _rawVn
+          _rawJp
+        }
       }
       author {
         name
@@ -55,9 +59,11 @@ export const query = graphql`
           current
         }
         title {
-          en
-          vn
-          jp
+          lang {
+            en
+            vn
+            jp
+          }
         }
         mainImage {
           asset {
@@ -80,7 +86,7 @@ const SinglePost = ({ pageContext, location, data }) => {
 
 	return (
     <React.Fragment>
-      <SEO titleTemplate={post?.title?.[language]} />
+      <SEO titleTemplate={post?.title?.lang?.[language]} />
       <div className="min-h-screen max-w-screen bg-white py-6 2xl:py-10 flex flex-col items-start">
         <OverlayLink
           type="main"
@@ -92,7 +98,7 @@ const SinglePost = ({ pageContext, location, data }) => {
         </OverlayLink>
         <div className="flex flex-col items-center w-full space-y-12">
           <h1 className="font-black text-2xl md:text-3xl xl:text-6xl uppercase xl:tracking-wide px-6 2xl:px-0 w-full 2xl:w-2/3 text-center">
-            {post?.title?.[language]}
+            {post?.title?.lang?.[language]}
           </h1>
           <ul className="text-xs font-light font-mono flex flex-col items-center">
             <li className="tracking-wide">
@@ -112,7 +118,7 @@ const SinglePost = ({ pageContext, location, data }) => {
             <GatsbyImage
               className="w-full mb-4"
               image={image}
-              alt={`Image of ${post?.title?.[language]}`}
+              alt={`Image of ${post?.title?.lang?.[language]}`}
             />
             {post?.mainImage?.caption && (
               <span className="mx-6 2xl:mx-16 font-light self-start font-mono text-sm">
@@ -121,20 +127,8 @@ const SinglePost = ({ pageContext, location, data }) => {
             )}
           </div>
           <BlockContent
-            blocks={post?.body?.[`_raw${capitalize(language)}`]}
+            blocks={post?.body?.lang?.[`_raw${capitalize(language)}`]}
             className="w-full px-6 2xl:w-1/2 font-mono space-y-12 text-xl sm:text-2xl md:text-3xl break-all text-gray-800 text-justify" />
-          <div className="w-full flex flex-col">
-            <GatsbyImage
-              className="w-full mb-4"
-              image={image}
-              alt={`Image of ${post?.title?.[language]}`}
-            />
-            {post?.mainImage?.caption && (
-              <span className="mx-6 2xl:mx-16 font-light self-start font-mono text-sm">
-                {post?.mainImage?.caption}
-              </span>
-            )}
-          </div>
           <ul className="text-xs font-light font-mono flex flex-col self-start mx-6 2xl:mx-16">
             <li className="tracking-wide">
               <span className="uppercase mr-2 tracking-widest">Text:</span>
@@ -181,7 +175,7 @@ const SinglePost = ({ pageContext, location, data }) => {
                     <div key={dt?._id} className={className}>
                       <CardPost
                         image={useMemo(() => getGatsbyImage(dt?.mainImage?.asset?.id, {maxWidth: 600, aspectRatio: 2.0}), [dt?.mainImage?.asset?.id])}
-                        title={dt?.title?.[language]}
+                        title={dt?.title?.lang?.[language]}
                         slug={dt?.slug?.current}
                         date={dt?._updatedAt}
                       />

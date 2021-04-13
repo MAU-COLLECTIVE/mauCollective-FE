@@ -18,7 +18,7 @@ const About = ({ id, data }) => {
           <BadgeNumber number="03" />
           <h1 className="font-semibold text-3xl mb-4 text-white uppercase">{t('aboutSection.aboutCategory')}</h1>
           <p className="font-mono xl:text-lg text-gray-200">
-            {data?.aboutTab?.description?.[language]}
+            {data?.aboutTab?.description?.lang?.[language]}
           </p>
         </div>
         <div className="flex flex-1 flex-col items-center space-y-8">
@@ -41,12 +41,12 @@ const About = ({ id, data }) => {
           </div>
           <div className="flex flex-col lg:flex-row xl:flex-col space-x-0 lg:space-x-28 xl:space-x-0">
             <div>
-              <p className="font-mono xl:text-lg text-gray-200">{data?.aboutTab?.address?.streetNo?.[language]}</p>
-              <p className="font-mono xl:text-lg text-gray-200 mb-6">{data?.aboutTab?.address?.streetName?.[language]}</p>
+              <p className="font-mono xl:text-lg text-gray-200">{data?.aboutTab?.address?.streetNo?.lang?.[language]}</p>
+              <p className="font-mono xl:text-lg text-gray-200 mb-6">{data?.aboutTab?.address?.streetName?.lang?.[language]}</p>
             </div>
             <div>
-              <p className="font-mono xl:text-lg text-gray-200">{data?.aboutTab?.address?.city?.[language]}</p>
-              <p className="font-mono xl:text-lg text-gray-200">{data?.aboutTab?.address?.country?.[language]}</p>
+              <p className="font-mono xl:text-lg text-gray-200">{data?.aboutTab?.address?.city?.lang?.[language]}</p>
+              <p className="font-mono xl:text-lg text-gray-200">{data?.aboutTab?.address?.country?.lang?.[language]}</p>
             </div>
           </div>
           <div className="flex flex-col md:flex-row xl:flex-col 2xl:flex-row md:space-x-28 2xl:space-x-28 xl:space-x-0">

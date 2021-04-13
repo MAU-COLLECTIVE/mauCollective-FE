@@ -19,9 +19,11 @@ export const query = graphql`
     sanityArtist(slug: {current: {eq: $slug}}) {
       artistName
       description {
-        en
-        vn
-        jp
+        lang {
+          en
+            vn
+            jp
+        }
       }
     }
   }
@@ -52,7 +54,7 @@ const ArtistPage = ({ pageContext, location, data }) => {
             </h1>
           </div>
           <p className="px-6 font-mono xl:text-lg text-gray-300 mb-32">
-            {artist?.description?.[language]}
+            {artist?.description?.lang?.[language]}
           </p>
           <div className="lg:hidden flex flex-1 flex-col items-center space-y-8 mb-32">
             <img src="/img/artist.png" alt="artist" className="w-full" style={{ maxWidth: '600px' }} />

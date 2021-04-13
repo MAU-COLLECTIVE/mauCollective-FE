@@ -44,7 +44,7 @@ const RecentCollaboration = ({ id, data }) => {
           <GatsbyImage
             className="w-full h-full object-cover"
             image={useMemo(() => getGatsbyImage(dt?.mainImage?.asset?.id, {maxWidth: 1920}), [dt?.mainImage?.asset?.id])}  
-            alt={`Image of ${data?.[0].title?.[language]}`}
+            alt={`Image of ${data?.[0].title?.lang?.[language]}`}
           />
         </div>
       ))}
@@ -60,9 +60,9 @@ const RecentCollaboration = ({ id, data }) => {
       </div>
       <div className="flex flex-col lg:flex-row px-2 lg:px-6 z-10 flex-1 items-center">
         <div className="relative w-full lg:w-1/2 xl:w-1/3">
-          <h1 className="font-black text-2xl xs:text-3xl lg:text-5xl mb-8 xl:mb-28 uppercase xl:tracking-wide">{data?.[currentIndex]?.title?.[language]}</h1>
+          <h1 className="font-black text-2xl xs:text-3xl lg:text-5xl mb-8 xl:mb-28 uppercase xl:tracking-wide">{data?.[currentIndex]?.title?.lang?.[language]}</h1>
           <p className="font-mono xl:text-lg mb-8">
-            {data?.[0]?.shortDesc?.[language]}
+            {data?.[0]?.shortDesc?.lang?.[language]}
           </p>
           <OverlayLink
             type="secondary"
