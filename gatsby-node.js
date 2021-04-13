@@ -25,9 +25,11 @@ exports.createPages = ({ graphql, actions }) => {
           }
           artistName
           description {
-            en
-            jp
-            vn
+            lang {
+              en
+              vn
+              jp
+            }
           }
         }
       }

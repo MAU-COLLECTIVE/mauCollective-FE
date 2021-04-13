@@ -36,14 +36,18 @@ export const query = graphql`
           current
         }
         title {
-          en
-          vn
-          jp
+          lang {
+            en
+            vn
+            jp
+          }
         }
         shortDesc {
-          en
-          vn
-          jp
+          lang {
+            en
+            vn
+            jp
+          }
         }
         mainImage {
           asset {
@@ -52,9 +56,11 @@ export const query = graphql`
           }
         }
         body {
-          _rawEn
-          _rawVn
-          _rawJp
+          lang {
+            _rawEn
+            _rawVn
+            _rawJp
+          }
         }
       }
     }
@@ -70,14 +76,18 @@ export const query = graphql`
           current
         }
         title {
-          en
-          vn
-          jp
+          lang {
+            en
+            vn
+            jp
+          }
         }
         shortDesc {
-          en
-          vn
-          jp
+          lang {
+            en
+            vn
+            jp
+          }
         }
         mainImage {
           asset {
@@ -86,9 +96,11 @@ export const query = graphql`
           }
         }
         body {
-          _rawEn
-          _rawVn
-          _rawJp
+          lang {
+            _rawEn
+            _rawVn
+            _rawJp
+          }
         }
       }
     }
@@ -104,14 +116,18 @@ export const query = graphql`
           current
         }
         title {
-          en
-          vn
-          jp
+          lang {
+            en
+            vn
+            jp
+          }
         }
         shortDesc {
-          en
-          vn
-          jp
+          lang {
+            en
+            vn
+            jp
+          }
         }
         mainImage {
           asset {
@@ -130,9 +146,11 @@ export const query = graphql`
         }
         artistName
         description {
-          en
-          vn
-          jp
+          lang {
+            en
+            vn
+            jp
+          }
         }
       }
     }
@@ -149,14 +167,18 @@ export const query = graphql`
           }
         }
         description {
-          en
-          jp
-          vn
+          lang {
+            en
+            jp
+            vn
+          }
         }
         metaSeoDescription {
-          en
-          jp
-          vn
+          lang {
+            en
+            jp
+            vn
+          }
         }
         social {
           facebook
@@ -166,24 +188,32 @@ export const query = graphql`
         }
         address {
           city {
-            en
-            jp
-            vn
+            lang {
+              en
+              jp
+              vn
+            }
           }
           country {
-            en
-            jp
-            vn
+            lang {
+              en
+              jp
+              vn
+            }
           }
           streetName {
-            en
-            jp
-            vn
+            lang {
+              en
+              jp
+              vn
+            }
           }
           streetNo {
-            en
-            jp
-            vn
+            lang {
+              en
+              jp
+              vn
+            }
           }
         }
       }
@@ -204,7 +234,7 @@ const HomePage = ({ pageContext, data }) => {
 
   return (
     <HomeLayout>
-      <SEO description={about.aboutTab.metaSeoDescription[language]} /> 
+      {/* <SEO description={about.aboutTab.metaSeoDescription.lang[language]} />  */}
       <Recent id="news" data={newsPost} />
       <About id="about" data={about} />
       <div id="artists" className="h-screen">

@@ -28,18 +28,18 @@ const Recent = ({ id, data }) => {
         <div className="relative px-2 lg:px-6 py-4 w-full xl:w-1/3">
           <BadgeNumber number={id === 'news' ? '02' : '04'} />
           <h1 className="font-black text-2xl xs:text-3xl lg:text-5xl mb-8 xl:mb-28 uppercase xl:tracking-wide">
-            {data?.[0]?.title?.[language]}
+            {data?.[0]?.title?.lang?.[language]}
           </h1>
           <div className="xl:hidden md:block w-full mb-8 xl:mb-0">
             <GatsbyImage
               className="w-full"
               image={firstImage}
-              alt={`Image of ${data?.[0].title?.[language]}`}
+              alt={`Image of ${data?.[0].title?.lang?.[language]}`}
             />
           </div>
           <div className="flex flex-col md:flex-row xl:flex-col md:space-x-8 items-start justify-start xl:space-x-0 space-y-8 md:space-y-0 xl:space-y-8">
             <p className="font-mono text-sm xs:text-lg font-light xl:font-normal">
-              {data?.[0]?.shortDesc?.[language]}
+              {data?.[0]?.shortDesc?.lang?.[language]}
             </p>
             <OverlayLink
               type="secondary"
@@ -54,7 +54,7 @@ const Recent = ({ id, data }) => {
             <GatsbyImage
               className="w-full max-h-96"
               image={firstImage}
-              alt={`Image of ${data?.[0].title?.[language]}`}
+              alt={`Image of ${data?.[0].title?.lang?.[language]}`}
             />
           </div>
           <div className="flex flex-col-reverse sm:flex-row">
@@ -78,7 +78,7 @@ const Recent = ({ id, data }) => {
                     <div key={dt?._id} className={className}>
                       <CardPost
                         image={useMemo(() => getGatsbyImage(dt?.mainImage?.asset?.id, {maxWidth: 600, aspectRatio: 2.0}), [dt?.mainImage?.asset?.id])}
-                        title={dt?.title?.[language]}
+                        title={dt?.title?.lang?.[language]}
                         slug={dt?.slug?.current}
                         date={dt?._updatedAt}
                       />
