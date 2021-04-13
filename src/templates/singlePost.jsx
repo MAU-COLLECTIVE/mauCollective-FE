@@ -90,7 +90,7 @@ const SinglePost = ({ pageContext, location, data }) => {
       <div className="min-h-screen max-w-screen bg-white py-6 2xl:py-10 flex flex-col items-start">
         <OverlayLink
           type="main"
-          to="/"
+          to={location?.state?.referrer ?? '/'}
           section={section}
           className="relative mx-4 2xl:mx-10 px-6 py-4">
             <BadgeNumber number="01" />
@@ -115,11 +115,13 @@ const SinglePost = ({ pageContext, location, data }) => {
             </li>
           </ul>
           <div className="w-full flex flex-col">
-            <GatsbyImage
-              className="w-full mb-4"
-              image={image}
-              alt={`Image of ${post?.title?.lang?.[language]}`}
-            />
+            {image && (
+              <GatsbyImage
+                className="w-full mb-4"
+                image={image}
+                alt={`Image of ${post?.title?.lang?.[language]}`}
+              />
+            )}
             {post?.mainImage?.caption && (
               <span className="mx-6 2xl:mx-16 font-light self-start font-mono text-sm">
                 {post?.mainImage?.caption}
