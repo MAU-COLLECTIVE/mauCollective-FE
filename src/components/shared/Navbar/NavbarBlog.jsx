@@ -19,9 +19,6 @@ const NavbarBlog = () => {
             <OverlayLink type="secondary" to='/blog/news'>{t('newsSection.newsCategory')}</OverlayLink>
           </li>
           <li className="uppercase font-light">
-            <OverlayLink type="secondary" to='/blog/artist'>{t('artistSection.artistCategory')}</OverlayLink>
-          </li>
-          <li className="uppercase font-light">
             <OverlayLink type="secondary" to='/blog/collaborations'>{t('collaborationSection.collaborationCategory')}</OverlayLink>
           </li>
           <li className="uppercase font-light">

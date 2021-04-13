@@ -18,24 +18,32 @@ const Footer = () => {
           }
           address {
             city {
-              en
-              jp
-              vn
+              lang {
+                en
+                jp
+                vn
+              }
             }
             country {
-              en
-              jp
-              vn
+              lang {
+                en
+                jp
+                vn
+              }
             }
             streetName {
-              en
-              jp
-              vn
+              lang {
+                en
+                jp
+                vn
+              }
             }
             streetNo {
-              en
-              jp
-              vn
+              lang {
+                en
+                jp
+                vn
+              }
             }
           }
         }
@@ -57,12 +65,12 @@ const Footer = () => {
       </div>
       <div className="relative flex-1 flex flex-wrap sm:space-x-8 2xl:space-x-16 justify-between xl:justify-start xl:px-4">
         <div className="w-1/2 sm:w-auto">
-          <p className="font-light text-xs">{data?.aboutTab?.address?.city?.[language]}</p>
-          <p className="font-light text-xs">{data?.aboutTab?.address?.country?.[language]}</p>
+          <p className="font-light text-xs">{data?.aboutTab?.address?.city?.lang?.[language]}</p>
+          <p className="font-light text-xs">{data?.aboutTab?.address?.country?.lang?.[language]}</p>
         </div>
         <div className="w-1/2 pl-4 sm:pl-0 sm:w-auto">
-          <p className="font-light text-xs">{data?.aboutTab?.address?.streetNo?.[language]}</p>
-          <p className="font-light text-xs">{data?.aboutTab?.address?.streetName?.[language]}</p>
+          <p className="font-light text-xs">{data?.aboutTab?.address?.streetNo?.lang?.[language]}</p>
+          <p className="font-light text-xs">{data?.aboutTab?.address?.streetName?.lang?.[language]}</p>
         </div>
         <div className="w-full sm:w-auto flex sm:flex-col mt-4 sm:mt-0 space-x-8 sm:space-x-0">
           <p className="font-light text-xs w-1/2 sm:w-auto">

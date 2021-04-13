@@ -28,9 +28,11 @@ export const query = graphql`
           current
         }
         title {
-          en
-          vn
-          jp
+          lang {
+            en
+            vn
+            jp
+          }
         }
         mainImage {
           asset {
@@ -71,7 +73,7 @@ const BlogPage = ({ pageContext, data }) => {
           {posts.map(post => (
             <CardPost
               key={post?._id}
-              title={post?.title?.[language]}
+              title={post?.title?.lang?.[language]}
               image={useMemo(() => getGatsbyImage(post?.mainImage?.asset?.id, {maxWidth: 800, aspectRatio: 2.0}), [post?.mainImage?.asset?.id])}
               slug={post?.slug?.current}
               date={post?._updatedAt}
