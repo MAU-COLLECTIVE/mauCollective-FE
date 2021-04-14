@@ -29,6 +29,13 @@ export const query = graphql`
           jp
         }
       }
+      shortDesc {
+        lang {
+          en
+          vn
+          jp
+        }
+      }
       mainImage {
         caption
         asset {
@@ -86,7 +93,8 @@ const SinglePost = ({ pageContext, location, data }) => {
 
 	return (
     <React.Fragment>
-      <SEO titleTemplate={post?.title?.lang?.[language]} />
+      <SEO titleTemplate={post?.title?.lang?.[language]}
+           description={post?.shortDesc?.lang?.[language]} />
       <div className="min-h-screen max-w-screen bg-white py-6 2xl:py-10 flex flex-col items-start">
         <OverlayLink
           type="main"
