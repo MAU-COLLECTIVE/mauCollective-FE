@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { useI18next } from 'gatsby-plugin-react-i18next'
+import Social from 'components/shared/SocialIcon'
 
 const Footer = () => {
   const { sanityAbout: data }  = useStaticQuery(graphql`
@@ -57,10 +58,10 @@ const Footer = () => {
       <div className="xl:w-1/3 flex justify-between xl:justify-start">
         <h1 className="font-light text-xs">{data?.name}</h1>
         <div className="flex justify-end space-x-2 xl:hidden">
-          <a target="_blank" rel="noreferrer" href={data?.aboutTab?.social?.facebook}><img src="/icons/fb.svg"/></a>
-          <a target="_blank" rel="noreferrer" href={data?.aboutTab?.social?.instagram}><img src="/icons/ig.svg"/></a>
-          <a target="_blank" rel="noreferrer" href={data?.aboutTab?.social?.youtube}><img src="/icons/youtube.svg"/></a>
-          <a target="_blank" rel="noreferrer" href={data?.aboutTab?.social?.spotify}><img src="/icons/spotify.svg"/></a>
+          <Social url={data?.aboutTab?.social?.facebook} src="/icons/fb.svg" />
+          <Social url={data?.aboutTab?.social?.instagram} src="/icons/ig.svg" />
+          <Social url={data?.aboutTab?.social?.youtube} src="/icons/youtube.svg" />
+          <Social url={data?.aboutTab?.social?.spotify} src="/icons/spotify.svg" />
         </div>
       </div>
       <div className="relative flex-1 flex flex-wrap sm:space-x-8 2xl:space-x-16 justify-between xl:justify-start xl:px-4">
@@ -86,10 +87,10 @@ const Footer = () => {
           <p className="font-light text-xs">{data?.aboutTab?.email}</p>
         </div>
         <div className="hidden xl:flex flex-1 justify-end space-x-2">
-          <a target="_blank" rel="noreferrer" href={data?.aboutTab?.social?.facebook}><img src="/icons/fb.svg"/></a>
-          <a target="_blank" rel="noreferrer" href={data?.aboutTab?.social?.instagram}><img src="/icons/ig.svg"/></a>
-          <a target="_blank" rel="noreferrer" href={data?.aboutTab?.social?.youtube}><img src="/icons/youtube.svg"/></a>
-          <a target="_blank" rel="noreferrer" href={data?.aboutTab?.social?.spotify}><img src="/icons/spotify.svg"/></a>
+          <Social url={data?.aboutTab?.social?.facebook} src="/icons/fb.svg" />
+          <Social url={data?.aboutTab?.social?.instagram} src="/icons/ig.svg" />
+          <Social url={data?.aboutTab?.social?.youtube} src="/icons/youtube.svg" />
+          <Social url={data?.aboutTab?.social?.spotify} src="/icons/spotify.svg" />
         </div>
       </div>
     </footer>
