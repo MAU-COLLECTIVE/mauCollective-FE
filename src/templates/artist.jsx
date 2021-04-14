@@ -78,7 +78,8 @@ const ArtistPage = ({ pageContext, location, data }) => {
 
   return (
     <React.Fragment>
-      <SEO titleTemplate={artist?.artistName} />
+      <SEO titleTemplate={artist?.artistName}
+           description={artist?.description?.lang?.[language]} />
       <div className="min-h-screen px-4 py-10 sm:py-4 lg:py-12 flex flex-col items-start bg-black text-white">
         <OverlayLink
           type="main"
