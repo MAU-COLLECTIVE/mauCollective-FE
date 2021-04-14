@@ -23,7 +23,7 @@ const RecentCollaboration = ({ id, data }) => {
   const imgRef = useRef([]);
 
   useEffect(() => {
-    TweenLite.to(imgRef.current[0], 0.5, {css:{autoAlpha:1}})
+    if(imgRef.current[0] !== undefined) TweenLite.to(imgRef.current[0], 0.5, {css:{autoAlpha:1}})
   },[])
 
   useEffect(() => {
@@ -36,18 +36,23 @@ const RecentCollaboration = ({ id, data }) => {
 
   return (
     <div id={id} className="min-h-screen relative px-2 lg:px-6 py-28 flex flex-col justify-between text-gray-200">
-      {data.map((dt, index) => (
-        <div
-          className="absolute w-full h-full -mx-2 lg:-mx-6 -my-28 z-0 transition-all invisible"
-          style={{ filter: 'brightness(75%)' }}
-          key={index} ref={elm => imgRef.current[index] = elm}>
-          <GatsbyImage
-            className="w-full h-full object-cover"
-            image={useMemo(() => getGatsbyImage(dt?.mainImage?.asset?.id, {maxWidth: 1920}), [dt?.mainImage?.asset?.id])}  
-            alt={`Image of ${data?.[0].title?.lang?.[language]}`}
-          />
-        </div>
-      ))}
+      {data.map((dt, index) => {
+        const image = useMemo(() => getGatsbyImage(dt?.mainImage?.asset?.id, {maxWidth: 1920}), [dt?.mainImage?.asset?.id]);
+        return (
+          <div
+            className="absolute w-full h-full -mx-2 lg:-mx-6 -my-28 z-0 transition-all invisible"
+            style={{ filter: 'brightness(75%)' }}
+            key={index} ref={elm => imgRef.current[index] = elm}>
+              {image && (
+                <GatsbyImage
+                  className="w-full h-full object-cover"
+                  image={image}  
+                  alt={`Image of ${data?.[0].title?.lang?.[language]}`}
+                />
+              )}
+          </div>
+        )
+      })}
       <div className="text-right px-2 lg:px-6 mb-4 z-10">
         <OverlayLink
           type="secondary"
