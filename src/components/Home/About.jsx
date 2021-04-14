@@ -5,6 +5,7 @@ import { useTranslation } from 'gatsby-plugin-react-i18next'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { getGatsbyImage } from 'components/helper'
+import Social from 'components/shared/SocialIcon'
 
 const About = ({ id, data }) => {
   const { t } = useTranslation();
@@ -22,12 +23,12 @@ const About = ({ id, data }) => {
           </p>
         </div>
         <div className="flex flex-1 flex-col items-center space-y-8">
-          <GatsbyImage image={imageData} alt="Brand Logo" />
+          {imageData && <GatsbyImage image={imageData} alt="Brand Logo" />}
           <div className="flex space-x-2">
-            <a target="_blank" rel="noreferrer" href={data?.aboutTab?.social?.facebook}><img src="/icons/fb.svg"/></a>
-            <a target="_blank" rel="noreferrer" href={data?.aboutTab?.social?.instagram}><img src="/icons/ig.svg"/></a>
-            <a target="_blank" rel="noreferrer" href={data?.aboutTab?.social?.youtube}><img src="/icons/youtube.svg"/></a>
-            <a target="_blank" rel="noreferrer" href={data?.aboutTab?.social?.spotify}><img src="/icons/spotify.svg"/></a>
+            <Social url={data?.aboutTab?.social?.facebook} src="/icons/fb.svg" />
+            <Social url={data?.aboutTab?.social?.instagram} src="/icons/ig.svg" />
+            <Social url={data?.aboutTab?.social?.youtube} src="/icons/youtube.svg" />
+            <Social url={data?.aboutTab?.social?.spotify} src="/icons/spotify.svg" />
           </div>
         </div>
       </div>
