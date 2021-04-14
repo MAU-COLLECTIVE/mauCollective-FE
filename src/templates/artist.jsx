@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import BadgeNumber from 'components/shared/BadgeNumber'
 import OverlayLink from 'components/shared/OverlayLink'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
+import ArtistMedia from  'components/shared/ArtistMedia'
+import SEO from 'components/shared/SEO'
+import { GatsbyImage } from 'gatsby-plugin-image'
+import { getGatsbyImage } from 'components/helper'
+import Social from 'components/shared/SocialIcon'
 
 export const query = graphql`
   query ArtistPage($language: String!, $slug: String!) {
@@ -25,6 +30,41 @@ export const query = graphql`
             jp
         }
       }
+      social {
+        facebook
+        instagram
+        spotify
+        youtube
+      }
+      musicAndVideoTab {
+        someMusic {
+          _key
+          songTitle
+          releaseYear(formatString: "YYYY")
+          shortDes
+          streamLink {
+            appleMusic
+            spotify
+            youtube
+          }
+        }
+        someVideo {
+          _key
+          videoTitle
+          releaseYear(formatString: "YYYY")
+          shortDes
+          streamLink {
+            facebook
+            instagram
+            youtube
+          }
+        }
+      }
+      profilePicture {
+        asset {
+          id
+        }
+      }
     }
   }
 `;
@@ -34,157 +74,85 @@ const ArtistPage = ({ pageContext, location, data }) => {
   const { language } = pageContext;
   const section = location?.state?.section;
   const { sanityArtist: artist } = data;
+  const image = useMemo(() => getGatsbyImage(artist?.profilePicture?.asset?.id, {maxWidth: 600, layout: 'fullWidth'}), [artist]);
 
   return (
-    <div className="min-h-screen max-w-screen py-6 2xl:py-10 flex flex-col items-start bg-black text-white">
-      <OverlayLink
-        type="main"
-        to="/"
-        section={section}
-        className="relative mx-4 2xl:mx-10 px-6 py-4 mb-8">
-          <BadgeNumber number="01" />
-          <span className="block font-medium uppercase text-xs">{t('shared.close')}</span>
-      </OverlayLink>
-      <div className="w-full flex px-4 2xl:px-10">
-        <div className="lg:w-2/3">
-          <div className="relative px-6 py-4 mb-6">
-            <BadgeNumber number="02" />
-            <h1 className="block font-semibold text-3xl uppercase">
-              {artist?.artistName}
-            </h1>
+    <React.Fragment>
+      <SEO titleTemplate={artist?.artistName} />
+      <div className="min-h-screen px-4 py-10 sm:py-4 lg:py-12 flex flex-col items-start bg-black text-white">
+        <OverlayLink
+          type="main"
+          to="/"
+          section={section}
+          className="relative mx-4 2xl:mx-10 px-6 py-4 mb-8">
+            <BadgeNumber number="01" />
+            <span className="block font-medium uppercase text-xs">{t('shared.close')}</span>
+        </OverlayLink>
+        <div className="w-full flex px-4 2xl:px-10 space-x-10">
+          <div className="w-full lg:w-3/5">
+            <div className="relative px-6 py-4 mb-6">
+              <BadgeNumber number="02" />
+              <h1 className="block font-semibold text-3xl uppercase">
+                {artist?.artistName}
+              </h1>
+            </div>
+            <p className="px-6 font-mono xl:text-lg text-gray-300 mb-32">
+              {artist?.description?.lang?.[language]}
+            </p>
+            <div className="lg:hidden flex flex-1 flex-col items-center space-y-8 mb-32">
+              {image && (
+                <GatsbyImage
+                  className="w-full h-auto"
+                  image={image}
+                  alt={`Image of ${artist?.artistName}`}
+                />
+              )}
+              <div className="flex space-x-2">
+                <Social url={artist?.social?.facebook} src="/icons/fb.svg" />
+                <Social url={artist?.social?.instagram} src="/icons/ig.svg" />
+                <Social url={artist?.social?.youtube} src="/icons/youtube.svg" />
+                <Social url={artist?.social?.spotify} src="/icons/spotify.svg" />
+              </div>
+            </div>
+            <div className="flex flex-col md:flex-row md:space-x-16 space-y-16 md:space-y-0 justify-between lg:justify-start">
+              {artist?.musicAndVideoTab?.someMusic?.length > 0 && (
+                <div className="w-full md:w-1/2">
+                  <ArtistMedia
+                    title={t('artistPage.music')}
+                    number="03"
+                    data={artist?.musicAndVideoTab?.someMusic}
+                  />
+                </div>
+              )}
+              {artist?.musicAndVideoTab?.someVideo?.length > 0 && (
+                <div className="w-full md:w-1/2">
+                  <ArtistMedia
+                    title={t('artistPage.video')}
+                    number="03"
+                    data={artist?.musicAndVideoTab?.someVideo}
+                  />
+                </div>
+              )}
+            </div>
           </div>
-          <p className="px-6 font-mono xl:text-lg text-gray-300 mb-32">
-            {artist?.description?.lang?.[language]}
-          </p>
-          <div className="lg:hidden flex flex-1 flex-col items-center space-y-8 mb-32">
-            <img src="/img/artist.png" alt="artist" className="w-full" style={{ maxWidth: '600px' }} />
+          <div className="hidden lg:flex flex-1 flex-col items-center space-y-8">
+            {image && (
+              <GatsbyImage
+                className="w-full h-auto"
+                image={image}
+                alt={`Image of ${artist?.artistName}`}
+              />
+            )}
             <div className="flex space-x-2">
-              <a href="#fb"><img src="/icons/fb.svg"/></a>
-              <a href="#fb"><img src="/icons/ig.svg"/></a>
-              <a href="#fb"><img src="/icons/youtube.svg"/></a>
-              <a href="#fb"><img src="/icons/spotify.svg"/></a>
+              <Social url={artist?.social?.facebook} src="/icons/fb.svg" />
+              <Social url={artist?.social?.instagram} src="/icons/ig.svg" />
+              <Social url={artist?.social?.youtube} src="/icons/youtube.svg" />
+              <Social url={artist?.social?.spotify} src="/icons/spotify.svg" />
             </div>
-          </div>
-          <div className="flex flex-col md:flex-row md:space-x-16 space-y-16 md:space-y-0 justify-between lg:justify-start">
-            <div className="flex flex-col">
-              <div className="relative px-6 py-4 mb-6">
-                <BadgeNumber number="03" />
-                <a href="#" className="block font-semibold text-3xl uppercase">{t('artistPage.music')}</a>
-              </div>
-              <ul className="px-6">
-                <li className="flex space-x-2 md:space-x-8 font-mono font-light text-sm xs:text-lg text-gray-400 border-b border-gray-400 py-6 first:pt-0">
-                  <p className="tracking-wide">2019</p>
-                  <div className="flex flex-col">
-                    <p className="tracking-wide">Wean</p>
-                    <p className="text-xs xs:text-sm">{t('artistPage.livePerform')}</p>
-                  </div>
-                  <div className="flex flex-col flex-1 items-end">
-                    <p className="text-right">{t('artistPage.streamOn')}:</p>
-                    <div className="flex space-x-1 mt-auto">
-                      <img src="/icons/fb.svg" className="w-4 opacity-75" />
-                      <img src="/icons/ig.svg" className="w-4 opacity-75" />
-                    </div>
-                  </div>
-                </li>
-                <li className="flex space-x-2 md:space-x-8 font-mono font-light text-sm xs:text-lg text-gray-400 border-b border-gray-400 py-6 first:pt-0">
-                  <p className="tracking-wide">2019</p>
-                  <div className="flex flex-col">
-                    <p className="tracking-wide">Wean</p>
-                    <p className="text-xs xs:text-sm">{t('artistPage.livePerform')}</p>
-                  </div>
-                  <div className="flex flex-col flex-1 items-end">
-                    <p className="text-right">{t('artistPage.streamOn')}:</p>
-                    <div className="flex space-x-1 mt-auto">
-                      <img src="/icons/fb.svg" className="w-4 opacity-75" />
-                      <img src="/icons/ig.svg" className="w-4 opacity-75" />
-                    </div>
-                  </div>
-                </li>
-                <li className="flex space-x-2 md:space-x-8 font-mono font-light text-sm xs:text-lg text-gray-400 border-b border-gray-400 py-6 first:pt-0">
-                  <p className="tracking-wide">2019</p>
-                  <div className="flex flex-col">
-                    <p className="tracking-wide">Wean</p>
-                    <p className="text-xs xs:text-sm">{t('artistPage.livePerform')}</p>
-                  </div>
-                  <div className="flex flex-col flex-1 items-end">
-                    <p className="text-right">{t('artistPage.streamOn')}:</p>
-                    <div className="flex space-x-1 mt-auto">
-                      <img src="/icons/fb.svg" className="w-4 opacity-75" />
-                      <img src="/icons/ig.svg" className="w-4 opacity-75" />
-                    </div>
-                  </div>
-                </li>
-                <li className="flex justify-end space-x-8 font-light text-xs xs:text-sm text-gray-400 py-6 first:pt-0">
-                  1/2
-                </li>
-              </ul>
-            </div>
-            <div className="flex flex-col">
-              <div className="relative px-6 py-4 mb-6">
-                <BadgeNumber number="04" />
-                <a href="#" className="block font-semibold text-3xl uppercase">{t('artistPage.video')}</a>
-              </div>
-              <ul className="px-6">
-                <li className="flex space-x-2 md:space-x-8 font-mono font-light text-sm xs:text-lg text-gray-400 border-b border-gray-400 py-6 first:pt-0">
-                  <p className="tracking-wide">2019</p>
-                  <div className="flex flex-col">
-                    <p className="tracking-wide">Wean</p>
-                    <p className="text-xs xs:text-sm">{t('artistPage.livePerform')}</p>
-                  </div>
-                  <div className="flex flex-col flex-1 items-end">
-                    <p className="text-right">{t('artistPage.streamOn')}:</p>
-                    <div className="flex space-x-1 mt-auto">
-                      <img src="/icons/fb.svg" className="w-4 opacity-75" />
-                      <img src="/icons/ig.svg" className="w-4 opacity-75" />
-                    </div>
-                  </div>
-                </li>
-                <li className="flex space-x-2 md:space-x-8 font-mono font-light text-sm xs:text-lg text-gray-400 border-b border-gray-400 py-6 first:pt-0">
-                  <p className="tracking-wide">2019</p>
-                  <div className="flex flex-col">
-                    <p className="tracking-wide">Wean</p>
-                    <p className="text-xs xs:text-sm">{t('artistPage.livePerform')}</p>
-                  </div>
-                  <div className="flex flex-col flex-1 items-end">
-                    <p className="text-right">{t('artistPage.streamOn')}:</p>
-                    <div className="flex space-x-1 mt-auto">
-                      <img src="/icons/fb.svg" className="w-4 opacity-75" />
-                      <img src="/icons/ig.svg" className="w-4 opacity-75" />
-                    </div>
-                  </div>
-                </li>
-                <li className="flex space-x-2 md:space-x-8 font-mono font-light text-sm xs:text-lg text-gray-400 border-b border-gray-400 py-6 first:pt-0">
-                  <p className="tracking-wide">2019</p>
-                  <div className="flex flex-col">
-                    <p className="tracking-wide">Wean</p>
-                    <p className="text-xs xs:text-sm">{t('artistPage.livePerform')}</p>
-                  </div>
-                  <div className="flex flex-col flex-1 items-end">
-                    <p className="text-right">{t('artistPage.streamOn')}:</p>
-                    <div className="flex space-x-1 mt-auto">
-                      <img src="/icons/fb.svg" className="w-4 opacity-75" />
-                      <img src="/icons/ig.svg" className="w-4 opacity-75" />
-                    </div>
-                  </div>
-                </li>
-                <li className="flex justify-end space-x-8 font-light text-xs xs:text-sm text-gray-400 py-6 first:pt-0">
-                  1/2
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="hidden lg:flex flex-1 flex-col items-center space-y-8">
-          <img src="/img/artist.png" alt="artist" className="w-full" style={{  maxWidth: '600px' }} />
-          <div className="flex space-x-2">
-            <a href="#fb"><img src="/icons/fb.svg"/></a>
-            <a href="#fb"><img src="/icons/ig.svg"/></a>
-            <a href="#fb"><img src="/icons/youtube.svg"/></a>
-            <a href="#fb"><img src="/icons/spotify.svg"/></a>
           </div>
         </div>
       </div>
-    </div>
+    </React.Fragment>
   )
 }
 
@@ -194,4 +162,4 @@ ArtistPage.propTypes = {
   data: PropTypes.object.isRequired,
 }
 
-export default ArtistPage
+export default React.memo(ArtistPage)

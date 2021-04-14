@@ -152,6 +152,11 @@ export const query = graphql`
             jp
           }
         }
+        profilePicture {
+          asset {
+            id
+          }
+        }
       }
     }
     # Get about
@@ -237,7 +242,7 @@ const HomePage = ({ pageContext, data }) => {
       <SEO description={about?.aboutTab?.metaSeoDescription?.lang?.[language]} /> 
       <Recent id="news" data={newsPost} />
       <About id="about" data={about} />
-      <div id="artists" className="h-screen">
+      <div id="artists" className="min-h-screen block">
         {ctx.artistType === 'slider' ? (
           <ArtistSlider data={artists} />
         ) : (

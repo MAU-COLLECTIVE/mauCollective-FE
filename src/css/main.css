@@ -61,5 +61,5 @@ html, body {
 }
 
 .swiper-slide-active h1 {
-  @apply lg:mt-20 2xl:mt-24 3xl:mt-28 !important;
+  @apply lg:mt-8 2xl:mt-12 3xl:mt-16 !important;
 }
