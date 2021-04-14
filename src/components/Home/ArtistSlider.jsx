@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination, EffectCoverflow } from 'swiper';
-import OverlayLink from 'components/shared/OverlayLink';
-
 import 'swiper/swiper-bundle.css';
+import OverlayLink from 'components/shared/OverlayLink';
+import { GatsbyImage } from 'gatsby-plugin-image'
+import { getGatsbyImage } from 'components/helper'
 
 SwiperCore.use([Navigation, Pagination, EffectCoverflow]);
 
 const ArtistSlider = ({ data }) => {
   return (
-    <div className="min-h-screen bg-black text-white py-28 flex items-center">
+    <div className="min-h-screen bg-black text-white flex items-center">
       <Swiper
         effect="coverflow"
         spaceBetween={220}
@@ -38,17 +39,26 @@ const ArtistSlider = ({ data }) => {
       >
         {data.map(dt => (
           <SwiperSlide key={dt._id}>
-            {({ isActive }) => (
-              <OverlayLink
-                type="secondary"
-                to={`/artist/${dt?.slug?.current}`}
-                section="artists"
-                className={`flex flex-col items-center space-y-6 transition-transform cursor-pointer ${!isActive && 'pointer-events-none'}`}
-              >
-                <img src="/img/artist.png" alt={dt?.artistName} className="slide-img transition-transform" />
-                <h1 className="text-xs">{dt?.artistName}</h1>
-              </OverlayLink>
-            )}
+            {({ isActive }) => {
+              const image = useMemo(() => getGatsbyImage(dt?.profilePicture?.asset?.id, {maxWidth: 600, aspectRatio: 1.0}), [dt?.profilePicture?.asset?.id]);
+              return (
+                <OverlayLink
+                  type="secondary"
+                  to={`/artist/${dt?.slug?.current}`}
+                  section="artists"
+                  className={`flex flex-col items-center space-y-6 transition-transform cursor-pointer ${!isActive && 'pointer-events-none'}`}
+                >
+                  {image && (
+                    <GatsbyImage
+                      className="slide-img transition-transform"
+                      image={image}
+                      alt={`Image of ${dt?.artistName}`}
+                    />
+                  )}
+                  <h1 className="text-xs">{dt?.artistName}</h1>
+                </OverlayLink>
+              )
+            }}
           </SwiperSlide>
         ))}
       </Swiper>
