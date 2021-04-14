@@ -36,7 +36,7 @@ const serializers = {
       const image = getGatsbyImage(props.node.asset._ref, {maxWidth: 1600, aspectRatio: 2.0});
       return (
         <div className="flex flex-col">
-          <GatsbyImage image={image} alt={`Image property ${props.node.asset._key}`} />
+          {image && <GatsbyImage image={image} alt={`Image property ${props.node.asset._key}`} />}
           {props?.node?.caption && (
             <span className="mx-8 mt-2 font-light font-mono text-base">
               {props.node.caption}

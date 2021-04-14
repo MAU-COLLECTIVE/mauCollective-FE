@@ -6,11 +6,13 @@ import OverlayLink from 'components/shared/OverlayLink'
 const CardPost = ({ title, image, slug, date }) => {
   return (
     <div className="flex flex-col space-y-4">
-      <GatsbyImage
-        className="w-full h-auto"
-        image={image}
-        alt={`Image of ${title}`}
-      />
+      {image && (
+        <GatsbyImage
+          className="w-full h-auto"
+          image={image}
+          alt={`Image of ${title}`}
+        />
+      )}
       <OverlayLink
         type="secondary"
         to={`/blog/${slug}`}

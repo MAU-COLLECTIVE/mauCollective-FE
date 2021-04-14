@@ -31,11 +31,13 @@ const Recent = ({ id, data }) => {
             {data?.[0]?.title?.lang?.[language]}
           </h1>
           <div className="xl:hidden md:block w-full mb-8 xl:mb-0">
-            <GatsbyImage
-              className="w-full"
-              image={firstImage}
-              alt={`Image of ${data?.[0]?.title?.lang?.[language]}`}
-            />
+            {firstImage && (
+              <GatsbyImage
+                className="w-full"
+                image={firstImage}
+                alt={`Image of ${data?.[0]?.title?.lang?.[language]}`}
+              />
+            )}
           </div>
           <div className="flex flex-col md:flex-row xl:flex-col md:space-x-8 items-start justify-start xl:space-x-0 space-y-8 md:space-y-0 xl:space-y-8">
             <p className="font-mono text-sm xs:text-lg font-light xl:font-normal">
@@ -51,11 +53,13 @@ const Recent = ({ id, data }) => {
         </div>
         <div className="px-2 lg:px-6 py-2 flex-1 xl:space-y-6">
           <div className="hidden xl:block w-full">
-            <GatsbyImage
-              className="w-full max-h-96"
-              image={firstImage}
-              alt={`Image of ${data?.[0]?.title?.lang?.[language]}`}
-            />
+            {firstImage && (
+              <GatsbyImage
+                className="w-full max-h-96"
+                image={firstImage}
+                alt={`Image of ${data?.[0]?.title?.lang?.[language]}`}
+              />
+            )}
           </div>
           <div className="flex flex-col-reverse sm:flex-row">
             <div className="block mt-8 sm:mt-0 xl:hidden w-1/3 lg:pr-6 xl:pr-0">
