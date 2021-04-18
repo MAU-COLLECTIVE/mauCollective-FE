@@ -65,7 +65,14 @@ const RecentCollaboration = ({ id, data }) => {
       </div>
       <div className="flex flex-col lg:flex-row px-2 lg:px-6 z-10 flex-1 items-center">
         <div className="relative w-full lg:w-1/2 xl:w-1/3">
-          <h1 className="font-black text-2xl xs:text-3xl lg:text-5xl mb-8 xl:mb-28 uppercase xl:tracking-wide">{data?.[currentIndex]?.title?.lang?.[language]}</h1>
+          <OverlayLink
+            type="secondary"
+            to={`/blog/${data?.[0]?.slug?.current}`}
+            section={id}>
+              <h1 className="font-black text-2xl xs:text-3xl lg:text-5xl mb-8 xl:mb-28 uppercase xl:tracking-wide hover:text-gray-300 transition-colors">
+                {data?.[currentIndex]?.title?.lang?.[language]}
+              </h1>
+          </OverlayLink>
           <p className="font-mono xl:text-lg mb-8 long-text">
             {data?.[0]?.shortDesc?.lang?.[language]}
           </p>
