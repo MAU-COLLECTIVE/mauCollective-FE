@@ -7,11 +7,15 @@ const CardPost = ({ title, image, slug, date }) => {
   return (
     <div className="flex flex-col space-y-4">
       {image && (
-        <GatsbyImage
-          className="w-full h-auto"
-          image={image}
-          alt={`Image of ${title}`}
-        />
+        <OverlayLink
+          type="secondary"
+          to={`/blog/${slug}`}>
+            <GatsbyImage
+              className="w-full h-auto"
+              image={image}
+              alt={`Image of ${title}`}
+            />
+        </OverlayLink>
       )}
       <OverlayLink
         type="secondary"
