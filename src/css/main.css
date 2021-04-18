@@ -63,3 +63,17 @@ html, body {
 .swiper-slide-active h1 {
   @apply lg:mt-8 2xl:mt-12 3xl:mt-16 !important;
 }
+
+.long-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+.long-text-single {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
