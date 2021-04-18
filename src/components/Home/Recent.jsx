@@ -40,7 +40,7 @@ const Recent = ({ id, data }) => {
             )}
           </div>
           <div className="flex flex-col md:flex-row xl:flex-col md:space-x-8 items-start justify-start xl:space-x-0 space-y-8 md:space-y-0 xl:space-y-8">
-            <p className="font-mono text-sm xs:text-lg font-light xl:font-normal">
+            <p className="font-mono text-sm xs:text-lg font-light xl:font-normal long-text">
               {data?.[0]?.shortDesc?.lang?.[language]}
             </p>
             <OverlayLink

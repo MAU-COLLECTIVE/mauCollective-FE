@@ -66,7 +66,7 @@ const RecentCollaboration = ({ id, data }) => {
       <div className="flex flex-col lg:flex-row px-2 lg:px-6 z-10 flex-1 items-center">
         <div className="relative w-full lg:w-1/2 xl:w-1/3">
           <h1 className="font-black text-2xl xs:text-3xl lg:text-5xl mb-8 xl:mb-28 uppercase xl:tracking-wide">{data?.[currentIndex]?.title?.lang?.[language]}</h1>
-          <p className="font-mono xl:text-lg mb-8">
+          <p className="font-mono xl:text-lg mb-8 long-text">
             {data?.[0]?.shortDesc?.lang?.[language]}
           </p>
           <OverlayLink
@@ -78,8 +78,13 @@ const RecentCollaboration = ({ id, data }) => {
           </OverlayLink>
         </div>
         <ul className="flex flex-row mt-28 lg:mt-0 lg:flex-col lg:flex-1 lg:items-end justify-center space-x-4 lg:space-x-0 lg:space-y-4 text-xs">
-          <li onClick={() => setCurrentIndex(0)} className={`cursor-pointer transition-all ${currentIndex === 0 && 'border-b-2 border-white'}`}>01</li>
-          <li onClick={() => setCurrentIndex(1)} className={`cursor-pointer transition-all ${currentIndex === 1 && 'border-b-2 border-white'}`}>02</li>
+          {data?.map((_, index) => (
+            <li key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`cursor-pointer transition-all ${currentIndex === index && 'border-b-2 border-white'}`}>
+                  {(index+1).toString().padStart(2, '0')}
+            </li>  
+          ))}
         </ul>
       </div>
     </div>
