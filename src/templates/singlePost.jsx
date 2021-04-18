@@ -89,7 +89,7 @@ const SinglePost = ({ pageContext, location, data }) => {
   const { language } = pageContext;
   const section = location?.state?.section;
   const { sanityPost: post, allSanityPost: { nodes: nextPosts } } = data;
-  const image = useMemo(() => getGatsbyImage(post?.mainImage?.asset?.id, {maxWidth: 1600, aspectRatio: 2.0}), [post]);
+  const image = useMemo(() => getGatsbyImage(post?.mainImage?.asset?.id, {maxWidth: 1920}), [post]);
 
 	return (
     <React.Fragment>
@@ -138,7 +138,7 @@ const SinglePost = ({ pageContext, location, data }) => {
           </div>
           <BlockContent
             blocks={post?.body?.lang?.[`_raw${capitalize(language)}`]}
-            className="w-full px-6 2xl:w-1/2 font-mono space-y-12 text-xl sm:text-2xl md:text-3xl break-all text-gray-800 text-justify" />
+            className="w-full px-6 2xl:p-0 2xl:w-1/2 font-mono space-y-12 text-xl sm:text-2xl md:text-3xl break-all text-gray-800 text-justify" />
           <ul className="text-xs font-light font-mono flex flex-col self-start mx-6 2xl:mx-16">
             <li className="tracking-wide">
               <span className="uppercase mr-2 tracking-widest">Text:</span>
