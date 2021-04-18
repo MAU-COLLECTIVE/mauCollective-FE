@@ -27,16 +27,26 @@ const Recent = ({ id, data }) => {
       <div className="flex flex-col xl:flex-row">
         <div className="relative px-2 lg:px-6 py-4 w-full xl:w-1/3">
           <BadgeNumber number={id === 'news' ? '02' : '04'} />
-          <h1 className="font-black text-2xl xs:text-3xl lg:text-5xl mb-8 xl:mb-28 uppercase xl:tracking-wide">
-            {data?.[0]?.title?.lang?.[language]}
-          </h1>
+          <OverlayLink
+            type="secondary"
+            to={`/blog/${data?.[0]?.slug?.current}`}
+            section={id}>
+              <h1 className="font-black text-2xl xs:text-3xl lg:text-5xl mb-8 xl:mb-28 uppercase xl:tracking-wide hover:text-gray-600 transition-colors">
+                {data?.[0]?.title?.lang?.[language]}
+              </h1>
+          </OverlayLink>
           <div className="xl:hidden md:block w-full mb-8 xl:mb-0">
             {firstImage && (
-              <GatsbyImage
-                className="w-full"
-                image={firstImage}
-                alt={`Image of ${data?.[0]?.title?.lang?.[language]}`}
-              />
+              <OverlayLink
+                type="secondary"
+                to={`/blog/${data?.[0]?.slug?.current}`}
+                section={id}>
+                  <GatsbyImage
+                    className="w-full"
+                    image={firstImage}
+                    alt={`Image of ${data?.[0]?.title?.lang?.[language]}`}
+                  />
+              </OverlayLink>
             )}
           </div>
           <div className="flex flex-col md:flex-row xl:flex-col md:space-x-8 items-start justify-start xl:space-x-0 space-y-8 md:space-y-0 xl:space-y-8">
@@ -54,11 +64,16 @@ const Recent = ({ id, data }) => {
         <div className="px-2 lg:px-6 py-2 flex-1 xl:space-y-6">
           <div className="hidden xl:block w-full">
             {firstImage && (
-              <GatsbyImage
-                className="w-full max-h-96"
-                image={firstImage}
-                alt={`Image of ${data?.[0]?.title?.lang?.[language]}`}
-              />
+              <OverlayLink
+                type="secondary"
+                to={`/blog/${data?.[0]?.slug?.current}`}
+                section={id}>
+                  <GatsbyImage
+                    className="w-full max-h-96"
+                    image={firstImage}
+                    alt={`Image of ${data?.[0]?.title?.lang?.[language]}`}
+                  />
+              </OverlayLink>
             )}
           </div>
           <div className="flex flex-col-reverse sm:flex-row">
