@@ -10,7 +10,6 @@ const NavComponent = ({ className }) => {
   const { t } = useTranslation();
   const ctx = useContext(HomeContext);
   const location = useLocation();
-  const section = location?.state?.section;
 
   const toggleArtistType = () => {
     const artistSection = document.getElementById('artists')
@@ -30,12 +29,7 @@ const NavComponent = ({ className }) => {
       top: offsetPosition,
       behavior: "smooth"
     });
-  }
-
-  useLayoutEffect(() => {
-    if(section) handleNav(section)
-  }, [section])
-    
+  }    
 
   return (
     <div className={`lg:space-x-4 ${className}`}>
