@@ -9,7 +9,7 @@ const CardPost = ({ title, image, slug, date }) => {
       {image && (
         <OverlayLink
           type="secondary"
-          to={`/blog/${slug}`}>
+          to={slug}>
             <GatsbyImage
               className="w-full h-auto"
               image={image}
@@ -19,7 +19,7 @@ const CardPost = ({ title, image, slug, date }) => {
       )}
       <OverlayLink
         type="secondary"
-        to={`/blog/${slug}`}
+        to={slug}
         className="font-mono font-semibold text-sm hover:text-gray-600 transition-colors">
           {title}
       </OverlayLink>

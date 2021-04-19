@@ -18,7 +18,7 @@ const Recent = ({ id, data }) => {
       <div className="text-right px-2 lg:px-6 mb-2 hidden xl:block">
         <OverlayLink
           type="secondary"
-          to={`/blog/${id}`}
+          to={`/${id}`}
           section={id}
           className="font-light text-xs uppercase">
             {`${t('shared.viewAll')} ${id === 'news' ? t('newsSection.newsCategory') : t('eventSection.eventCategory')}`}
@@ -29,7 +29,7 @@ const Recent = ({ id, data }) => {
           <BadgeNumber number={id === 'news' ? '02' : '04'} />
           <OverlayLink
             type="secondary"
-            to={`/blog/${data?.[0]?.slug?.current}`}
+            to={`/${id}/${data?.[0]?.slug?.current}`}
             section={id}>
               <h1 className="font-black text-2xl xs:text-3xl lg:text-5xl mb-8 xl:mb-28 uppercase xl:tracking-wide hover:text-gray-600 transition-colors">
                 {data?.[0]?.title?.lang?.[language]}
@@ -39,7 +39,7 @@ const Recent = ({ id, data }) => {
             {firstImage && (
               <OverlayLink
                 type="secondary"
-                to={`/blog/${data?.[0]?.slug?.current}`}
+                to={`/${id}/${data?.[0]?.slug?.current}`}
                 section={id}>
                   <GatsbyImage
                     className="w-full"
@@ -55,7 +55,7 @@ const Recent = ({ id, data }) => {
             </p>
             <OverlayLink
               type="secondary"
-              to={`/blog/${data?.[0]?.slug?.current}`}
+              to={`/${id}/${data?.[0]?.slug?.current}`}
               section={id}
               className="font-light text-sm leading-6 uppercase border-b-2 border-black border-solid whitespace-nowrap hover:text-gray-600 hover:border-gray-600 transition-colors">
                 {t('shared.continueRead')}</OverlayLink>
@@ -66,7 +66,7 @@ const Recent = ({ id, data }) => {
             {firstImage && (
               <OverlayLink
                 type="secondary"
-                to={`/blog/${data?.[0]?.slug?.current}`}
+                to={`/${id}/${data?.[0]?.slug?.current}`}
                 section={id}>
                   <GatsbyImage
                     className="w-full max-h-96"
@@ -80,7 +80,7 @@ const Recent = ({ id, data }) => {
             <div className="block mt-8 sm:mt-0 xl:hidden w-1/3 lg:pr-6 xl:pr-0">
               <OverlayLink
                 type="secondary"
-                to="/blog"
+                to={`/${id}`}
                 section={id}
                 className="font-light text-xs uppercase hover:text-gray-400 transition-colors">
                   {`${t('shared.viewAll')} ${id === 'news' ? t('newsSection.newsCategory') : t('eventSection.eventCategory')}`}
@@ -98,7 +98,7 @@ const Recent = ({ id, data }) => {
                       <CardPost
                         image={useMemo(() => getGatsbyImage(dt?.mainImage?.asset?.id, {maxWidth: 600, aspectRatio: 2.0}), [dt?.mainImage?.asset?.id])}
                         title={dt?.title?.lang?.[language]}
-                        slug={dt?.slug?.current}
+                        slug={`/${id}/${dt?.slug?.current}`}
                         date={dt?._updatedAt}
                       />
                     </div>
