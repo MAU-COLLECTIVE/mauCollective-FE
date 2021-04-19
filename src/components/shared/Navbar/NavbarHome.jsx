@@ -50,7 +50,7 @@ const NavComponent = ({ className }) => {
         <button onClick={() => handleNav('artists')} className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase focus:outline-none">{t('artistSection.artistCategory')}</button>
         <button
           id="btn-artist-type"
-          className="absolute w-max break-words hidden font-normal text-xs tracking-widest lg:font-medium uppercas focus:outline-nonee focus:outline-none"
+          className="z-50 absolute w-max break-words hidden font-normal text-xs tracking-widest lg:font-medium uppercas focus:outline-nonee focus:outline-none"
           onClick={toggleArtistType}>
           {ctx.artistType === 'slider' ? t('artistSection.artistViewAllStyle') : t('artistSection.artistShuffleStyle')}
         </button>
