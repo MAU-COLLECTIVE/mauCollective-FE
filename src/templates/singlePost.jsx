@@ -156,7 +156,7 @@ const SinglePost = ({ pageContext, location, data }) => {
                 to={`/${category}`}
                 section="news"
                 className="font-light text-xs uppercase">
-                  {t('shared.viewAll')+' '+t('newsSection.newsCategory')}
+                  {t('shared.viewAll')+' '+category}
               </OverlayLink>
             </div>
             <div className="w-full md:w-1/3">
@@ -168,7 +168,7 @@ const SinglePost = ({ pageContext, location, data }) => {
                 to={`/${category}`}
                 section="news"
                 className="font-light text-xs uppercase">
-                  {t('shared.viewAll')+' '+t('newsSection.newsCategory')}
+                  {t('shared.viewAll')+' '+category}
               </OverlayLink>
             </div>
             {nextPosts?.length > 0 && (
