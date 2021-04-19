@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { navigate, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import BadgeNumber from 'components/shared/BadgeNumber'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
@@ -8,6 +8,7 @@ import SEO from 'components/shared/SEO'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { getGatsbyImage } from 'components/helper'
 import Social from 'components/shared/SocialIcon'
+import CloseButton from 'components/shared/CloseButton'
 
 export const query = graphql`
   query ArtistPage($language: String!, $slug: String!) {
@@ -68,7 +69,7 @@ export const query = graphql`
   }
 `;
 
-const ArtistPage = ({ pageContext, location, data }) => {
+const ArtistPage = ({ pageContext, data }) => {
   const { t } = useTranslation();
   const { language } = pageContext;
   const { sanityArtist: artist } = data;
@@ -79,12 +80,7 @@ const ArtistPage = ({ pageContext, location, data }) => {
       <SEO titleTemplate={artist?.artistName}
            description={artist?.description?.lang?.[language]} />
       <div className="min-h-screen px-4 py-10 sm:py-4 lg:py-12 flex flex-col items-start bg-black text-white">
-      <button
-        className="relative mx-4 2xl:mx-10 px-6 py-4 mb-8 focus:outline-none"
-        onClick={() => navigate(location?.state?.referrer ? -1 : '/')}>
-            <BadgeNumber number="01" />
-            <span className="block font-medium uppercase text-xs">{t('shared.close')}</span>
-        </button>
+        <CloseButton className="relative mx-4 2xl:mx-10 px-6 py-4 mb-8 focus:outline-none" />
         <div className="w-full flex px-4 2xl:px-10 space-x-10">
           <div className="w-full lg:w-3/5">
             <div className="relative px-6 py-4 mb-6">
