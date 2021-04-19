@@ -1,8 +1,7 @@
 import React, { useMemo } from 'react'
-import { graphql } from 'gatsby'
+import { navigate, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import BadgeNumber from 'components/shared/BadgeNumber'
-import OverlayLink from 'components/shared/OverlayLink'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 import ArtistMedia from  'components/shared/ArtistMedia'
 import SEO from 'components/shared/SEO'
@@ -72,7 +71,6 @@ export const query = graphql`
 const ArtistPage = ({ pageContext, location, data }) => {
   const { t } = useTranslation();
   const { language } = pageContext;
-  const section = location?.state?.section;
   const { sanityArtist: artist } = data;
   const image = useMemo(() => getGatsbyImage(artist?.profilePicture?.asset?.id, {maxWidth: 600, layout: 'fullWidth'}), [artist]);
 
@@ -81,14 +79,12 @@ const ArtistPage = ({ pageContext, location, data }) => {
       <SEO titleTemplate={artist?.artistName}
            description={artist?.description?.lang?.[language]} />
       <div className="min-h-screen px-4 py-10 sm:py-4 lg:py-12 flex flex-col items-start bg-black text-white">
-        <OverlayLink
-          type="main"
-          to="/"
-          section={section}
-          className="relative mx-4 2xl:mx-10 px-6 py-4 mb-8">
+      <button
+        className="relative mx-4 2xl:mx-10 px-6 py-4 mb-8 focus:outline-none"
+        onClick={() => navigate(location?.state?.referrer ? -1 : '/')}>
             <BadgeNumber number="01" />
             <span className="block font-medium uppercase text-xs">{t('shared.close')}</span>
-        </OverlayLink>
+        </button>
         <div className="w-full flex px-4 2xl:px-10 space-x-10">
           <div className="w-full lg:w-3/5">
             <div className="relative px-6 py-4 mb-6">

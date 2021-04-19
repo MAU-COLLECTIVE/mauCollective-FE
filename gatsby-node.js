@@ -47,6 +47,9 @@ exports.createPages = ({ graphql, actions }) => {
           slug {
             current
           }
+          categories {
+            title
+          }
         }
       }
     }  
@@ -78,7 +81,7 @@ exports.createPages = ({ graphql, actions }) => {
         const langPrefix = lang === defaultLanguage ? `` : `${lang}/`;
         createPage({
           // Path for this page — required
-          path: `${langPrefix}blog/${node.title.toLowerCase()}`,
+          path: `${langPrefix}${node.title.toLowerCase()}`,
           component: categoryTemplate,
           context: {
             id: node._id
@@ -91,13 +94,16 @@ exports.createPages = ({ graphql, actions }) => {
     allSanityPost.nodes.forEach(node => {
       languages.forEach(lang => {
         const langPrefix = lang === defaultLanguage ? `` : `${lang}/`;
-        createPage({
-          // Path for this page — required
-          path: `${langPrefix}blog/${node.slug.current}`,
-          component: postTemplate,
-          context: {
-            id: node._id
-          },
+        node.categories.forEach(category => {
+          createPage({
+            // Path for this page — required
+            path: `${langPrefix}${category.title.toLowerCase()}/${node.slug.current}`,
+            component: postTemplate,
+            context: {
+              id: node._id,
+              category: category.title.toLowerCase()
+            },
+          })
         })
       })
     })    

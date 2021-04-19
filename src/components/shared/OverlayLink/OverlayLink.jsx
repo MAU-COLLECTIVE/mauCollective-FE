@@ -5,7 +5,6 @@ import { useI18next } from 'gatsby-plugin-react-i18next'
 
 function PaintDrip({
   type = 'main',
-  section,
   to,
   ...props
 }) {
@@ -143,7 +142,6 @@ function PaintDrip({
             slideIn(entry, node, type),
         }}
         to={linkTo}
-        state={{ section }}
         {...props}>
         {props.children}
       </TransitionLink>

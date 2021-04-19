@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { graphql } from 'gatsby'
+import { navigate, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import BadgeNumber from 'components/shared/BadgeNumber'
 import CardPost from 'components/shared/CardPost'
@@ -83,11 +83,9 @@ export const query = graphql`
   }
 `;
 
-
 const SinglePost = ({ pageContext, location, data }) => {
   const { t } = useTranslation();
-  const { language } = pageContext;
-  const section = location?.state?.section;
+  const { language, category } = pageContext;
   const { sanityPost: post, allSanityPost: { nodes: nextPosts } } = data;
   const image = useMemo(() => getGatsbyImage(post?.mainImage?.asset?.id, {maxWidth: 1920}), [post]);
 
@@ -96,14 +94,12 @@ const SinglePost = ({ pageContext, location, data }) => {
       <SEO titleTemplate={post?.title?.lang?.[language]}
            description={post?.shortDesc?.lang?.[language]} />
       <div className="min-h-screen max-w-screen bg-white py-6 2xl:py-10 flex flex-col items-start">
-        <OverlayLink
-          type="main"
-          to={location?.state?.referrer ?? '/'}
-          section={section}
-          className="relative mx-4 2xl:mx-10 px-6 py-4">
+        <button
+          className="relative mx-4 2xl:mx-10 px-6 py-4 focus:outline-none"
+          onClick={() => navigate(location?.state?.referrer ? -1 : '/')}>
             <BadgeNumber number="01" />
             <span className="block font-medium uppercase text-xs">{t('shared.close')}</span>
-        </OverlayLink>
+        </button>
         <div className="flex flex-col items-center w-full space-y-12">
           <h1 className="font-black text-2xl md:text-3xl xl:text-6xl uppercase xl:tracking-wide px-6 2xl:px-0 w-full 2xl:w-2/3 text-center">
             {post?.title?.lang?.[language]}
@@ -157,7 +153,7 @@ const SinglePost = ({ pageContext, location, data }) => {
             <div className="w-full text-right md:mb-2 hidden md:block">
               <OverlayLink
                 type="secondary"
-                to="/blog/news"
+                to={`/${category}`}
                 section="news"
                 className="font-light text-xs uppercase">
                   {t('shared.viewAll')+' '+t('newsSection.newsCategory')}
@@ -169,7 +165,7 @@ const SinglePost = ({ pageContext, location, data }) => {
             <div className="w-full md:mb-2 md:hidden">
               <OverlayLink
                 type="secondary"
-                to="/blog/news"
+                to={`/${category}`}
                 section="news"
                 className="font-light text-xs uppercase">
                   {t('shared.viewAll')+' '+t('newsSection.newsCategory')}
@@ -186,7 +182,7 @@ const SinglePost = ({ pageContext, location, data }) => {
                       <CardPost
                         image={useMemo(() => getGatsbyImage(dt?.mainImage?.asset?.id, {maxWidth: 600, aspectRatio: 2.0}), [dt?.mainImage?.asset?.id])}
                         title={dt?.title?.lang?.[language]}
-                        slug={dt?.slug?.current}
+                        slug={`/${category}/${dt?.slug?.current}`}
                         date={dt?._updatedAt}
                       />
                     </div>
