@@ -3,6 +3,9 @@ import './src/css/fonts.css'
 
 import React from 'react';
 import { HomeProvider } from './src/contexts/HomeContext';
+import smoothscroll from 'smoothscroll-polyfill';
+
+smoothscroll.polyfill();
 
 export const wrapRootElement = ({ element }) => (
   <HomeProvider>
