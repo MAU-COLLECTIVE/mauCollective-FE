@@ -40,6 +40,7 @@ export const query = graphql`
         caption
         asset {
           id
+          url
         }
       }
       body {
@@ -91,8 +92,11 @@ const SinglePost = ({ pageContext, data }) => {
 
 	return (
     <React.Fragment>
-      <SEO titleTemplate={post?.title?.lang?.[language]}
-           description={post?.shortDesc?.lang?.[language]} />
+      <SEO
+        titleTemplate={post?.title?.lang?.[language]}
+        description={post?.shortDesc?.lang?.[language]}
+        imgUrl={post?.mainImage?.asset?.url}  
+      />
       <div className="min-h-screen max-w-screen bg-white py-6 2xl:py-10 flex flex-col items-start">
         <CloseButton className="relative mx-4 2xl:mx-10 px-6 py-4 focus:outline-none" />
         <div className="flex flex-col items-center w-full space-y-12">
