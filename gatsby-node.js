@@ -48,6 +48,7 @@ exports.createPages = ({ graphql, actions }) => {
             current
           }
           categories {
+            _id
             title
           }
         }
@@ -101,11 +102,12 @@ exports.createPages = ({ graphql, actions }) => {
             component: postTemplate,
             context: {
               id: node._id,
+              categoryId: category._id,
               category: category.title.toLowerCase()
             },
           })
         })
       })
-    })    
+    })
   })
 }

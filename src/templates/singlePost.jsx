@@ -11,7 +11,7 @@ import SEO from 'components/shared/SEO'
 import CloseButton from 'components/shared/CloseButton'
 
 export const query = graphql`
-  query($language: String!, $id: String!) {
+  query($language: String!, $id: String!, $categoryId: String!) {
     locales: allLocale(filter: {language: {eq: $language}}) {
       edges {
         node {
@@ -55,7 +55,10 @@ export const query = graphql`
       _updatedAt(formatString: "DD.MM.YYYY")
     }
     allSanityPost(
-      filter: {_id: {ne: $id}}
+      filter: {
+        _id: {ne: $id}
+        categories: {elemMatch: {_id: {eq: $categoryId}}}
+      }
       limit: 3
       sort: {fields: _updatedAt, order: DESC}
     ) {
