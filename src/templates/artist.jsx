@@ -63,6 +63,7 @@ export const query = graphql`
       profilePicture {
         asset {
           id
+          url
         }
       }
     }
@@ -77,8 +78,11 @@ const ArtistPage = ({ pageContext, data }) => {
 
   return (
     <React.Fragment>
-      <SEO titleTemplate={artist?.artistName}
-           description={artist?.description?.lang?.[language]} />
+      <SEO
+        titleTemplate={artist?.artistName}
+        description={artist?.description?.lang?.[language]}
+        imgUrl={artist?.profilePicture?.asset?.url}
+      />
       <div className="min-h-screen px-4 py-10 sm:py-4 lg:py-12 flex flex-col items-start bg-black text-white">
         <CloseButton className="relative mx-4 2xl:mx-10 px-6 py-4 mb-8 focus:outline-none" />
         <div className="w-full flex px-4 2xl:px-10 space-x-10">

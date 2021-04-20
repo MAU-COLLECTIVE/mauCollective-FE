@@ -169,6 +169,7 @@ export const query = graphql`
           asset {
             id
             gatsbyImageData
+            url
           }
         }
         description {
@@ -239,7 +240,10 @@ const HomePage = ({ pageContext, data }) => {
 
   return (
     <HomeLayout>
-      <SEO description={about?.aboutTab?.metaSeoDescription?.lang?.[language]} /> 
+      <SEO
+        description={about?.aboutTab?.metaSeoDescription?.lang?.[language]}
+        imgUrl={about?.aboutTab?.logo?.asset?.url}  
+       /> 
       <Recent id="news" data={newsPost} />
       <About id="about" data={about} />
       <div id="artists" className="min-h-screen block">
