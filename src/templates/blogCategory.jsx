@@ -44,6 +44,16 @@ export const query = graphql`
     }
     sanityCategory(_id: {eq: $id}) {
       title
+      description
+    }
+    sanityAbout {
+      aboutTab {
+        logo {
+          asset {
+            url
+          }
+        }
+      }
     }
   }
 `;
@@ -51,7 +61,11 @@ export const query = graphql`
 const BlogPage = ({ pageContext, data }) => {
   const { t } = useTranslation();
   const { language } = pageContext;
-  const { sanityCategory: category, allSanityPost: { nodes: posts} } = data;
+  const {
+    sanityCategory: category,
+    allSanityPost: { nodes: posts},
+    sanityAbout: about
+  } = data;
   const renderCategory = useCallback(category => {
     switch (category.toLowerCase()) {
       case 'news': return t('newsSection.newsCategory');
@@ -64,7 +78,11 @@ const BlogPage = ({ pageContext, data }) => {
 
   return (
     <BlogLayout>
-      <SEO titleTemplate={category?.title} />
+      <SEO
+        titleTemplate={category?.title}
+        description={category?.description}
+        imgUrl={about?.aboutTab?.logo?.asset?.url} 
+      />
       <div className="flex flex-col">
         <h1 className="block font-black text-2xl sm:text-5xl mb-8 sm:mb-10 lg:mb-14 uppercase xl:tracking-wide text-right sm:text-left">
           {renderCategory(category?.title)}
