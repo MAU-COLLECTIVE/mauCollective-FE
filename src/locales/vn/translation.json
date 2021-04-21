@@ -31,7 +31,7 @@
 	},
 	"shopSection": {
 		"shopCategory": "Shop",
-		"shopComingSoon": "Tính năng của hàng sắp ra mắt",
+		"shopComingSoon": "Tính năng cửa hàng sắp ra mắt",
 		"shopGoBack": "Trở về trang chủ"
 	},
 	"artistPage": {
@@ -41,7 +41,7 @@
 		"streamOn": "Stream"
 	},
 	"404Page": {
-		"404PageText": "trang này không khả dụng",
+		"404PageText": "404 trang này không khả dụng",
 		"404PageGoBack": "Trở về trang chủ"
 	}
 }
