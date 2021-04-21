@@ -1,41 +1,47 @@
 {
-  "shared": {
-    "close": "閉じる",
-    "loadMore": "JPロード",
-    "categories": "カテゴリー",
-    "viewAll": "全てを見る",
-    "continueRead": "続きを読む",
-    "watchVideo": "ビデオ を見る",
-    "nextStory": "次のストーリー"
-  },
-  "homeSection": {
-    "homeCategory": "ホーム"
-  },
-  "newsSection": {
-    "newsCategory": "ニュース"
-  },
-  "aboutSection": {
-    "aboutCategory": "M.A.Uについて、",
-    "contactUsField": "連絡"
-  },
-  "artistSection": {
-    "artistCategory": "アーティスト",
-    "artistViewAllStyle": "全てのアーティストを見る",
-    "artistShuffleStyle": "シャッフル"
-  },
-  "collaborationSection": {
-    "collaborationCategory": "コラボレーション"
-  },
-  "eventSection": {
-    "eventCategory": "イベント"
-  },
-  "shopSection": {
-    "shopCategory": "ショップ"
-  },
-  "artistPage": {
-    "music": "ミュージック",
-    "video": "ビデオ",
-    "livePerform": "ライブパフォーマンス",
-    "streamOn": "ストリーム"
-  }
+	"shared": {
+		"close": "閉じる",
+		"loadMore": "JPロード",
+		"categories": "カテゴリー",
+		"viewAll": "全てを見る",
+		"continueRead": "続きを読む",
+		"watchVideo": "ビデオ を見る",
+		"nextStory": "次のストーリー"
+	},
+	"homeSection": {
+		"homeCategory": "ホーム"
+	},
+	"newsSection": {
+		"newsCategory": "ニュース"
+	},
+	"aboutSection": {
+		"aboutCategory": "M.A.Uについて、",
+		"contactUsField": "連絡"
+	},
+	"artistSection": {
+		"artistCategory": "アーティスト",
+		"artistViewAllStyle": "全てのアーティストを見る",
+		"artistShuffleStyle": "シャッフル"
+	},
+	"collaborationSection": {
+		"collaborationCategory": "コラボレーション"
+	},
+	"eventSection": {
+		"eventCategory": "イベント"
+	},
+	"shopSection": {
+		"shopCategory": "ショップ",
+		"shopComingSoon": "近日公開",
+		"shopGoBack": "ホーム"
+	},
+	"artistPage": {
+		"music": "ミュージック",
+		"video": "ビデオ",
+		"livePerform": "ライブパフォーマンス",
+		"streamOn": "ストリーム"
+	},
+	"404Page": {
+		"404PageText": "見つかりません",
+		"404PageGoBack": "ホーム"
+	}
 }

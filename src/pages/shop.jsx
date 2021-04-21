@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import HomeLayout from 'layouts/HomeLayout'
 import SEO from 'components/shared/SEO'
 import OverlayLink from '../components/shared/OverlayLink'
+import { useI18next, useTranslation } from 'gatsby-plugin-react-i18next'
 
 export const query = graphql`
 	query ComingSoonPage($language: String!) {
@@ -84,8 +85,9 @@ export const query = graphql`
 	}
 `
 
-const ComingSoonPage = ({ pageContext, data }) => {
-	const { language } = pageContext
+const ComingSoonPage = ({ data }) => {
+	const { t } = useTranslation()
+	const { language } = useI18next()
 	const { sanityAbout: about } = data
 
 	return (
@@ -95,13 +97,13 @@ const ComingSoonPage = ({ pageContext, data }) => {
 			/>
 			<div className="min-h-screen bg-black text-white flex flex-col text-center justify-center items-center uppercase ">
 				<div className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3">
-					shop coming soon
+					{t('shopSection.shopComingSoon')}
 				</div>
 				<OverlayLink
 					type="secondary"
 					to={'/'}
 					className="whitespace-nowrap text-base border-solid border-white border-b-2 hover:text-gray-600 hover:border-gray-600 transition-colors">
-					go back to home page
+					{t('shopSection.shopGoBack')}
 				</OverlayLink>
 			</div>
 		</HomeLayout>
