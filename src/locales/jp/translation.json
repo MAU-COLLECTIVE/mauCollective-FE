@@ -31,8 +31,8 @@
 	},
 	"shopSection": {
 		"shopCategory": "ショップ",
-		"shopComingSoon": "近日公開",
-		"shopGoBack": "ホーム"
+		"shopComingSoon": "SHOP近日公開",
+		"shopGoBack": "RETURN ホーム"
 	},
 	"artistPage": {
 		"music": "ミュージック",
@@ -41,7 +41,7 @@
 		"streamOn": "ストリーム"
 	},
 	"404Page": {
-		"404PageText": "見つかりません",
-		"404PageGoBack": "ホーム"
+		"404PageText": "404見つかりません",
+		"404PageGoBack": "RETURN ホーム"
 	}
 }
