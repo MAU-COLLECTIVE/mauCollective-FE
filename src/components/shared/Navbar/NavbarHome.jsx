@@ -4,11 +4,12 @@ import BadgeNumber from 'components/shared/BadgeNumber'
 import LanguageSwitcher from 'components/shared/LanguageSwitcher'
 import HomeContext from 'contexts/HomeContext'
 import OverlayLink from 'components/shared/OverlayLink'
-import { useTranslation } from 'gatsby-plugin-react-i18next'
+import { useI18next, useTranslation } from 'gatsby-plugin-react-i18next'
 import { navigate } from 'gatsby'
 
 const NavComponent = ({ className }) => {
 	const { t } = useTranslation()
+	const { language } = useI18next()
 	const ctx = useContext(HomeContext)
 
 	const toggleArtistType = () => {
@@ -31,7 +32,11 @@ const NavComponent = ({ className }) => {
 				behavior: 'smooth',
 			})
 		} else {
-			navigate('/')
+			if (language === 'en') {
+				navigate(`/`)
+			} else {
+				navigate(`/${language}/`)
+			}
 			setTimeout(() => {
 				const element = document.getElementById(id)
 				const offset = 0
@@ -57,7 +62,7 @@ const NavComponent = ({ className }) => {
 						if (location.pathname === '/') {
 							scrollTo(0, 0)
 						} else {
-							navigate(`/`)
+							navigate(`/${language}`)
 						}
 					}}
 					className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase focus:outline-none">
