@@ -44,6 +44,7 @@ const ArtistMedia = ({ title, data, number }) => {
               <div className="flex space-x-1 mt-auto">
                 <Social className="w-4 opacity-75" url={dt?.streamLink?.youtube} src="/icons/youtube.svg" />
                 <Social className="w-4 opacity-75" url={dt?.streamLink?.spotify} src="/icons/spotify.svg" />
+                <Social className="w-4 opacity-75" url={dt?.streamLink?.appleMusic} src="/icons/apple-music.svg" />
                 <Social className="w-4 opacity-75" url={dt?.streamLink?.facebookVideo} src="/icons/fb.svg" />
                 <Social className="w-4 opacity-75" url={dt?.streamLink?.instagram} src="/icons/ig.svg" />
               </div>
