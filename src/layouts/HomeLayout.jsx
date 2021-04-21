@@ -5,11 +5,11 @@ import PropTypes from 'prop-types'
 import { NavbarHome } from 'components/shared/Navbar'
 import Footer from 'components/shared/Footer'
 
-const HomeLayout = ({ children, hideFooter }) => {
+const HomeLayout = ({ children, hideFooter, isHome }) => {
 	return (
 		<React.Fragment>
 			<header>
-				<NavbarHome />
+				<NavbarHome isHome={isHome} />
 			</header>
 			<main>{children}</main>
 			{!hideFooter && <Footer />}
@@ -20,6 +20,7 @@ const HomeLayout = ({ children, hideFooter }) => {
 HomeLayout.propTypes = {
 	children: PropTypes.node,
 	hideFooter: PropTypes.bool,
+	isHome: PropTypes.bool
 }
 
 export default HomeLayout
