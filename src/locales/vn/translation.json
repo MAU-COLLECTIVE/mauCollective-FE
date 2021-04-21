@@ -1,41 +1,47 @@
 {
-  "shared": {
-    "close": "Đóng",
-    "loadMore": "Xem thêm",
-    "categories": "Chỉ mục",
-    "viewAll": "Xem tất cả",
-    "continueRead": "Đọc tiếp",
-    "watchVideo": "Xem Video",
-    "nextStory": "Xem bài viết khác" 
-  },
-  "homeSection": {
-    "homeCategory": "Trang Chủ" 
-  },
-  "newsSection": {
-    "newsCategory": "Tin Tức"
-  },
-  "aboutSection": {
-    "aboutCategory": "About M.A.U",
-    "contactUsField": "Thông Tin Liên Lạc" 
-  },
-  "artistSection": {
-    "artistCategory": "Nghệ Sĩ", 
-    "artistViewAllStyle": "Xem tất cả nghệ sỹ",
-    "artistShuffleStyle": "Shuffle"
-  },
-  "collaborationSection": {
-    "collaborationCategory": "Hợp Tác"
-  },
-  "eventSection": {
-    "eventCategory": "Sự Kiện"
-  },
-  "shopSection": {
-    "shopCategory": "Shop"
-  },
-  "artistPage": {
-    "music": "Music",
-    "video": "Video",
-    "livePerform": "Live Performance",
-    "streamOn": "Stream"
-  }
+	"shared": {
+		"close": "Đóng",
+		"loadMore": "Xem thêm",
+		"categories": "Chỉ mục",
+		"viewAll": "Xem tất cả",
+		"continueRead": "Đọc tiếp",
+		"watchVideo": "Xem Video",
+		"nextStory": "Xem bài viết khác"
+	},
+	"homeSection": {
+		"homeCategory": "Trang Chủ"
+	},
+	"newsSection": {
+		"newsCategory": "Tin Tức"
+	},
+	"aboutSection": {
+		"aboutCategory": "About M.A.U",
+		"contactUsField": "Thông Tin Liên Lạc"
+	},
+	"artistSection": {
+		"artistCategory": "Nghệ Sĩ",
+		"artistViewAllStyle": "Xem tất cả nghệ sỹ",
+		"artistShuffleStyle": "Shuffle"
+	},
+	"collaborationSection": {
+		"collaborationCategory": "Hợp Tác"
+	},
+	"eventSection": {
+		"eventCategory": "Sự Kiện"
+	},
+	"shopSection": {
+		"shopCategory": "Shop",
+		"shopComingSoon": "Tính năng của hàng sắp ra mắt",
+		"shopGoBack": "Trở về trang chủ"
+	},
+	"artistPage": {
+		"music": "Music",
+		"video": "Video",
+		"livePerform": "Live Performance",
+		"streamOn": "Stream"
+	},
+	"404Page": {
+		"404PageText": "trang này không khả dụng",
+		"404PageGoBack": "Trở về trang chủ"
+	}
 }
