@@ -6,7 +6,7 @@ import { useLocation } from '@reach/router'
 import { useTranslation } from 'gatsby-plugin-react-i18next'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 
-const CloseButton = ({ referrer = true, number, className }) => {
+const CloseButton = ({ referrer = true, withNumber = true, className }) => {
   const { t } = useTranslation();
   const { language, defaultLanguage } = useI18next();
   const location = useLocation();
@@ -22,14 +22,14 @@ const CloseButton = ({ referrer = true, number, className }) => {
     <button
       className={className}
       onClick={goBack}>
-        {number && <BadgeNumber number={number} />}
+        {withNumber && <BadgeNumber number="01" />}
         <span className="block font-medium uppercase text-xs">{t('shared.close')}</span>
     </button>
   )
 }
 
 CloseButton.propTypes = {
-  number: PropTypes.string,
+  withNumber: PropTypes.string,
   className: PropTypes.string,
   referrer: PropTypes.bool
 }

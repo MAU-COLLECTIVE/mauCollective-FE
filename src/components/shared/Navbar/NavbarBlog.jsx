@@ -9,6 +9,7 @@ const NavbarBlog = () => {
   return (
     <nav className="lg:h-screen p-2 lg:p-10 text-black flex flex-col items-start">
       <CloseButton
+        withNumber={false}
         referrer={false}
         className="relative p-4 mb-8 lg:mb-16 focus:outline-none" />
       <div className="px-4 block w-full">
