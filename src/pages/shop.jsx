@@ -91,7 +91,7 @@ const ComingSoonPage = ({ data }) => {
 	const { sanityAbout: about } = data
 
 	return (
-		<HomeLayout hideFooter={true}>
+		<HomeLayout hideFooter={true} isHome={false}>
 			<SEO
 				description={about?.aboutTab?.metaSeoDescription?.lang?.[language]}
 			/>
