@@ -35,12 +35,12 @@ const RecentCollaboration = ({ id, data }) => {
   }, [currentIndex])
 
   return (
-    <div id={id} className="min-h-screen relative px-2 lg:px-6 py-28 flex flex-col justify-between text-gray-200">
+    <div id={id} className="min-h-screen relative px-2 lg:px-6 py-14 sm:py-28 flex flex-col justify-between text-gray-200">
       {data.map((dt, index) => {
         const image = useMemo(() => getGatsbyImage(dt?.mainImage?.asset?.id, {maxWidth: 1920}), [dt?.mainImage?.asset?.id]);
         return (
           <div
-            className="absolute w-full h-full -mx-2 lg:-mx-6 -my-28 z-0 transition-all invisible"
+            className="absolute w-full h-full -mx-2 lg:-mx-6 -my-14 sm:-my-28 z-0 transition-all invisible"
             style={{ filter: 'brightness(75%)' }}
             key={index} ref={elm => imgRef.current[index] = elm}>
               {image && (
@@ -64,7 +64,7 @@ const RecentCollaboration = ({ id, data }) => {
         </OverlayLink>
       </div>
       <div className="flex flex-col lg:flex-row px-2 lg:px-6 z-10 flex-1 items-center">
-        <div className="relative w-full lg:w-1/2 xl:w-1/3">
+        <div className="relative w-full lg:w-1/2 xl:w-1/3 flex-1">
           <OverlayLink
             type="secondary"
             to={`/collaborations/${data?.[currentIndex]?.slug?.current}`}
@@ -84,7 +84,7 @@ const RecentCollaboration = ({ id, data }) => {
               {t('shared.watchVideo')}
           </OverlayLink>
         </div>
-        <ul className="flex flex-row mt-28 lg:mt-0 lg:flex-col lg:flex-1 lg:items-end justify-center space-x-4 lg:space-x-0 lg:space-y-4 text-xs">
+        <ul className="flex flex-row lg:flex-col lg:flex-1 lg:items-end justify-center space-x-4 lg:space-x-0 lg:space-y-4 text-xs">
           {data?.map((_, index) => (
             <li key={index}
                 onClick={() => setCurrentIndex(index)}
