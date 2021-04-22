@@ -167,7 +167,7 @@ const SinglePost = ({ pageContext, data }) => {
             </div>
             {nextPosts?.length > 0 && (
               <div className="flex-1 flex space-x-6">
-                {nextPosts.filter((_, i) => i !== 0).map((dt, i) => {
+                {nextPosts.map((dt, i) => {
                   let className;
                   if(i === 2) className = 'hidden 2xl:block 2xl:w-1/3'
                   else className = 'w-1/2 2xl:w-1/3';
