@@ -47,7 +47,7 @@ const RecentCollaboration = ({ id, data }) => {
                 <GatsbyImage
                   className="w-full h-full object-cover"
                   image={image}  
-                  alt={`Image of ${data?.[0].title?.lang?.[language]}`}
+                  alt={`Image of ${data?.[currentIndex].title?.lang?.[language]}`}
                 />
               )}
           </div>
