@@ -67,18 +67,18 @@ const RecentCollaboration = ({ id, data }) => {
         <div className="relative w-full lg:w-1/2 xl:w-1/3">
           <OverlayLink
             type="secondary"
-            to={`/collaborations/${data?.[0]?.slug?.current}`}
+            to={`/collaborations/${data?.[currentIndex]?.slug?.current}`}
             section={id}>
               <h1 className="font-black text-2xl xs:text-3xl lg:text-5xl mb-8 xl:mb-28 uppercase xl:tracking-wide hover:text-gray-300 transition-colors">
                 {data?.[currentIndex]?.title?.lang?.[language]}
               </h1>
           </OverlayLink>
           <p className="font-mono xl:text-lg mb-8 long-text">
-            {data?.[0]?.shortDesc?.lang?.[language]}
+            {data?.[currentIndex]?.shortDesc?.lang?.[language]}
           </p>
           <OverlayLink
             type="secondary"
-            to={`/collaborations/${data?.[0]?.slug?.current}`}
+            to={`/collaborations/${data?.[currentIndex]?.slug?.current}`}
             section={id}
             className="font-light text-sm leading-6 uppercase border-b-2 border-white border-solid whitespace-nowrap hover:text-gray-300 hover:border-gray-300 transition-colors">
               {t('shared.watchVideo')}
