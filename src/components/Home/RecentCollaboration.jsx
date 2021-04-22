@@ -6,6 +6,7 @@ import { useTranslation } from 'gatsby-plugin-react-i18next'
 import { useI18next } from 'gatsby-plugin-react-i18next'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import { getGatsbyImage } from 'components/helper'
+import BadgeNumber from 'components/shared/BadgeNumber'
 
 function usePrevious(value) {
   const ref = useRef();
@@ -63,8 +64,9 @@ const RecentCollaboration = ({ id, data }) => {
             <span>{t('collaborationSection.collaborationCategory')}</span>
         </OverlayLink>
       </div>
-      <div className="flex flex-col lg:flex-row px-2 lg:px-6 z-10 flex-1 items-center">
-        <div className="relative w-full lg:w-1/2 xl:w-1/3 flex-1">
+      <div className="flex flex-col lg:flex-row lg:pr-6 z-10 flex-1 items-center">
+        <div className="relative px-2 lg:px-6 py-4 w-full xl:w-1/3 flex-1">
+          <BadgeNumber number="04" />
           <OverlayLink
             type="secondary"
             to={`/collaborations/${data?.[currentIndex]?.slug?.current}`}
