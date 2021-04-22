@@ -14,8 +14,8 @@ const ArtistSlider = ({ data }) => {
     <div className="min-h-screen bg-black text-white flex items-center">
       <Swiper
         effect="coverflow"
-        spaceBetween={220}
-        slidesPerView={3}
+        spaceBetween={300}
+        slidesPerView={2}
         centeredSlides={true}
         slideToClickedSlide
         coverflowEffect={{
@@ -27,17 +27,21 @@ const ArtistSlider = ({ data }) => {
         }}
         breakpoints={{
           1124: {
-            spaceBetween: 140
+            spaceBetween: 300,
+            slidesPerView: 2
           },
           1530: {
             spaceBetween: 170
           },
           1800: {
             spaceBetween: 220
+          },
+          1920: {
+            slidesPerView: 3
           }
         }}
       >
-        {data.map(dt => (
+        {data.slice(0, 3).map(dt => (
           <SwiperSlide key={dt._id}>
             {({ isActive }) => {
               const image = useMemo(() => getGatsbyImage(dt?.profilePicture?.asset?.id, {maxWidth: 600, aspectRatio: 1.0}), [dt?.profilePicture?.asset?.id]);
