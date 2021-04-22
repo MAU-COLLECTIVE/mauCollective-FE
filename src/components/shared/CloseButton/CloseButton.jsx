@@ -29,7 +29,7 @@ const CloseButton = ({ referrer = true, withNumber = true, className }) => {
 }
 
 CloseButton.propTypes = {
-  withNumber: PropTypes.string,
+  withNumber: PropTypes.bool,
   className: PropTypes.string,
   referrer: PropTypes.bool
 }
