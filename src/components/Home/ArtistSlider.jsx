@@ -41,7 +41,7 @@ const ArtistSlider = ({ data }) => {
           }
         }}
       >
-        {data.slice(0, 3).map(dt => (
+        {data.map(dt => (
           <SwiperSlide key={dt._id}>
             {({ isActive }) => {
               const image = useMemo(() => getGatsbyImage(dt?.profilePicture?.asset?.id, {maxWidth: 600, aspectRatio: 1.0}), [dt?.profilePicture?.asset?.id]);
