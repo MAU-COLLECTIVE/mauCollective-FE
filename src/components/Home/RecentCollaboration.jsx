@@ -41,7 +41,7 @@ const RecentCollaboration = ({ id, data }) => {
         return (
           <div
             className="absolute w-full h-full -mx-2 lg:-mx-6 -my-14 sm:-my-28 z-0 transition-all invisible"
-            style={{ filter: 'brightness(75%)' }}
+            style={{ filter: 'brightness(50%)' }}
             key={index} ref={elm => imgRef.current[index] = elm}>
               {image && (
                 <GatsbyImage
