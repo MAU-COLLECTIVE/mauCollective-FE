@@ -26,7 +26,7 @@ const Recent = ({ id, data }) => {
       </div>
       <div className="flex flex-col xl:flex-row">
         <div className="relative px-2 lg:px-6 py-4 w-full xl:w-1/3">
-          <BadgeNumber number={id === 'news' ? '02' : '04'} />
+          <BadgeNumber number={id === 'news' ? '02' : '05'} />
           <OverlayLink
             type="secondary"
             to={`/${id}/${data?.[0]?.slug?.current}`}
