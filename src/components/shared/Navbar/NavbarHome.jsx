@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import LanguageSwitcher from 'components/shared/LanguageSwitcher'
 import NavbarHomeComponent from './NavbarHomeComponent'
+import { use100vh } from 'react-div-100vh'
 
 const NavbarHome = ({ isHome = true }) => {
+	const height = use100vh()
 	const [isToggled, setIsToggeled] = useState(false)
 	const handleToggle = () => setIsToggeled((prev) => !prev)
 
@@ -71,9 +73,10 @@ const NavbarHome = ({ isHome = true }) => {
 			</nav>
 			{/* Sidebar */}
 			<div
+				style={{ height }}
 				className={`transform transition-transform ease-in-out duration-500 pl-6 pr-20 py-2 fixed z-50 ${
 					isToggled ? 'translate-x-0' : '-translate-x-full'
-				} flex flex-1 flex-wrap flex-col justify-start items-start lg:flex-row h-screen lg:min-h-0 w-auto max-w-full lg:hidden bg-black text-white`}>
+				} flex flex-1 flex-wrap flex-col justify-start items-start lg:flex-row w-auto max-w-full lg:hidden bg-black text-white`}>
 				<button
 					className="block lg:hidden my-6 self-end -mr-14"
 					onClick={handleToggle}>
