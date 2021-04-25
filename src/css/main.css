@@ -64,6 +64,26 @@ html, body {
   @apply mt-16 2xl:mt-20 !important;
 }
 
+.swiper-slide-active {
+  cursor: pointer;
+}
+
+.swiper-slide-active a {
+  pointer-events: auto;
+}
+
+.swiper-slide-prev a, .swiper-slide-next a {
+  pointer-events: none; 
+}
+
+.swiper-slide-prev {
+  cursor: w-resize;
+}
+
+.swiper-slide-next {
+  cursor: e-resize;
+}
+
 .long-text {
   overflow: hidden;
   text-overflow: ellipsis;
