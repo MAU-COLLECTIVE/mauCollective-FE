@@ -52,10 +52,6 @@ html, body {
   padding: 150px 0;
 }
 
-.slide-img {
-  width: 600px;
-}
-
 .swiper-slide-active .slide-img {
   transform: scale(1.15);
 }
@@ -69,10 +65,10 @@ html, body {
 }
 
 .swiper-slide-active a {
-  pointer-events: auto;
+  pointer-events: auto !important;
 }
 
-.swiper-slide-prev a, .swiper-slide-next a {
+.swiper-slide a {
   pointer-events: none; 
 }
 
