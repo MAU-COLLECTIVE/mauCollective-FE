@@ -77,11 +77,11 @@ html, body {
 }
 
 .swiper-slide-prev {
-  cursor: e-resize;
+  cursor: w-resize;
 }
 
 .swiper-slide-next {
-  cursor: w-resize;
+  cursor: e-resize;
 }
 
 .long-text {
