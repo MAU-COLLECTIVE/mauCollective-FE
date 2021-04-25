@@ -4,7 +4,7 @@ import React from 'react'
 import SanityBlockContent from '@sanity/block-content-to-react'
 import PropTypes from 'prop-types'
 import { GatsbyImage } from 'gatsby-plugin-image'
-import { getGatsbyImage } from 'components/helper'
+import { getGatsbyImage, getVideoEmbed } from 'components/helper'
 
 const serializers = {
   types: {
@@ -42,6 +42,15 @@ const serializers = {
               {props.node.caption}
             </span>
           )}
+        </div>
+      )
+    },
+    youtube: ({node}) => {
+      const { url } = node
+      const vid = getVideoEmbed(url)
+      return (
+        <div className="video-wrapper">
+          <div dangerouslySetInnerHTML={{__html: vid}} />
         </div>
       )
     }
