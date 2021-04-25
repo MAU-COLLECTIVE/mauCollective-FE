@@ -24,10 +24,8 @@ const serializers = {
         return <blockquote>- {props.children}</blockquote>;
       }
 
-      return <p style={{ textIndent: '2.5rem' }}>{props.children}</p>
-
       // Fall back to default handling
-      // return SanityBlockContent.defaultSerializers.types.block(props);
+      return SanityBlockContent.defaultSerializers.types.block(props);
     },
     code: (props) => (
       <pre data-language={props.node.language}>
