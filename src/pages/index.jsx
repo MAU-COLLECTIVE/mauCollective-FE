@@ -138,7 +138,7 @@ export const query = graphql`
       }
     }
     # Get all artists
-    allSanityArtist {
+    allSanityArtist(sort: {fields: artistName, order: ASC}) {
       nodes {
         _id
         slug {
