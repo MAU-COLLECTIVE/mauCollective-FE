@@ -41,30 +41,28 @@ const ArtistSlider = ({ data }) => {
           }
         }}
       >
-        {data.map(dt => (
-          <SwiperSlide key={dt._id}>
-            {({ isActive }) => {
-              const image = useMemo(() => getGatsbyImage(dt?.profilePicture?.asset?.id, {maxWidth: 600, aspectRatio: 1.0}), [dt?.profilePicture?.asset?.id]);
-              return (
-                <OverlayLink
-                  type="secondary"
-                  to={`/artist/${dt?.slug?.current}`}
-                  section="artists"
-                  className={`flex flex-col items-center space-y-6 transition-transform cursor-pointer ${!isActive && 'pointer-events-none'}`}
-                >
-                  {image && (
-                    <GatsbyImage
-                      className="slide-img transition-transform"
-                      image={image}
-                      alt={`Image of ${dt?.artistName}`}
-                    />
-                  )}
-                  <h1 className="text-xs">{dt?.artistName}</h1>
-                </OverlayLink>
-              )
-            }}
-          </SwiperSlide>
-        ))}
+        {data.map(dt => {
+          const image = useMemo(() => getGatsbyImage(dt?.profilePicture?.asset?.id, {maxWidth: 600, aspectRatio: 1.0}), [dt?.profilePicture?.asset?.id]);
+          return (
+            <SwiperSlide key={dt._id}>
+              <OverlayLink
+                type="secondary"
+                to={`/artist/${dt?.slug?.current}`}
+                section="artists"
+                className="flex flex-col items-center space-y-6 transition-transform"
+              >
+                {image && (
+                  <GatsbyImage
+                    className="slide-img transition-transform"
+                    image={image}
+                    alt={`Image of ${dt?.artistName}`}
+                  />
+                )}
+                <h1 className="text-xs">{dt?.artistName}</h1>
+              </OverlayLink>
+            </SwiperSlide>
+          )
+        })}
       </Swiper>
     </div>
   );
