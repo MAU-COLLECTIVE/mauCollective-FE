@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import {
+  Home,
   Recent,
   About,
   RecentCollaboration,
@@ -21,6 +22,23 @@ export const query = graphql`
           ns
           data
           language
+        }
+      }
+    }
+    # Get home
+    sanityHome {
+      mainImage {
+        asset {
+          id
+          gatsbyImageData
+          url
+        }
+      }
+      backgroundImage {
+        asset {
+          id
+          gatsbyImageData
+          url
         }
       }
     }
@@ -231,6 +249,7 @@ const HomePage = ({ pageContext, data }) => {
   const { language } = pageContext;
   const ctx = useContext(HomeContext);
   const {
+    sanityHome: home,
     allSanityArtist: { nodes: artists },
     allNewsPost: { nodes: newsPost },
     allEventPost: { nodes: eventPost },
@@ -243,7 +262,8 @@ const HomePage = ({ pageContext, data }) => {
       <SEO
         description={about?.aboutTab?.metaSeoDescription?.lang?.[language]}
         imgUrl={about?.aboutTab?.logo?.asset?.url}  
-       /> 
+      /> 
+      <Home id="home" data={home} /> 
       <Recent id="news" data={newsPost} />
       <About id="about" data={about} />
       <div id="artists" className="min-h-screen block">
