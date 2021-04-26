@@ -10,7 +10,7 @@ const Home = ({ data }) => {
   const mainImage = useMemo(() => getGatsbyImage(data?.mainImage?.asset?.id, {maxWidth: 900}), [data?.mainImage?.asset?.id]);
   
   return (
-    <div id="home" className="h-screen w-full relative p-0 flex justify-center items-center bg-white">
+    <div id="home" className="h-screen w-screen relative p-0 flex justify-center items-center bg-white">
       <GatsbyImage
         className="absolute w-full h-full object-cover"
         image={backgroundImage}  
