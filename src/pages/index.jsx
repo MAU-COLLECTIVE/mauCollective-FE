@@ -258,23 +258,28 @@ const HomePage = ({ pageContext, data }) => {
   } = data;
 
   return (
-    <HomeLayout>
+    <HomeLayout hideNav={ctx.isInLanding} hideFooter={ctx.isInLanding}>
       <SEO
         description={about?.aboutTab?.metaSeoDescription?.lang?.[language]}
         imgUrl={about?.aboutTab?.logo?.asset?.url}  
       /> 
-      <Home id="home" data={home} /> 
-      <Recent id="news" data={newsPost} />
-      <About id="about" data={about} />
-      <div id="artists" className="min-h-screen block">
-        {ctx.artistType === 'slider' ? (
-          <ArtistSlider data={artists} />
-        ) : (
-          <Artists data={artists} />
-        )}
-      </div>
-      <RecentCollaboration id="collaborations" data={collaborationPost} />
-      <Recent id="events" data={eventPost} />
+      {ctx.isInLanding ? (
+        <Home id="home" data={home} />
+      ) : (
+        <React.Fragment>
+          <Recent id="news" data={newsPost} />
+          <About id="about" data={about} />
+          <div id="artists" className="min-h-screen block">
+            {ctx.artistType === 'slider' ? (
+              <ArtistSlider data={artists} />
+            ) : (
+              <Artists data={artists} />
+            )}
+          </div>
+          <RecentCollaboration id="collaborations" data={collaborationPost} />
+          <Recent id="events" data={eventPost} />
+        </React.Fragment>
+      )}
     </HomeLayout>
   )
 }

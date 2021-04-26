@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 
 const initState = {
   artistType: 'slider',
-  setArtistType: () => {}
+  setArtistType: () => {},
+  isInLanding: true,
+  setIsInLanding: () => {},
 }
 
 const HomeContext = createContext(initState);
@@ -11,6 +13,9 @@ const HomeContext = createContext(initState);
 const HomeProvider = ({ children }) => {
   const [artistType, setArtistType] = useState('slider'); // slider or shuffle
   const changeArtistType = () => setArtistType(prev => prev === 'slider' ? 'shuffle' : 'slider');
+
+  const [isInLanding, setIsInLanding] = useState(true);
+  const toggleIsInLanding = () => setIsInLanding(prev => !prev);
 
   useEffect(() => {
     const resize = () => {
@@ -25,7 +30,10 @@ const HomeProvider = ({ children }) => {
   }, [])
 
   return (
-    <HomeContext.Provider value={{ artistType, changeArtistType }}>
+    <HomeContext.Provider value={{
+      artistType, changeArtistType,
+      isInLanding, toggleIsInLanding,
+    }}>
       {children}
     </HomeContext.Provider>
   )
