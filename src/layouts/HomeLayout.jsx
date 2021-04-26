@@ -21,6 +21,7 @@ const HomeLayout = ({ children, hideNav, hideFooter, isHome }) => {
 
 HomeLayout.propTypes = {
 	children: PropTypes.node,
+	hideNav: PropTypes.bool,
 	hideFooter: PropTypes.bool,
 	isHome: PropTypes.bool
 }

@@ -258,7 +258,7 @@ const HomePage = ({ pageContext, data }) => {
   } = data;
 
   return (
-    <HomeLayout hideNav={ctx.isInLanding} hideFooter={ctx.isInLanding}>
+    <HomeLayout hideFooter={ctx.isInLanding}>
       <SEO
         description={about?.aboutTab?.metaSeoDescription?.lang?.[language]}
         imgUrl={about?.aboutTab?.logo?.asset?.url}  
