@@ -76,15 +76,16 @@ const Footer = () => {
         <div className="w-full sm:w-auto flex sm:flex-col mt-4 sm:mt-0 space-x-8 sm:space-x-0">
           <p className="font-light text-xs w-1/2 sm:w-auto">
             <span className="font-medium md:hidden mr-2 text-gray-400">T</span>
-            {data?.aboutTab?.phoneNum}
+            <a href={`tel:${data?.aboutTab?.phoneNum}`}>{data?.aboutTab?.phoneNum}</a>
+            
           </p>
           <p className="font-light text-xs md:hidden w-1/2 sm:w-auto">
             <span className="font-medium md:hidden mr-2 text-gray-400">E</span>
-            {data?.aboutTab?.email}
+            <a href={`mailto:${data?.aboutTab?.email}`}>{data?.aboutTab?.email}</a> 
           </p>
         </div>
-        <div className="hidden md:block">
-          <p className="font-light text-xs">{data?.aboutTab?.email}</p>
+        <div className="hidden md:flex"> 
+          <a className="font-light text-xs" href={`mailto:${data?.aboutTab?.email}`}>{data?.aboutTab?.email}</a>
         </div>
         <div className="hidden xl:flex flex-1 justify-end space-x-2">
           <Social url={data?.aboutTab?.social?.facebook} src="/icons/fb.svg" />
