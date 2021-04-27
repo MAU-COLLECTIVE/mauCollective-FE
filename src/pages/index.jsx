@@ -27,18 +27,37 @@ export const query = graphql`
     }
     # Get home
     sanityHome {
-      mainImage {
+      logo {
         asset {
           id
           gatsbyImageData
           url
         }
       }
-      backgroundImage {
-        asset {
-          id
-          gatsbyImageData
-          url
+      homeBackgroundTab {
+        imgLandscape {
+          asset {
+            id
+            gatsbyImageData
+            url
+          }
+        }
+        imgPotrait {
+          asset {
+            id
+            gatsbyImageData
+            url
+          }
+        }
+        videoLandscape {
+          asset {
+            url
+          }
+        }
+        videoPotrait {
+          asset {
+            url
+          }
         }
       }
     }
