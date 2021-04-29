@@ -40,7 +40,11 @@ const NavbarHomeComponent = ({ className, isHome }) => {
 			<div className="relative w-full lg:w-auto lg:px-6 py-2 lg:py-4">
 				<BadgeNumber number="01" className="hidden lg:block" />
         {isHome ? (
-					<button onClick={() => handleNav('home')} className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase focus:outline-none">{t('homeSection.homeCategory')}</button>
+					<button
+						onClick={ctx.toggleIsInLanding}
+						className="break-words block font-normal text-xs tracking-widest lg:font-medium uppercase focus:outline-none">
+							{t('homeSection.homeCategory')}
+					</button>
 				) : (
 					<OverlayLink
 						type="secondary"
