@@ -276,13 +276,17 @@ const HomePage = ({ pageContext, data }) => {
     sanityAbout: about
   } = data;
 
+  const isHomeAvailable = home?.logo &&
+                          (home?.homeBackgroundTab?.imgLandscape && home?.homeBackgroundTab?.imgPotrait) ||
+                          (home?.homeBackgroundTab?.videoLandscape && home?.homeBackgroundTab?.videoPotrait)
+
   return (
     <HomeLayout hideFooter={ctx.isInLanding}>
       <SEO
         description={about?.aboutTab?.metaSeoDescription?.lang?.[language]}
         imgUrl={about?.aboutTab?.logo?.asset?.url}  
       /> 
-      {ctx.isInLanding ? (
+      {ctx.isInLanding && isHomeAvailable ? (
         <Home id="home" data={home} />
       ) : (
         <React.Fragment>
