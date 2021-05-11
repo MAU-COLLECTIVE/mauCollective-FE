@@ -24,8 +24,7 @@ const Home = ({ data }) => {
   useEffect(() => {
     const reorentation = () => {
       const orientation = (window.screen.orientation || {}).type || window.screen.mozOrientation || window.screen.msOrientation;
-      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-      if ((orientation === "landscape-primary" || orientation === "landscape-secondary") && isMobile) {
+      if (orientation === "landscape-primary" || orientation === "landscape-secondary") {
         setIsLandscape(true)
       }
       else setIsLandscape(false)
