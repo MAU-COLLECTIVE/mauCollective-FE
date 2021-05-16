@@ -91,7 +91,7 @@ const SinglePost = ({ pageContext, data }) => {
   const { t } = useTranslation();
   const { language, category } = pageContext;
   const { sanityPost: post, allSanityPost: { nodes: nextPosts } } = data;
-  const image = useMemo(() => getGatsbyImage(post?.mainImage?.asset?.id, {maxWidth: 1920}), [post]);
+  const image = useMemo(() => getGatsbyImage(post?.mainImage?.asset?.id, {maxWidth: 1920, layout: 'fullWidth'}), [post]);
 
 	return (
     <React.Fragment>
