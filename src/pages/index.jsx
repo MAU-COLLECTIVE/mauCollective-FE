@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import {
+  Home,
   Recent,
   About,
   RecentCollaboration,
@@ -21,6 +22,42 @@ export const query = graphql`
           ns
           data
           language
+        }
+      }
+    }
+    # Get home
+    sanityHome {
+      logo {
+        asset {
+          id
+          gatsbyImageData
+          url
+        }
+      }
+      homeBackgroundTab {
+        imgLandscape {
+          asset {
+            id
+            gatsbyImageData
+            url
+          }
+        }
+        imgPotrait {
+          asset {
+            id
+            gatsbyImageData
+            url
+          }
+        }
+        videoLandscape {
+          asset {
+            url
+          }
+        }
+        videoPotrait {
+          asset {
+            url
+          }
         }
       }
     }
@@ -138,7 +175,7 @@ export const query = graphql`
       }
     }
     # Get all artists
-    allSanityArtist {
+    allSanityArtist(sort: {fields: artistName, order: ASC}) {
       nodes {
         _id
         slug {
@@ -231,6 +268,7 @@ const HomePage = ({ pageContext, data }) => {
   const { language } = pageContext;
   const ctx = useContext(HomeContext);
   const {
+    sanityHome: home,
     allSanityArtist: { nodes: artists },
     allNewsPost: { nodes: newsPost },
     allEventPost: { nodes: eventPost },
@@ -238,23 +276,33 @@ const HomePage = ({ pageContext, data }) => {
     sanityAbout: about
   } = data;
 
+  const isHomeAvailable = home?.logo &&
+                          (home?.homeBackgroundTab?.imgLandscape && home?.homeBackgroundTab?.imgPotrait) ||
+                          (home?.homeBackgroundTab?.videoLandscape && home?.homeBackgroundTab?.videoPotrait)
+
   return (
-    <HomeLayout>
+    <HomeLayout hideFooter={ctx.isInLanding}>
       <SEO
         description={about?.aboutTab?.metaSeoDescription?.lang?.[language]}
         imgUrl={about?.aboutTab?.logo?.asset?.url}  
-       /> 
-      <Recent id="news" data={newsPost} />
-      <About id="about" data={about} />
-      <div id="artists" className="min-h-screen block">
-        {ctx.artistType === 'slider' ? (
-          <ArtistSlider data={artists} />
-        ) : (
-          <Artists data={artists} />
-        )}
-      </div>
-      <RecentCollaboration id="collaborations" data={collaborationPost} />
-      <Recent id="events" data={eventPost} />
+      /> 
+      {ctx.isInLanding && isHomeAvailable ? (
+        <Home id="home" data={home} />
+      ) : (
+        <React.Fragment>
+          <Recent id="news" data={newsPost} />
+          <About id="about" data={about} />
+          <div id="artists" className="min-h-screen block">
+            {ctx.artistType === 'slider' ? (
+              <ArtistSlider data={artists} />
+            ) : (
+              <Artists data={artists} />
+            )}
+          </div>
+          <RecentCollaboration id="collaborations" data={collaborationPost} />
+          <Recent id="events" data={eventPost} />
+        </React.Fragment>
+      )}
     </HomeLayout>
   )
 }

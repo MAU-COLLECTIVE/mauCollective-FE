@@ -45,19 +45,19 @@ const About = ({ id, data }) => {
               <p className="font-mono xl:text-lg text-gray-200">{data?.aboutTab?.address?.streetNo?.lang?.[language]}</p>
               <p className="font-mono xl:text-lg text-gray-200 mb-6">{data?.aboutTab?.address?.streetName?.lang?.[language]}</p>
             </div>
-            <div>
+            <div> 
               <p className="font-mono xl:text-lg text-gray-200">{data?.aboutTab?.address?.city?.lang?.[language]}</p>
               <p className="font-mono xl:text-lg text-gray-200">{data?.aboutTab?.address?.country?.lang?.[language]}</p>
             </div>
           </div>
           <div className="flex flex-col md:flex-row xl:flex-col 2xl:flex-row md:space-x-28 2xl:space-x-28 xl:space-x-0">
-            <div>
-              <p className="font-mono xl:text-lg text-gray-200">Email</p>
-              <p className="font-mono xl:text-lg text-gray-200 mb-6">{data?.aboutTab?.email}</p>
+            <div className="mb-6">
+              <p className="font-mono xl:text-lg text-gray-200">Email</p> 
+              <a className="font-mono xl:text-lg text-gray-200" href={`mailto:${data?.aboutTab?.email}`}>{data?.aboutTab?.email}</a>
             </div>
             <div>
-              <p className="font-mono xl:text-lg text-gray-200">Phone</p>
-              <p className="font-mono xl:text-lg text-gray-200">{data?.aboutTab?.phoneNum}</p>
+              <p className="font-mono xl:text-lg text-gray-200">Phone</p> 
+              <a className="font-mono xl:text-lg text-gray-200" href={`tel:${data?.aboutTab?.phoneNum}`}>{data?.aboutTab?.phoneNum}</a>
             </div>
           </div>
         </div>
