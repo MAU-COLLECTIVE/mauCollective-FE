@@ -11,7 +11,7 @@ import { getGatsbyImage } from 'components/helper'
 const Recent = ({ id, data }) => {
   const { t } = useTranslation();
   const { language } = useI18next();
-  const firstImage = useMemo(() => getGatsbyImage(data?.[0]?.mainImage?.asset?.id, {maxWidth: 1600, aspectRatio: 2.0}), [data]);
+  const firstImage = useMemo(() => getGatsbyImage(data?.[0]?.mainImage?.asset?.id, {maxWidth: 1600, layout: 'fullWidth', aspectRatio: 2.2}), [data]);
   
   return (
     <div id={id} className="min-h-screen bg-white px-2 lg:px-6 py-28 flex flex-col justify-center">
@@ -69,7 +69,7 @@ const Recent = ({ id, data }) => {
                 to={`/${id}/${data?.[0]?.slug?.current}`}
                 section={id}>
                   <GatsbyImage
-                    className="w-full max-h-96"
+                    className="w-full"
                     image={firstImage}
                     alt={`Image of ${data?.[0]?.title?.lang?.[language]}`}
                   />
