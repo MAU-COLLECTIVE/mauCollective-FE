@@ -65,7 +65,7 @@ const RecentCollaboration = ({ id, data }) => {
         </OverlayLink>
       </div>
       <div className="flex flex-col lg:flex-row lg:pr-6 z-10 flex-1 items-center">
-        <div className="relative px-2 lg:px-6 py-4 w-full xl:w-1/3 flex-1">
+        <div className="flex flex-col justify-end relative px-2 lg:px-6 py-4 w-full xl:w-1/3 flex-1">
           <BadgeNumber number="04" />
           <OverlayLink
             type="secondary"
@@ -82,7 +82,7 @@ const RecentCollaboration = ({ id, data }) => {
             type="secondary"
             to={`/collaborations/${data?.[currentIndex]?.slug?.current}`}
             section={id}
-            className="font-light text-sm leading-6 uppercase border-b-2 border-white border-solid whitespace-nowrap hover:text-gray-300 hover:border-gray-300 transition-colors">
+            className="font-light w-max text-sm leading-6 uppercase border-b-2 border-white border-solid whitespace-nowrap hover:text-gray-300 hover:border-gray-300 transition-colors">
               {t('shared.watchVideo')}
           </OverlayLink>
         </div>
