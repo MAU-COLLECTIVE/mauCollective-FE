@@ -63,12 +63,13 @@ export const query = graphql`
     }
     # Get all post (category: news)
     allNewsPost: allSanityPost(
+      sort: {order: DESC, fields: publishedAt}
       filter: {categories: {elemMatch: {title: {eq: "News"}}}}
       limit: 5  
     ) {
       nodes {
         _id
-        _updatedAt(formatString: "DD.MM.YYYY")
+        publishedAt(formatString: "DD.MM.YYYY")
         slug {
           current
         }
@@ -103,12 +104,13 @@ export const query = graphql`
     }
     # Get all post (category: event)
     allEventPost: allSanityPost(
+      sort: {order: DESC, fields: publishedAt}
       filter: {categories: {elemMatch: {title: {eq: "Events"}}}}
       limit: 5  
     ) {
       nodes {
         _id
-        _updatedAt(formatString: "DD.MM.YYYY")
+        publishedAt(formatString: "DD.MM.YYYY")
         slug {
           current
         }
@@ -143,12 +145,13 @@ export const query = graphql`
     }
     # Get all post (category: collaborations)
     allCollaborationPost: allSanityPost(
+      sort: {order: DESC, fields: publishedAt}
       filter: {categories: {elemMatch: {title: {eq: "Collaborations"}}}}
       limit: 5  
     ) {
       nodes {
         _id
-        _updatedAt(formatString: "DD.MM.YYYY")
+        publishedAt(formatString: "DD.MM.YYYY")
         slug {
           current
         }

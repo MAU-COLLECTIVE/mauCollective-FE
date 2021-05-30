@@ -19,11 +19,12 @@ export const query = graphql`
       }
     }
     allSanityPost(
+      sort: {order: DESC, fields: publishedAt}
       filter: {categories: {elemMatch: {_id: {eq: $id}}}}
     ) {
       nodes {
         _id
-        _updatedAt(formatString: "DD.MM.YYYY")
+        publishedAt(formatString: "DD.MM.YYYY")
         slug {
           current
         }
@@ -94,7 +95,7 @@ const BlogPage = ({ pageContext, data }) => {
               title={post?.title?.lang?.[language]}
               image={useMemo(() => getGatsbyImage(post?.mainImage?.asset?.id, {maxWidth: 800, aspectRatio: 2.0}), [post?.mainImage?.asset?.id])}
               slug={`/${category?.title?.toLowerCase()}/${post?.slug?.current}`}
-              date={post?._updatedAt}
+              date={post?.publishedAt}
             />
           ))}
         </div>

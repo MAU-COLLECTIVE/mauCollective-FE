@@ -53,7 +53,7 @@ export const query = graphql`
       author {
         name
       }
-      _updatedAt(formatString: "DD.MM.YYYY")
+      publishedAt(formatString: "DD.MM.YYYY")
     }
     allSanityPost(
       filter: {
@@ -61,11 +61,11 @@ export const query = graphql`
         categories: {elemMatch: {_id: {eq: $categoryId}}}
       }
       limit: 3
-      sort: {fields: _updatedAt, order: DESC}
+      sort: {fields: publishedAt, order: DESC}
     ) {
       nodes {
         _id
-        _updatedAt(formatString: "DD.MM.YYYY")
+        publishedAt(formatString: "DD.MM.YYYY")
         slug {
           current
         }
@@ -113,7 +113,7 @@ const SinglePost = ({ pageContext, data }) => {
             </li>
             <li className="tracking-wide">
               <span className="uppercase mr-2 tracking-widest">Date:</span>
-              {post?._updatedAt}
+              {post?.publishedAt}
             </li>
           </ul>
           <div className="w-full flex flex-col">
@@ -140,7 +140,7 @@ const SinglePost = ({ pageContext, data }) => {
             </li>
             <li className="tracking-wide">
               <span className="uppercase mr-2 tracking-widest">Date:</span>
-              {post?._updatedAt}
+              {post?.publishedAt}
             </li>
           </ul>
           <div className="flex flex-wrap px-6 2xl:px-16 w-full flex-col md:flex-row space-y-4 2xl:space-y-0">
@@ -177,7 +177,7 @@ const SinglePost = ({ pageContext, data }) => {
                         image={useMemo(() => getGatsbyImage(dt?.mainImage?.asset?.id, {maxWidth: 600, aspectRatio: 2.0}), [dt?.mainImage?.asset?.id])}
                         title={dt?.title?.lang?.[language]}
                         slug={`/${category}/${dt?.slug?.current}`}
-                        date={dt?._updatedAt}
+                        date={dt?.publishedAt}
                       />
                     </div>
                   )})}

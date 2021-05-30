@@ -99,7 +99,7 @@ const Recent = ({ id, data }) => {
                         image={useMemo(() => getGatsbyImage(dt?.mainImage?.asset?.id, {maxWidth: 600, aspectRatio: 2.0}), [dt?.mainImage?.asset?.id])}
                         title={dt?.title?.lang?.[language]}
                         slug={`/${id}/${dt?.slug?.current}`}
-                        date={dt?._updatedAt}
+                        date={dt?.publishedAt}
                       />
                     </div>
                   )})}
