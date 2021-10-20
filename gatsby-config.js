@@ -82,5 +82,14 @@ module.exports = {
       },
       __key: "images",
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [process.env.GATSBY_SANITY_GA],
+        pluginConfig: {
+          head: true,
+        },
+      },
+    },
   ],
 };
